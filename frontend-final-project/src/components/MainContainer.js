@@ -1,11 +1,11 @@
 import React from 'react'
-import Photo from './Main/Photo'
+import PhotoList from './Photo/PhotoList'
+import Adapter from '../adapter'
 
 
 class MainContainer extends React.Component {
-  state = {
 
-  }
+
 
 
 
@@ -14,9 +14,9 @@ class MainContainer extends React.Component {
 
   render = () => {
     return (
-      <div>
+      <div className="MainContainer" >
         MainContainer
-        <Photo />
+        <PhotoList />
       </div>
     )
   }

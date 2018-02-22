@@ -1,11 +1,9 @@
 import React from 'react'
-import TagSearchContainer from './TagList/TagSearchContainer'
+import TagsContainer from './TagList/TagsContainer'
 
 
 class SideContainer extends React.Component {
-  state = {
 
-  }
 
 
 
@@ -14,8 +12,8 @@ class SideContainer extends React.Component {
 
   render = () => {
     return (
-      <div>
-        <TagSearchContainer />
+      <div className="SmallContainer">
+        <TagsContainer />
       </div>
     )
   }

@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20180221202311) do
     t.string "username"
     t.string "password_digest"
     t.string "website"
+    t.string "custom_url"
+    t.string "business_name"
     t.string "profile_photo"
     t.string "instagram_url"
     t.string "facebook_url"
