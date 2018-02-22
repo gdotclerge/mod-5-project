@@ -2,21 +2,24 @@ import React from 'react'
 import Tag from './Tag'
 
 
-const tagList = (props) => {
+class TagList extends React.Component {
 
 
-  return (
-    <div>
-      <Tag />
-    </div>
-  )
+  render = () => {
+    return (
+      <div>
+        {this.listTags()}
+      </div>
+    )
+  }
 
-
-
-
-
+  listTags = () => {
+    return this.props.selectedTags.map( (t) => {
+      return(<Tag tag={t} key={t.id}/>)
+    })
+  }
 
 }
 
 
-export default tagList
+export default TagList

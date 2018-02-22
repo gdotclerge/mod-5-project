@@ -7,7 +7,7 @@ const tag = (props) => {
 
   return (
     <div>
-      We got a Tag
+      {props.tag.name}
     </div>
   )
 

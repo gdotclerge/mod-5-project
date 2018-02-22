@@ -1,16 +1,21 @@
 import React from 'react'
 
 
-const TagSearch = (prop) => {
+class TagSearch extends React.Component {
 
 
-  return (
-    <div>
-      <input type="text"/>
-    </div>
-  )
-
-
+  render = () => {
+    return (
+      <div>
+        <input list="data" type="text" onChange={this.props.handleSearch}/>
+        <datalist id="data" onSubmit={this.props.handleTagClick}>
+            {this.props.tags.map( (t) =>
+                <option value={t.name} onClick={this.props.handleTagClick} />
+            )}
+        </datalist>
+      </div>
+    )
+  }
 
 }
 

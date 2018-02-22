@@ -3,6 +3,7 @@ import NavBar from './Navbar'
 import MainContainer from './components/MainContainer'
 import SideContainer from './components/SideContainer'
 import './App.css';
+import Adapter from './adapter'
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
 
 
@@ -12,9 +13,18 @@ class App extends Component {
   }
 
 
+  componentDidMount = () => {
+    Adapter.getPhotographers()
+    .then(json => {
+      this.setState({ photographers: json})
+    })
+  }
+
+
   createPhotographerPaths = () => {
     this.state.photographers.map( (p)=> {
-      return <Route exact path={}/>
+      const pathName = `/${p.custom_url}`
+      return <Route exact path={pathName}/>
     })
   }
 
