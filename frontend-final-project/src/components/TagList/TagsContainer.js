@@ -26,7 +26,7 @@ class TagsContainer extends React.Component {
     return (
       <div>
         <TagSearch handleSearch={this.handleSearch} tags={this.state.tags} />
-        <TagList selectedTags={this.state.selectedTags}/>
+        <TagList selectedTags={this.state.selectedTags} handleTagRemoval={this.handleTagRemoval}/>
       </div>
     )
   }
@@ -46,6 +46,13 @@ class TagsContainer extends React.Component {
   }
 
 
+  handleTagRemoval = (tag) => {
+    const index = this.state.selectedTags.indexOf(tag)
+    this.setState( (preState) => {
+      preState.selectedTags.splice(index, 1)
+      return {selectedTags: preState.selectedTags }
+    })
+  }
 
 
 

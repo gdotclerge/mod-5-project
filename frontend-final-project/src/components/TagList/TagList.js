@@ -15,7 +15,7 @@ class TagList extends React.Component {
 
   listTags = () => {
     return this.props.selectedTags.map( (t) => {
-      return(<Tag tag={t} key={t.id}/>)
+      return(<Tag tag={t} key={t.id} handleTagRemoval={this.props.handleTagRemoval}/>)
     })
   }
 
