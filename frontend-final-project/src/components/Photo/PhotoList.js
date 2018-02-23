@@ -1,22 +1,25 @@
 import React from 'react'
 import Photo from './Photo'
 import Adapter from '../../adapter'
+import { connect } from "react-redux";
+import { fetchPhotos } from "../../actions";
 
 
 class PhotoList extends React.Component {
-  state = {
-    photos: [],
-    filterBy: []
-  }
+  // state = {
+  //   photos: [],
+  //   filterBy: []
+  // }
 
 
   componentDidMount = () => {
-    Adapter.getPhotos()
-    .then(json => {
-      this.setState({
-        photos: json
-      })
-    })
+    this.props.fetchPhotos()
+    // Adapter.getPhotos()
+    // .then(json => {
+    //   this.setState({
+    //     photos: json
+    //   })
+    // })
   }
 
 
@@ -31,7 +34,7 @@ class PhotoList extends React.Component {
 
 
   allPhotos = () => {
-    return this.state.photos.map( (p) => {
+    return this.props.photos.map( (p) => {
       return(<Photo photo={p} key={p.id}/>)
     })
   }
@@ -53,4 +56,4 @@ class PhotoList extends React.Component {
 }
 
 
-export default PhotoList
+export default connect((state)=> ({photos: state.photos}), { fetchPhotos })(PhotoList)

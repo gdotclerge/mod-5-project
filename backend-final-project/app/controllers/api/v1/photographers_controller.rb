@@ -10,7 +10,7 @@ class Api::V1::PhotographersController < ApplicationController
 
   def show
     @photographer = Photographer.find(params[:id])
-    render json: @photographer, include: 'photos'
+    render json: @photographer
   end
 
 
