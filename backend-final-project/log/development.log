@@ -3208,3 +3208,615 @@ Processing by Api::V1::PhotographersController#index as */*
 Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/api/v1/tags" for ::1 at 2018-02-22 13:45:27 -0500
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-22 13:45:27 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-02-22 13:45:27 -0500
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhoto Load (1.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mPhotographer Load (3.7ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-22 13:50:17 -0500
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-22 13:50:17 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-02-22 13:50:17 -0500
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mPhotographer Load (6.5ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 200 OK in 12ms (Views: 4.8ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-22 13:59:04 -0500
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-22 13:59:04 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-02-22 13:59:04 -0500
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhoto Load (1.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mPhotographer Load (0.8ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-22 17:50:37 -0500
+Started GET "/api/v1/photos" for ::1 at 2018-02-22 17:50:37 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-02-22 17:50:37 -0500
+Processing by Api::V1::TagsController#index as */*
+Processing by Api::V1::PhotosController#index as */*
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhotographer Load (30.8ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 200 OK in 286ms (Views: 253.7ms | ActiveRecord: 30.8ms)
+
+
+  [1m[36mPhoto Load (50.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Completed 200 OK in 296ms (Views: 244.9ms | ActiveRecord: 50.0ms)
+
+
+  [1m[36mTag Load (61.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+Completed 200 OK in 315ms (Views: 247.2ms | ActiveRecord: 61.2ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-22 17:53:51 -0500
+Processing by Api::V1::TagsController#index as */*
+Started GET "/api/v1/photos" for ::1 at 2018-02-22 17:53:51 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-02-22 17:53:51 -0500
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhoto Load (12.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Completed 200 OK in 89ms (Views: 76.9ms | ActiveRecord: 12.1ms)
+
+
+  [1m[36mTag Load (74.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+Completed 200 OK in 111ms (Views: 26.4ms | ActiveRecord: 74.1ms)
+
+
+  [1m[36mPhotographer Load (12.1ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 200 OK in 90ms (Views: 77.5ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-22 17:53:57 -0500
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (1.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-22 17:53:57 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-02-22 17:53:57 -0500
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhoto Load (1.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mPhotographer Load (4.6ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-22 17:55:25 -0500
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (6.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-22 17:55:25 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-02-22 17:55:25 -0500
+Processing by Api::V1::PhotosController#index as */*
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mPhotographer Load (0.4ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.4ms)
+
+
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-22 17:55:38 -0500
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-22 17:55:38 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-02-22 17:55:38 -0500
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhoto Load (4.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mPhotographer Load (0.9ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 200 OK in 16ms (Views: 11.3ms | ActiveRecord: 4.0ms)
+
+
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/graphiql" for ::1 at 2018-02-22 19:26:10 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/graphiql"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/graphiql" for ::1 at 2018-02-22 19:26:13 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/graphiql"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/tags" for ::1 at 2018-02-22 19:26:19 -0500
+Processing by Api::V1::TagsController#index as HTML
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+Completed 200 OK in 54ms (Views: 26.7ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/api/v1/photographers" for ::1 at 2018-02-22 19:26:23 -0500
+Processing by Api::V1::PhotographersController#index as HTML
+  [1m[36mPhotographer Load (0.6ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 200 OK in 26ms (Views: 15.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/v1/photographers" for ::1 at 2018-02-22 19:39:58 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PhotographersController#index as HTML
+  [1m[36mPhotographer Load (0.7ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 200 OK in 42ms (Views: 24.0ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-22 19:45:08 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-02-22 19:45:08 -0500
+Started GET "/api/v1/photos" for ::1 at 2018-02-22 19:45:08 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (23.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::PhotosController#index as */*
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mPhotographer Load (11.8ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+  [1m[36mTag Load (1.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mPhoto Load (12.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Completed 200 OK in 83ms (Views: 41.3ms | ActiveRecord: 20.4ms)
+
+
+Completed 200 OK in 60ms (Views: 12.7ms | ActiveRecord: 39.9ms)
+
+
+Completed 200 OK in 88ms (Views: 36.9ms | ActiveRecord: 30.1ms)
+
+
+Started GET "/api/v1/photographers" for ::1 at 2018-02-22 19:50:05 -0500
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PhotographersController#index as HTML
+  [1m[36mPhotographer Load (0.8ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 200 OK in 41ms (Views: 24.6ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/api/v1/photographers" for ::1 at 2018-02-22 19:54:23 -0500
+Processing by Api::V1::PhotographersController#index as HTML
+  [1m[36mPhotographer Load (0.7ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 200 OK in 33ms (Views: 23.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 19:54:40 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (6.6ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 19:54:45 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.5ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/photographers/2" for ::1 at 2018-02-22 19:54:49 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhotographer Load (0.4ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/photographers" for ::1 at 2018-02-22 19:54:54 -0500
+Processing by Api::V1::PhotographersController#index as HTML
+  [1m[36mPhotographer Load (0.7ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 19:54:58 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 19:55:46 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 0.7ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 19:55:51 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 19:55:52 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.4ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 19:55:52 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.4ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:01:16 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.4ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 0.8ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:01:18 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.6ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:01:18 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:01:19 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.2ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:01:19 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:01:19 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:01:19 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.2ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:01:20 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.2ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:01:20 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.2ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:01:20 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:01:20 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.2ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:01:20 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:01:21 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:15:05 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.7ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 4.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:22:38 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.6ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 45ms (Views: 0.9ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:22:41 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.8ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 0.7ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:22:42 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.4ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:22:43 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.5ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:22:43 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.5ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:22:43 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.5ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:22:44 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.6ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:22:44 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:22:45 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.4ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:22:45 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.5ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:22:45 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.4ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:22:45 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/photographers/1" for ::1 at 2018-02-22 20:23:47 -0500
+Processing by Api::V1::PhotographersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhotographer Load (0.4ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhoto Load (6.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+Completed 200 OK in 90ms (Views: 41.3ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/api/v1/photographers/" for ::1 at 2018-02-22 20:23:58 -0500
+Processing by Api::V1::PhotographersController#index as HTML
+  [1m[36mPhotographer Load (0.7ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 2]]
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/photographers/" for ::1 at 2018-02-22 20:24:57 -0500
+  
+SyntaxError (/Users/TiffanyDiana/Documents/Garry-Coding-Docs/05_MOD/Projects/Final-Project/backend-final-project/app/controllers/api/v1/photographers_controller.rb:7: syntax error, unexpected '\n', expecting =>
+/Users/TiffanyDiana/Documents/Garry-Coding-Docs/05_MOD/Projects/Final-Project/backend-final-project/app/controllers/api/v1/photographers_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/photographers_controller.rb:7: syntax error, unexpected '\n', expecting =>
+app/controllers/api/v1/photographers_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/v1/photographers/" for ::1 at 2018-02-22 20:25:03 -0500
+  
+SyntaxError (/Users/TiffanyDiana/Documents/Garry-Coding-Docs/05_MOD/Projects/Final-Project/backend-final-project/app/controllers/api/v1/photographers_controller.rb:7: syntax error, unexpected '\n', expecting =>
+/Users/TiffanyDiana/Documents/Garry-Coding-Docs/05_MOD/Projects/Final-Project/backend-final-project/app/controllers/api/v1/photographers_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/photographers_controller.rb:7: syntax error, unexpected '\n', expecting =>
+app/controllers/api/v1/photographers_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/v1/photographers/" for ::1 at 2018-02-22 20:25:35 -0500
+Processing by Api::V1::PhotographersController#index as HTML
+  [1m[36mPhotographer Load (0.4ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 200 OK in 31ms (Views: 18.0ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/api/v1/photographers/" for ::1 at 2018-02-22 20:25:56 -0500
+Processing by Api::V1::PhotographersController#index as HTML
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+  [1m[36mPackage Load (14.5ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPackage Load (1.9ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 2]]
+Completed 200 OK in 71ms (Views: 42.8ms | ActiveRecord: 20.1ms)
+
+
+Started GET "/api/v1/photographers/" for ::1 at 2018-02-22 20:26:21 -0500
+Processing by Api::V1::PhotographersController#index as HTML
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 2]]
+Completed 200 OK in 44ms (Views: 33.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/v1/photographers/" for ::1 at 2018-02-22 20:28:47 -0500
+Processing by Api::V1::PhotographersController#index as HTML
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `photos, packages' for #<Photographer:0x007faa78f83d18>):
+  
+app/controllers/api/v1/photographers_controller.rb:7:in `index'
+Started GET "/api/v1/photographers/" for ::1 at 2018-02-22 20:30:36 -0500
+Processing by Api::V1::PhotographersController#index as HTML
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 200 OK in 22ms (Views: 16.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/photographers/" for ::1 at 2018-02-22 20:33:08 -0500
+Processing by Api::V1::PhotographersController#index as HTML
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 200 OK in 22ms (Views: 16.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/photographers/" for ::1 at 2018-02-22 20:35:54 -0500
+Processing by Api::V1::PhotographersController#index as HTML
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `photos, packages' for #<Photographer:0x007faa7c0ab300>):
+  
+app/controllers/api/v1/photographers_controller.rb:7:in `index'
+Started GET "/api/v1/photographers/" for ::1 at 2018-02-22 20:38:41 -0500
+Processing by Api::V1::PhotographersController#index as HTML
+  [1m[36mPhotographer Load (0.7ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `photos,packages' for #<Photographer:0x007faa7c098840>):
+  
+app/controllers/api/v1/photographers_controller.rb:7:in `index'
+Started GET "/api/v1/photographers/" for ::1 at 2018-02-22 20:42:08 -0500
+  [1m[35m (7.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PhotographersController#index as HTML
+  [1m[36mPhotographer Load (0.7ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mPackage Load (0.9ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers]   [1m[36mPackage Load (0.4ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (87.4ms)
+Completed 200 OK in 156ms (Views: 131.2ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/api/v1/photographers/" for ::1 at 2018-02-22 20:43:03 -0500
+Processing by Api::V1::PhotographersController#index as HTML
+  [1m[36mPhotographer Load (0.4ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mPackage Load (0.4ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers]   [1m[36mPackage Load (0.4ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (60.4ms)
+Completed 200 OK in 88ms (Views: 78.6ms | ActiveRecord: 2.0ms)
+
+

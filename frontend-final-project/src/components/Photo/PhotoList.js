@@ -5,7 +5,8 @@ import Adapter from '../../adapter'
 
 class PhotoList extends React.Component {
   state = {
-    photos: []
+    photos: [],
+    filterBy: []
   }
 
 
@@ -23,17 +24,30 @@ class PhotoList extends React.Component {
     return (
       <div>
         PhotoList
-        {this.mapPhotos()}
+        {this.allPhotos()}
       </div>
     )
   }
 
 
-  mapPhotos = (props) => {
+  allPhotos = () => {
     return this.state.photos.map( (p) => {
       return(<Photo photo={p} key={p.id}/>)
     })
   }
+
+
+  // filteredPhotos = () => {
+    // this.state.filterBy.each( (f) => {
+    //    this.state.photos.filter( (p) => {
+    //
+    //    })
+    // })
+
+  //   return this.state.photos.map( (p) => {
+  //     return(<Photo photo={p} key={p.id}/>)
+  //   })
+  // }
 
 
 }

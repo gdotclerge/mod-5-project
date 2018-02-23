@@ -7,7 +7,7 @@ class TagSearch extends React.Component {
   render = () => {
     return (
       <div>
-        <input list="data" type="text" onChange={this.props.handleSearch}/>
+        <input list="data" type="text" onChange={this.props.handleSearch} placeholder="Search Tags"/>
         <datalist id="data" onSubmit={this.props.handleTagClick}>
             {this.props.tags.map( (t) =>
                 <option value={t.name} onClick={this.props.handleTagClick} />
