@@ -3872,3 +3872,180 @@ No serializer found for resource: #<Tag id: 1, name: "Blogger", created_at: "201
 Completed 200 OK in 349ms (Views: 176.3ms | ActiveRecord: 67.0ms)
 
 
+Started GET "/api/v1/photos" for ::1 at 2018-02-23 08:04:23 -0500
+Started GET "/api/v1/tags" for ::1 at 2018-02-23 08:04:23 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-02-23 08:04:23 -0500
+Processing by Api::V1::TagsController#index as */*
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mTag Load (35.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+No serializer found for resource: #<Tag id: 1, name: "Blogger", created_at: "2018-02-22 14:44:23", updated_at: "2018-02-22 14:44:23">
+  [1m[36mPhoto Load (41.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Tag::ActiveRecord_Relation (7.34ms)
+  [1m[36mPhotographer Load (46.3ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.79ms)
+Completed 200 OK in 222ms (Views: 185.5ms | ActiveRecord: 35.7ms)
+
+
+Completed 200 OK in 254ms (Views: 206.6ms | ActiveRecord: 41.6ms)
+
+
+[active_model_serializers]   [1m[36mPhoto Load (1.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mPackage Load (7.8ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers]   [1m[36mPackage Load (0.8ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (58.7ms)
+Completed 200 OK in 281ms (Views: 213.1ms | ActiveRecord: 67.2ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-23 08:05:17 -0500
+Processing by Api::V1::TagsController#index as */*
+Started GET "/api/v1/photos" for ::1 at 2018-02-23 08:05:17 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-02-23 08:05:17 -0500
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhotographer Load (0.5ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhoto Load (11.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.11ms)
+Completed 200 OK in 63ms (Views: 51.5ms | ActiveRecord: 11.4ms)
+
+
+  [1m[36mTag Load (9.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+No serializer found for resource: #<Tag id: 1, name: "Blogger", created_at: "2018-02-22 14:44:23", updated_at: "2018-02-22 14:44:23">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Tag::ActiveRecord_Relation (5.78ms)
+[active_model_serializers]   [1m[36mPackage Load (13.2ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+Completed 200 OK in 86ms (Views: 76.3ms | ActiveRecord: 9.0ms)
+
+
+[active_model_serializers]   [1m[36mPhoto Load (1.9ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers]   [1m[36mPackage Load (0.5ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (41.73ms)
+Completed 200 OK in 90ms (Views: 72.8ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-23 08:06:31 -0500
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+No serializer found for resource: #<Tag id: 1, name: "Blogger", created_at: "2018-02-22 14:44:23", updated_at: "2018-02-22 14:44:23">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Tag::ActiveRecord_Relation (2.43ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-23 08:06:31 -0500
+Processing by Api::V1::PhotosController#index as */*
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.27ms)
+Started GET "/api/v1/photographers" for ::1 at 2018-02-23 08:06:31 -0500
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.6ms)
+
+
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhotographer Load (0.7ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mPackage Load (0.7ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers]   [1m[36mPackage Load (0.5ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.86ms)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-23 08:08:26 -0500
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+No serializer found for resource: #<Tag id: 1, name: "Blogger", created_at: "2018-02-22 14:44:23", updated_at: "2018-02-22 14:44:23">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Tag::ActiveRecord_Relation (2.93ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/photographers" for ::1 at 2018-02-23 08:08:26 -0500
+Processing by Api::V1::PhotographersController#index as */*
+Started GET "/api/v1/photos" for ::1 at 2018-02-23 08:08:26 -0500
+Processing by Api::V1::PhotosController#index as */*
+  [1m[36mPhotographer Load (7.5ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+  [1m[36mPhoto Load (1.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.68ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 1.1ms)
+
+
+[active_model_serializers]   [1m[36mPhoto Load (1.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mPackage Load (7.2ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers]   [1m[36mPackage Load (0.7ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (63.64ms)
+Completed 200 OK in 76ms (Views: 32.8ms | ActiveRecord: 42.3ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-23 08:09:07 -0500
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+No serializer found for resource: #<Tag id: 1, name: "Blogger", created_at: "2018-02-22 14:44:23", updated_at: "2018-02-22 14:44:23">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Tag::ActiveRecord_Relation (2.91ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-23 08:09:07 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-02-23 08:09:07 -0500
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhoto Load (1.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.12ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mPhotographer Load (6.7ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mPackage Load (0.4ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers]   [1m[36mPackage Load (0.5ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (27.73ms)
+Completed 200 OK in 53ms (Views: 43.6ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-23 08:11:08 -0500
+Processing by Api::V1::TagsController#index as */*
+Started GET "/api/v1/photos" for ::1 at 2018-02-23 08:11:08 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-02-23 08:11:08 -0500
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+No serializer found for resource: #<Tag id: 1, name: "Blogger", created_at: "2018-02-22 14:44:23", updated_at: "2018-02-22 14:44:23">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Tag::ActiveRecord_Relation (4.77ms)
+Completed 200 OK in 73ms (Views: 71.7ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mPhoto Load (1.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.7ms)
+Completed 200 OK in 56ms (Views: 54.4ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mPhotographer Load (7.7ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mPhoto Load (1.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mPackage Load (0.6ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers]   [1m[36mPackage Load (8.0ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (73.14ms)
+Completed 200 OK in 134ms (Views: 115.6ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/api/v1/photographers" for ::1 at 2018-02-23 08:23:39 -0500
+  [1m[35m (8.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PhotographersController#index as HTML
+  [1m[36mPhotographer Load (0.8ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mPackage Load (0.5ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mPackage Load (0.4ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (63.15ms)
+Completed 200 OK in 125ms (Views: 101.6ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-23 08:23:42 -0500
+Processing by Api::V1::PhotosController#index as HTML
+  [1m[36mPhoto Load (5.9ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers]   [1m[36mTag Load (22.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 2]]
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 3]]
+[active_model_serializers]   [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (85.93ms)
+Completed 200 OK in 155ms (Views: 85.5ms | ActiveRecord: 60.3ms)
+
+

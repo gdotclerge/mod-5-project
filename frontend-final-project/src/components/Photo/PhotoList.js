@@ -6,20 +6,9 @@ import { fetchPhotos } from "../../actions";
 
 
 class PhotoList extends React.Component {
-  // state = {
-  //   photos: [],
-  //   filterBy: []
-  // }
-
 
   componentDidMount = () => {
     this.props.fetchPhotos()
-    // Adapter.getPhotos()
-    // .then(json => {
-    //   this.setState({
-    //     photos: json
-    //   })
-    // })
   }
 
 
@@ -35,7 +24,7 @@ class PhotoList extends React.Component {
 
   allPhotos = () => {
     return this.props.photos.map( (p) => {
-      return(<Photo photo={p} key={p.id}/>)
+      return(<Photo className="Photos" photo={p} key={p.id}/>)
     })
   }
 

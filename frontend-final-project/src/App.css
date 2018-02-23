@@ -1,7 +1,6 @@
 .App {
   display: grid;
   grid-template-columns: 10% 50% 10% 25% 5%;
-  grid-template-rows: 25% 25% 25% 25%;
 }
 
 .MainContainer {
@@ -12,7 +11,12 @@
 
 .SmallContainer {
   grid-column-start: 4;
-  grid-row-start: 1;
+}
+
+.Photos {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  overflow: auto;
 }
 
 

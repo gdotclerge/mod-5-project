@@ -3,7 +3,6 @@ import React from 'react'
 
 const photo = (props) => {
 
-
   return (
     <div>
       <img src={props.photo.img_src} />
@@ -12,11 +11,6 @@ const photo = (props) => {
       <button>Reserve</button>
     </div>
   )
-
-
-
-
-
 
 }
 
