@@ -1,9 +1,9 @@
 import React from 'react'
 import Tag from './Tag'
+import { connect } from "react-redux";
 
 
 class TagList extends React.Component {
-
 
   render = () => {
     return (
@@ -22,4 +22,4 @@ class TagList extends React.Component {
 }
 
 
-export default TagList
+export default connect((state)=> ({selectedTags: state.tags.selectedTags}))(TagList)

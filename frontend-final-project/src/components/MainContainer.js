@@ -15,7 +15,6 @@ class MainContainer extends React.Component {
   render = () => {
     return (
       <div className="MainContainer" >
-        MainContainer
         <PhotoList />
       </div>
     )

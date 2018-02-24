@@ -5,11 +5,20 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-import photoReducer from "./reducers";
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import photosReducer from "./reducers/PhotosReducer";
+import tagsReducer from "./reducers/TagsReducer";
 import thunk from "redux-thunk"
 
-const store = createStore(photoReducer, applyMiddleware(thunk));
+
+
+const rootReducer = combineReducers({
+  // currentUser: currentUserReducer,
+  photos: photosReducer,
+  tags: tagsReducer
+})
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>

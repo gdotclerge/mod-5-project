@@ -23,26 +23,36 @@ class PhotoList extends React.Component {
 
 
   allPhotos = () => {
-    return this.props.photos.map( (p) => {
+    return this.props.photos.photos.map( (p) => {
       return(<Photo className="Photos" photo={p} key={p.id}/>)
     })
   }
 
 
-  // filteredPhotos = () => {
-    // this.state.filterBy.each( (f) => {
-    //    this.state.photos.filter( (p) => {
-    //
-    //    })
-    // })
-
-  //   return this.state.photos.map( (p) => {
-  //     return(<Photo photo={p} key={p.id}/>)
-  //   })
+  // fakeFilter = () => {
+  //   let filtered = this.props.photos.filter( (p) => {
+  //     let photoTags = p.tags.map( (t) => t.name )
+  //
+  //     return photoTags.filter( (t) {
+  //         return this.props.filterTags.indexOf(t) > -1;
+  //     }).length === this.props.filtersTags.length;
+  //  });
   // }
+
+
+
 
 
 }
 
+// const mapStateToProps = () => {
+//
+// }
+
+
 
 export default connect((state)=> ({photos: state.photos}), { fetchPhotos })(PhotoList)
+
+
+
+// use with_router

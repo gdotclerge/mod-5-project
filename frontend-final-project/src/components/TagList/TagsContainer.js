@@ -2,63 +2,60 @@ import React from 'react'
 import TagList from './TagList'
 import TagSearch from './TagSearch'
 import Adapter from '../../adapter'
+import { connect } from "react-redux";
+import { fetchTags, addSelectedTags, removeSelectedTags } from "../../actions";
 
 
 
 class TagsContainer extends React.Component {
 
-  state = {
-    selectedTags: [],
-    tags: []
-  }
-
-
   componentWillMount = () => {
-    Adapter.getTags()
-    .then(json => {
-      this.setState({
-        tags: json
-      })
-    })
+    this.props.fetchTags()
   }
 
   render = () => {
+    console.log(this.props.selectedTags)
     return (
       <div>
-        <TagSearch handleSearch={this.handleSearch} tags={this.state.tags} />
-        <TagList selectedTags={this.state.selectedTags} handleTagRemoval={this.handleTagRemoval}/>
+        <TagSearch handleSearch={this.handleSearch} />
+        <TagList handleTagRemoval={this.handleTagRemoval}/>
       </div>
     )
   }
 
 
   handleSearch = (e) => {
-    const selectedTag = this.state.tags.find( (t) => {
+    const selectedTag = this.props.tags.find( (t) => {
       return t.name === e.target.value
     })
 
     if (selectedTag){
-      this.setState( (preState)=> {
-        return {selectedTags: [...this.state.selectedTags, selectedTag]}
-      })
+      this.props.addSelectedTags(selectedTag)
       e.target.value = ""
     }
   }
 
 
   handleTagRemoval = (tag) => {
-    const index = this.state.selectedTags.indexOf(tag)
-    this.setState( (preState) => {
-      preState.selectedTags.splice(index, 1)
-      return {selectedTags: preState.selectedTags }
-    })
+    this.props.removeSelectedTags(tag)
+
+    // const index = this.state.selectedTags.indexOf(tag)
+    // this.setState( (preState) => {
+    //   preState.selectedTags.splice(index, 1)
+    //   return {selectedTags: preState.selectedTags }
+    // })
   }
-
-
-
-
 
 }
 
 
-export default TagsContainer
+const mapStateToProps = (state) => {
+  return {
+    tags: state.tags.tags,
+    selectedTags: state.tags.selectedTags
+  }
+}
+
+
+
+export default connect(mapStateToProps, { fetchTags, addSelectedTags, removeSelectedTags })(TagsContainer)
