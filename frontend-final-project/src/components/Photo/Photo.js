@@ -4,11 +4,14 @@ import React from 'react'
 const photo = (props) => {
 
   return (
-    <div>
-      <img src={props.photo.img_src} />
+    <div className="photo">
+      <img src={props.photo.img_src} alt="" />
       <br/>
-      <button>View Profile</button>
-      <button>Reserve</button>
+      <div className="overlay"></div>
+      <div className="photobutton" >
+        <button>View Profile</button>
+        <button>Reserve</button>
+      </div>
     </div>
   )
 
