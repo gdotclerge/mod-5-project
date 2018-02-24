@@ -14,7 +14,6 @@ class TagsContainer extends React.Component {
   }
 
   render = () => {
-    console.log(this.props.selectedTags)
     return (
       <div>
         <TagSearch handleSearch={this.handleSearch} />
@@ -38,24 +37,11 @@ class TagsContainer extends React.Component {
 
   handleTagRemoval = (tag) => {
     this.props.removeSelectedTags(tag)
-
-    // const index = this.state.selectedTags.indexOf(tag)
-    // this.setState( (preState) => {
-    //   preState.selectedTags.splice(index, 1)
-    //   return {selectedTags: preState.selectedTags }
-    // })
   }
 
 }
 
 
-const mapStateToProps = (state) => {
-  return {
-    tags: state.tags.tags,
-    selectedTags: state.tags.selectedTags
-  }
-}
 
 
-
-export default connect(mapStateToProps, { fetchTags, addSelectedTags, removeSelectedTags })(TagsContainer)
+export default connect((state) => ({tags: state.tags.tags}), { fetchTags, addSelectedTags, removeSelectedTags })(TagsContainer)

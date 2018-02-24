@@ -23,7 +23,7 @@ class PhotoList extends React.Component {
 
 
   allPhotos = () => {
-    return this.props.photos.photos.map( (p) => {
+    return this.props.photos.map( (p) => {
       return(<Photo className="Photos" photo={p} key={p.id}/>)
     })
   }
@@ -39,19 +39,25 @@ class PhotoList extends React.Component {
   //  });
   // }
 
-
-
-
-
 }
 
-// const mapStateToProps = () => {
-//
-// }
+const mapStateToProps = (state) => {
+  const filteredPhotos = state.photos.photos.filter( (p) => {
+    let photoTags = p.tags.map( (pt) => pt.name )
+
+    return state.tags.selectedTags.filter( (t) => {
+      return photoTags.indexOf(t.name) > -1;
+    }).length === state.tags.selectedTags.length
+  })
 
 
+  return {
+    photos: filteredPhotos
+  }
+}
 
-export default connect((state)=> ({photos: state.photos}), { fetchPhotos })(PhotoList)
+
+export default connect((mapStateToProps), { fetchPhotos })(PhotoList)
 
 
 
