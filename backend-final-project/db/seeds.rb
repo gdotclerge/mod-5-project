@@ -23,13 +23,11 @@ dclive = Photographer.create(
 
 thugpic1 = thugnanny.photos.build(img_src: "https://static1.squarespace.com/static/54465cf1e4b09d4e92ebfe2d/t/5a2ed9768165f58c217dbe76/1513019808003/IMG_1700.JPG?format=500w")
 thugpic2 = thugnanny.photos.build(img_src: "https://static1.squarespace.com/static/54465cf1e4b09d4e92ebfe2d/t/5a2ed662c83025e9c486290a/1513019086951/IMG_5725.JPG?format=500w")
-thugpic1.save
-thugpic2.save
+
 
 dclivepic1 = dclive.photos.build(img_src: "http://www.dorianclive.com/wp-content/uploads/2015/05/MG_8234-Edit-2-853x1280.jpg")
 dclivepic2 = dclive.photos.build(img_src: "http://www.dorianclive.com/wp-content/uploads/2015/06/MG_7695-Edit-853x1280.jpg")
-dclivepic1.save
-dclivepic2.save
+
 
 
 package = thugnanny.packages.build(price: 100.00, photos_to_deliver: "10 - 20")
@@ -38,20 +36,61 @@ package1 = dclive.packages.build(price: 100.00, photos_to_deliver: "10 - 20")
 package1.save
 
 
-Tag.create(name: "Blogger")
-Tag.create(name: "Fashion")
-Tag.create(name: "Wedding")
-Tag.create(name: "New Born")
-Tag.create(name: "Black and White")
+# list of tags
+
+blogger = Tag.create(name: "Blogger")
+lifestyle = Tag.create(name: "Lifestyle")
+glamour = Tag.create(name: "Glamour")
+travel = Tag.create(name: "Travel")
+food = Tag.create(name: "Food")
+fashion = Tag.create(name: "Fashion")
+wedding = Tag.create(name: "Wedding")
+new_born = Tag.create(name: "New Born")
+birth = Tag.create(name: "Birth")
+engagement = Tag.create(name: "Engagement")
+kids = Tag.create(name: "Kids")
+babies = Tag.create(name: "Babies")
+family = Tag.create(name: "Family")
+headshot = Tag.create(name: "Headshot")
+product = Tag.create(name: "Product")
+portrait = Tag.create(name: "Portrait")
+boudoir = Tag.create(name: "Boudoir")
+social = Tag.create(name: "Social")
+surfing = Tag.create(name: "Surfing")
+
+Tag.create(name: "Landscape")
+Tag.create(name: "Wildlife")
+Tag.create(name: "Aerial")
+Tag.create(name: "Action")
+Tag.create(name: "Sports")
+Tag.create(name: "Pets")
+Tag.create(name: "Event")
+Tag.create(name: "Real Estate")
+Tag.create(name: "Architecture")
+Tag.create(name: "Journalism")
+Tag.create(name: "Musical Concert")
+Tag.create(name: "Macro")
+Tag.create(name: "Medical")
+Tag.create(name: "Aerial")
 
 
-PhotoTag.create(tag_id: 1, photo_id: 1)
-PhotoTag.create(tag_id: 2, photo_id: 1)
-PhotoTag.create(tag_id: 1, photo_id: 2)
-PhotoTag.create(tag_id: 2, photo_id: 2)
-PhotoTag.create(tag_id: 2, photo_id: 3)
-PhotoTag.create(tag_id: 5, photo_id: 3)
-PhotoTag.create(tag_id: 1, photo_id: 3)
-PhotoTag.create(tag_id: 2, photo_id: 4)
+thugpic1.tags << blogger
+thugpic1.tags << fashion
+thugpic1.tags << portrait
+thugpic1.save
+
+thugpic2.tags << blogger
+thugpic2.tags << fashion
+thugpic2.tags << portrait
+thugpic2.save
+
+dclivepic1.tags << fashion
+dclivepic1.tags << portrait
+dclivepic1.save
+
+dclivepic2.tags << fashion
+dclivepic2.tags << portrait
+dclivepic2.save
+
 
 PackageTag.create(tag_id: 1, package_id: 1)
