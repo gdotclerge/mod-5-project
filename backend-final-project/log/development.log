@@ -6523,3 +6523,420 @@ Completed 200 OK in 99ms (Views: 76.1ms | ActiveRecord: 22.1ms)
 Completed 200 OK in 121ms (Views: 88.2ms | ActiveRecord: 26.8ms)
 
 
+Started GET "/api/v1/tags" for ::1 at 2018-02-24 16:08:00 -0500
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.94ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-24 16:08:00 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-02-24 16:08:00 -0500
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhoto Load (9.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mPhotographer Load (0.7ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mTag Load (4.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+[active_model_serializers]   [1m[36mPackage Load (0.5ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 2]]
+[active_model_serializers]   [1m[36mPackage Load (6.9ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (28.02ms)
+[active_model_serializers]   [1m[36mTag Load (4.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 3]]
+Completed 200 OK in 40ms (Views: 31.2ms | ActiveRecord: 8.2ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (54.03ms)
+Completed 200 OK in 69ms (Views: 48.3ms | ActiveRecord: 20.3ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-24 16:10:36 -0500
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.83ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-24 16:10:36 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-02-24 16:10:36 -0500
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhoto Load (1.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers]   [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+  [1m[36mPhotographer Load (0.8ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mTag Load (5.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 2]]
+[active_model_serializers]   [1m[36mPackage Load (11.0ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (1.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 3]]
+[active_model_serializers]   [1m[36mPackage Load (7.9ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.99ms)
+Completed 200 OK in 52ms (Views: 32.0ms | ActiveRecord: 19.7ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (12.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (114.37ms)
+Completed 200 OK in 123ms (Views: 101.5ms | ActiveRecord: 21.3ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-24 16:10:59 -0500
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.52ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-24 16:10:59 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-02-24 16:10:59 -0500
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhotographer Load (1.2ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+  [1m[36mPhoto Load (6.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers]   [1m[36mPackage Load (4.8ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (2.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+[active_model_serializers]   [1m[36mPackage Load (3.6ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (17.46ms)
+Completed 200 OK in 24ms (Views: 14.1ms | ActiveRecord: 9.6ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (5.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 2]]
+[active_model_serializers]   [1m[36mTag Load (2.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 3]]
+[active_model_serializers]   [1m[36mTag Load (1.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (35.52ms)
+Completed 200 OK in 56ms (Views: 38.0ms | ActiveRecord: 17.5ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-24 18:47:26 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-02-24 18:47:26 -0500
+Processing by Api::V1::TagsController#index as */*
+Started GET "/api/v1/photos" for ::1 at 2018-02-24 18:47:26 -0500
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::PhotosController#index as */*
+  [1m[36mTag Load (75.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.58ms)
+  [1m[36mPhotographer Load (84.1ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+  [1m[36mPhoto Load (101.9ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Completed 200 OK in 330ms (Views: 249.9ms | ActiveRecord: 75.5ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (18.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+[active_model_serializers]   [1m[36mPackage Load (22.5ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (6.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 2]]
+[active_model_serializers]   [1m[36mPackage Load (8.2ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (55.67ms)
+[active_model_serializers]   [1m[36mTag Load (5.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 3]]
+Completed 200 OK in 368ms (Views: 251.5ms | ActiveRecord: 114.9ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (1.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (64.23ms)
+Completed 200 OK in 382ms (Views: 246.8ms | ActiveRecord: 134.0ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-24 18:49:40 -0500
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.82ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-24 18:49:40 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-02-24 18:49:40 -0500
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::PhotosController#index as */*
+  [1m[36mPhoto Load (7.8ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mPhotographer Load (19.9ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mTag Load (17.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+[active_model_serializers]   [1m[36mPackage Load (13.0ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (4.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 2]]
+[active_model_serializers]   [1m[36mPackage Load (4.7ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (26.53ms)
+Completed 200 OK in 52ms (Views: 14.0ms | ActiveRecord: 37.6ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (4.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 3]]
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (55.64ms)
+Completed 200 OK in 67ms (Views: 31.9ms | ActiveRecord: 34.9ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-24 19:37:35 -0500
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.67ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/photographers" for ::1 at 2018-02-24 19:37:35 -0500
+Processing by Api::V1::PhotographersController#index as */*
+Started GET "/api/v1/photos" for ::1 at 2018-02-24 19:37:35 -0500
+Processing by Api::V1::PhotosController#index as */*
+  [1m[36mPhotographer Load (2.2ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mPackage Load (0.5ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhoto Load (3.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers]   [1m[36mPackage Load (0.5ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.39ms)
+Completed 200 OK in 21ms (Views: 17.2ms | ActiveRecord: 3.2ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (3.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 2]]
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 3]]
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.63ms)
+Completed 200 OK in 34ms (Views: 24.6ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/tags" for ::1 at 2018-02-24 19:37:43 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/tags"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2018-02-24 19:37:44 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/tags" for ::1 at 2018-02-24 19:37:56 -0500
+Processing by Api::V1::TagsController#index as HTML
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.86ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-24 22:02:10 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-02-24 22:02:10 -0500
+Started GET "/api/v1/photos" for ::1 at 2018-02-24 22:02:10 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::PhotosController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/photographer.rb:5:in `<class:Photographer>'
+app/models/photographer.rb:1:in `<top (required)>'
+app/controllers/api/v1/photographers_controller.rb:6:in `index'
+Processing by Api::V1::TagsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-24 22:02:29 -0500
+Processing by Api::V1::TagsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-24 22:02:29 -0500
+Processing by Api::V1::PhotosController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/photographers" for ::1 at 2018-02-24 22:02:29 -0500
+Processing by Api::V1::PhotographersController#index as */*
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/photographer.rb:5:in `<class:Photographer>'
+app/models/photographer.rb:1:in `<top (required)>'
+app/controllers/api/v1/photographers_controller.rb:6:in `index'
+Started GET "/api/v1/tags" for ::1 at 2018-02-24 22:03:58 -0500
+Processing by Api::V1::TagsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-24 22:03:58 -0500
+Processing by Api::V1::PhotosController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/photographers" for ::1 at 2018-02-24 22:03:58 -0500
+Processing by Api::V1::PhotographersController#index as */*
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/photographer.rb:5:in `<class:Photographer>'
+app/models/photographer.rb:1:in `<top (required)>'
+app/controllers/api/v1/photographers_controller.rb:6:in `index'
+Started GET "/api/v1/tags" for ::1 at 2018-02-24 22:10:15 -0500
+Processing by Api::V1::TagsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-24 22:10:25 -0500
+Processing by Api::V1::PhotosController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-24 22:10:44 -0500
+Processing by Api::V1::TagsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-24 22:10:47 -0500
+Processing by Api::V1::PhotosController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-25 01:56:34 -0500
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.58ms)
+Completed 200 OK in 87ms (Views: 37.2ms | ActiveRecord: 37.9ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-25 01:56:59 -0500
+Processing by Api::V1::PhotosController#index as */*
+  [1m[36mPhoto Load (16.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers]   [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 2]]
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 3]]
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (67.85ms)
+Completed 200 OK in 167ms (Views: 115.1ms | ActiveRecord: 33.4ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-25 01:57:01 -0500
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.09ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-25 01:57:01 -0500
+Processing by Api::V1::PhotosController#index as */*
+  [1m[36mPhoto Load (0.9ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers]   [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 2]]
+[active_model_serializers]   [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 3]]
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (25.29ms)
+Completed 200 OK in 30ms (Views: 24.8ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-25 01:57:42 -0500
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.15ms)
+Completed 200 OK in 66ms (Views: 65.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-02-25 01:57:42 -0500
+Processing by Api::V1::PhotosController#index as */*
+  [1m[36mPhoto Load (1.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers]   [1m[36mTag Load (10.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 2]]
+[active_model_serializers]   [1m[36mTag Load (2.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 3]]
+[active_model_serializers]   [1m[36mTag Load (3.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (47.84ms)
+Completed 200 OK in 71ms (Views: 51.1ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-25 12:58:15 -0500
+Started GET "/api/v1/photos" for ::1 at 2018-02-25 12:58:15 -0500
+Processing by Api::V1::TagsController#index as */*
+Processing by Api::V1::PhotosController#index as */*
+  [1m[36mPhoto Load (27.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mTag Load (28.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.05ms)
+Completed 200 OK in 119ms (Views: 81.4ms | ActiveRecord: 28.6ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (25.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 2]]
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 3]]
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (58.97ms)
+Completed 200 OK in 137ms (Views: 80.3ms | ActiveRecord: 53.9ms)
+
+
+Started GET "/api/v1/tags" for ::1 at 2018-02-25 12:59:29 -0500
+Processing by Api::V1::TagsController#index as */*
+Started GET "/api/v1/photos" for ::1 at 2018-02-25 12:59:29 -0500
+Processing by Api::V1::PhotosController#index as */*
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers]   [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 2]]
+  [1m[36mTag Load (10.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.43ms)
+[active_model_serializers]   [1m[36mTag Load (7.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 3]]
+Completed 200 OK in 28ms (Views: 16.0ms | ActiveRecord: 10.0ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "photo_tags" ON "tags"."id" = "photo_tags"."tag_id" WHERE "photo_tags"."photo_id" = $1[0m  [["photo_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (29.84ms)
+Completed 200 OK in 33ms (Views: 21.9ms | ActiveRecord: 10.5ms)
+
+

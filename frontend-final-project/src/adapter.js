@@ -18,6 +18,19 @@ class Adapter {
   }
 
 
+  static loginPhotographer = ({username, password}) => {
+    return fetch('http://localhost:3001/api/v1/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({ photographer: {username, password} })
+    })
+    .then(response => response.json())
+  }
+
+
 }
 
 

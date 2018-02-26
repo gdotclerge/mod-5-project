@@ -1,6 +1,6 @@
 import React from 'react'
-import PhotoList from './Photo/PhotoList'
-import Adapter from '../adapter'
+import PhotoList from '../Photo/PhotoList'
+
 
 
 class MainContainer extends React.Component {

@@ -1,30 +1,17 @@
 import React from 'react'
-import TagsContainer from './TagList/TagsContainer'
 
 
 class SideContainer extends React.Component {
 
-
-
-
-
-
-
   render = () => {
     return (
       <div className="SmallContainer">
-        <TagsContainer />
+        where the profile photo will go for the photographer (component)
+        <button>Reserve</button>
+        <button>Schedule Call</button>
       </div>
     )
   }
-
-
-
-
-
-
-
-
 
 }
 

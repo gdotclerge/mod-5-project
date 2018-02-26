@@ -1,10 +1,10 @@
 class Api::V1::PhotographersController < ApplicationController
-
+  skip_before_action :authorized, only: [:index]
 
 
   def index
     @photographers = Photographer.all
-    render json:  @photographers
+    render json:  @photographers, status: 200
   end
 
 

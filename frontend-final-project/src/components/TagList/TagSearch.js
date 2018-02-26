@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 class TagSearch extends React.Component {
 
   render = () => {
-    console.log(this.props)
     return (
       <div>
         <input list="data" type="text" onChange={this.props.handleSearch} placeholder="Search Tags"/>

@@ -9,8 +9,9 @@ const photo = (props) => {
       <br/>
       <div className="overlay"></div>
       <div className="photobutton" >
-        <button>View Profile</button>
-        <button>Reserve</button>
+        <button className="button">View Profile</button>
+        <br/><br/>
+        <button className="button">Reserve</button>
       </div>
     </div>
   )

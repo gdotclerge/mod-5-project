@@ -1,6 +1,24 @@
 import { RestfulAdapter } from "../adapters";
 import Adapter from "../adapter";
 
+// FUNCTIONS FOR PHOTOGRAPHERS
+export function loginPhotographer(username, password) {
+  return dispatch => {
+    Adapter.loginPhotographer({username, password})
+    .then(data => dispatch(setCurrentPhotographer(data)))
+  }
+}
+
+export function setCurrentPhotographer(photographerData) {
+  return {
+    type: "SET_CURRENT_PHOTOGRAPHER",
+    payload: photographerData
+  }
+}
+
+
+
+// FUNCTIONS FOR PHOTOS
 export function fetchPhotos() {
   console.log("i am in fetch photos")
   return dispatch => {
@@ -11,6 +29,8 @@ export function fetchPhotos() {
   };
 }
 
+
+// FUNCTIONS FOR TAGS
 export function fetchTags() {
   console.log("i am in fetch tags")
   return dispatch => {
