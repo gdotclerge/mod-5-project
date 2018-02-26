@@ -22,10 +22,11 @@ class LoginForm extends React.Component {
 
   handleLoginSubmit = (event) => {
     event.preventDefault()
-    this.props.loginUser(this.state.username, this.state.password)
+    this.props.loginPhotographer(this.state.username, this.state.password)
   }
 
   render() {
+    console.log(this.state.username)
     return(
       <form onSubmit={this.handleLoginSubmit}>
         <input type="text" value={this.state.username} onChange={this.handleUsernameChange}></input>

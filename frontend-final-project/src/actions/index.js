@@ -3,6 +3,7 @@ import Adapter from "../adapter";
 
 // FUNCTIONS FOR PHOTOGRAPHERS
 export function loginPhotographer(username, password) {
+  console.log(username)
   return dispatch => {
     Adapter.loginPhotographer({username, password})
     .then(data => dispatch(setCurrentPhotographer(data)))

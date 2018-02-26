@@ -9,6 +9,7 @@
 
 thugnanny = Photographer.create(
   username: "thugnanny",
+  password: "hello",
   website: "http://www.denissebenitez.co/",
   profile_photo: "https://static1.squarespace.com/static/54465cf1e4b09d4e92ebfe2d/t/5a2ed6f68165f58c217d3189/1513019145997/self.png?format=500w",
   custom_url: "thugnanny"
@@ -16,6 +17,7 @@ thugnanny = Photographer.create(
 
 dclive = Photographer.create(
   username: "dclive",
+  password: "hello",
   website: "http://www.dorianclive.com/",
   profile_photo: "http://www.dorianclive.com/wp-content/uploads/2015/05/about-1273x854.jpg",
   custom_url: "dorianclive"

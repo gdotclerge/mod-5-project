@@ -6940,3 +6940,245 @@ Completed 200 OK in 28ms (Views: 16.0ms | ActiveRecord: 10.0ms)
 Completed 200 OK in 33ms (Views: 21.9ms | ActiveRecord: 10.5ms)
 
 
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (22.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (421.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "backend-final-project_development"[0m
+  [1m[35m (370.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "backend-final-project_test"[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3293780597352050820)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180221185228)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (23.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "first_name" character varying, "last_name" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180221185228"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePhotographers (20180221185355)
+  [1m[35m (6.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE TABLE "photographers" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "website" character varying, "custom_url" character varying, "business_name" character varying, "profile_photo" character varying, "instagram_url" character varying, "facebook_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180221185355"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePhotos (20180221185505)
+  [1m[35m (5.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.7ms)[0m  [1m[35mCREATE TABLE "photos" ("id" bigserial primary key, "photographer_id" bigint, "img_src" character varying, "img_size" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_photos_on_photographer_id" ON "photos"  ("photographer_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180221185505"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePhotoTags (20180221185606)
+  [1m[35m (5.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "photo_tags" ("id" bigserial primary key, "photo_id" bigint, "tag_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE  INDEX  "index_photo_tags_on_photo_id" ON "photo_tags"  ("photo_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_photo_tags_on_tag_id" ON "photo_tags"  ("tag_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180221185606"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePackages (20180221185731)
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE TABLE "packages" ("id" bigserial primary key, "photographer_id" bigint, "price" float, "hours" timestamp, "photos_to_deliver" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_packages_on_photographer_id" ON "packages"  ("photographer_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180221185731"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePackageTags (20180221185836)
+  [1m[35m (5.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "package_tags" ("id" bigserial primary key, "package_id" bigint, "tag_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE  INDEX  "index_package_tags_on_package_id" ON "package_tags"  ("package_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_package_tags_on_tag_id" ON "package_tags"  ("tag_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180221185836"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTags (20180221202311)
+  [1m[35m (6.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (44.0ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180221202311"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-02-26 14:34:51.313655"], ["updated_at", "2018-02-26 14:34:51.313655"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3293780597352050820)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "photographers" ("username", "password_digest", "website", "custom_url", "profile_photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "thugnanny"], ["password_digest", "$2a$10$7HBitqt.y6yapl99jhAAFuTmRYW8yVnDnazG..d2gpm5IuVG5Rkfu"], ["website", "http://www.denissebenitez.co/"], ["custom_url", "thugnanny"], ["profile_photo", "https://static1.squarespace.com/static/54465cf1e4b09d4e92ebfe2d/t/5a2ed6f68165f58c217d3189/1513019145997/self.png?format=500w"], ["created_at", "2018-02-26 14:35:37.636395"], ["updated_at", "2018-02-26 14:35:37.636395"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photographers" ("username", "password_digest", "website", "custom_url", "profile_photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "dclive"], ["password_digest", "$2a$10$w4zP52eP/fgVWq7hp9m.JeIe6Jep9UK86hQHgkvA6ZoUFtFAYJi1G"], ["website", "http://www.dorianclive.com/"], ["custom_url", "dorianclive"], ["profile_photo", "http://www.dorianclive.com/wp-content/uploads/2015/05/about-1273x854.jpg"], ["created_at", "2018-02-26 14:35:37.723934"], ["updated_at", "2018-02-26 14:35:37.723934"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "packages" ("photographer_id", "price", "photos_to_deliver", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["photographer_id", 1], ["price", 100.0], ["photos_to_deliver", "10 - 20"], ["created_at", "2018-02-26 14:35:37.797135"], ["updated_at", "2018-02-26 14:35:37.797135"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "packages" ("photographer_id", "price", "photos_to_deliver", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["photographer_id", 2], ["price", 100.0], ["photos_to_deliver", "10 - 20"], ["created_at", "2018-02-26 14:35:37.803316"], ["updated_at", "2018-02-26 14:35:37.803316"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Blogger"], ["created_at", "2018-02-26 14:35:37.818369"], ["updated_at", "2018-02-26 14:35:37.818369"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lifestyle"], ["created_at", "2018-02-26 14:35:37.827603"], ["updated_at", "2018-02-26 14:35:37.827603"]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Glamour"], ["created_at", "2018-02-26 14:35:37.835752"], ["updated_at", "2018-02-26 14:35:37.835752"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Travel"], ["created_at", "2018-02-26 14:35:37.838443"], ["updated_at", "2018-02-26 14:35:37.838443"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Food"], ["created_at", "2018-02-26 14:35:37.840463"], ["updated_at", "2018-02-26 14:35:37.840463"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fashion"], ["created_at", "2018-02-26 14:35:37.842535"], ["updated_at", "2018-02-26 14:35:37.842535"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Wedding"], ["created_at", "2018-02-26 14:35:37.844688"], ["updated_at", "2018-02-26 14:35:37.844688"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "New Born"], ["created_at", "2018-02-26 14:35:37.846829"], ["updated_at", "2018-02-26 14:35:37.846829"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Birth"], ["created_at", "2018-02-26 14:35:37.848870"], ["updated_at", "2018-02-26 14:35:37.848870"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Engagement"], ["created_at", "2018-02-26 14:35:37.850867"], ["updated_at", "2018-02-26 14:35:37.850867"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Kids"], ["created_at", "2018-02-26 14:35:37.852908"], ["updated_at", "2018-02-26 14:35:37.852908"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Babies"], ["created_at", "2018-02-26 14:35:37.855108"], ["updated_at", "2018-02-26 14:35:37.855108"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Family"], ["created_at", "2018-02-26 14:35:37.857283"], ["updated_at", "2018-02-26 14:35:37.857283"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Headshot"], ["created_at", "2018-02-26 14:35:37.859266"], ["updated_at", "2018-02-26 14:35:37.859266"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Product"], ["created_at", "2018-02-26 14:35:37.861253"], ["updated_at", "2018-02-26 14:35:37.861253"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Portrait"], ["created_at", "2018-02-26 14:35:37.863281"], ["updated_at", "2018-02-26 14:35:37.863281"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Boudoir"], ["created_at", "2018-02-26 14:35:37.865242"], ["updated_at", "2018-02-26 14:35:37.865242"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Social"], ["created_at", "2018-02-26 14:35:37.867248"], ["updated_at", "2018-02-26 14:35:37.867248"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Surfing"], ["created_at", "2018-02-26 14:35:37.869259"], ["updated_at", "2018-02-26 14:35:37.869259"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Landscape"], ["created_at", "2018-02-26 14:35:37.871252"], ["updated_at", "2018-02-26 14:35:37.871252"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Wildlife"], ["created_at", "2018-02-26 14:35:37.873365"], ["updated_at", "2018-02-26 14:35:37.873365"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Aerial"], ["created_at", "2018-02-26 14:35:37.875302"], ["updated_at", "2018-02-26 14:35:37.875302"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Action"], ["created_at", "2018-02-26 14:35:37.877279"], ["updated_at", "2018-02-26 14:35:37.877279"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sports"], ["created_at", "2018-02-26 14:35:37.879587"], ["updated_at", "2018-02-26 14:35:37.879587"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pets"], ["created_at", "2018-02-26 14:35:37.881700"], ["updated_at", "2018-02-26 14:35:37.881700"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Event"], ["created_at", "2018-02-26 14:35:37.883877"], ["updated_at", "2018-02-26 14:35:37.883877"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Real Estate"], ["created_at", "2018-02-26 14:35:37.885838"], ["updated_at", "2018-02-26 14:35:37.885838"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Architecture"], ["created_at", "2018-02-26 14:35:37.887884"], ["updated_at", "2018-02-26 14:35:37.887884"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Journalism"], ["created_at", "2018-02-26 14:35:37.889832"], ["updated_at", "2018-02-26 14:35:37.889832"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Musical Concert"], ["created_at", "2018-02-26 14:35:37.893586"], ["updated_at", "2018-02-26 14:35:37.893586"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Macro"], ["created_at", "2018-02-26 14:35:37.896534"], ["updated_at", "2018-02-26 14:35:37.896534"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Medical"], ["created_at", "2018-02-26 14:35:37.898814"], ["updated_at", "2018-02-26 14:35:37.898814"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Aerial"], ["created_at", "2018-02-26 14:35:37.901050"], ["updated_at", "2018-02-26 14:35:37.901050"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "photos" ("photographer_id", "img_src", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["photographer_id", 1], ["img_src", "https://static1.squarespace.com/static/54465cf1e4b09d4e92ebfe2d/t/5a2ed9768165f58c217dbe76/1513019808003/IMG_1700.JPG?format=500w"], ["created_at", "2018-02-26 14:35:37.931448"], ["updated_at", "2018-02-26 14:35:37.931448"]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "photo_tags" ("photo_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["photo_id", 1], ["tag_id", 1], ["created_at", "2018-02-26 14:35:37.933695"], ["updated_at", "2018-02-26 14:35:37.933695"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_tags" ("photo_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["photo_id", 1], ["tag_id", 6], ["created_at", "2018-02-26 14:35:37.935975"], ["updated_at", "2018-02-26 14:35:37.935975"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_tags" ("photo_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["photo_id", 1], ["tag_id", 16], ["created_at", "2018-02-26 14:35:37.937511"], ["updated_at", "2018-02-26 14:35:37.937511"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photos" ("photographer_id", "img_src", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["photographer_id", 1], ["img_src", "https://static1.squarespace.com/static/54465cf1e4b09d4e92ebfe2d/t/5a2ed662c83025e9c486290a/1513019086951/IMG_5725.JPG?format=500w"], ["created_at", "2018-02-26 14:35:37.946092"], ["updated_at", "2018-02-26 14:35:37.946092"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_tags" ("photo_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["photo_id", 2], ["tag_id", 1], ["created_at", "2018-02-26 14:35:37.947708"], ["updated_at", "2018-02-26 14:35:37.947708"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_tags" ("photo_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["photo_id", 2], ["tag_id", 6], ["created_at", "2018-02-26 14:35:37.949046"], ["updated_at", "2018-02-26 14:35:37.949046"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_tags" ("photo_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["photo_id", 2], ["tag_id", 16], ["created_at", "2018-02-26 14:35:37.950295"], ["updated_at", "2018-02-26 14:35:37.950295"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photos" ("photographer_id", "img_src", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["photographer_id", 2], ["img_src", "http://www.dorianclive.com/wp-content/uploads/2015/05/MG_8234-Edit-2-853x1280.jpg"], ["created_at", "2018-02-26 14:35:37.955279"], ["updated_at", "2018-02-26 14:35:37.955279"]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "photo_tags" ("photo_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["photo_id", 3], ["tag_id", 6], ["created_at", "2018-02-26 14:35:37.956735"], ["updated_at", "2018-02-26 14:35:37.956735"]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "photo_tags" ("photo_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["photo_id", 3], ["tag_id", 16], ["created_at", "2018-02-26 14:35:37.958872"], ["updated_at", "2018-02-26 14:35:37.958872"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photos" ("photographer_id", "img_src", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["photographer_id", 2], ["img_src", "http://www.dorianclive.com/wp-content/uploads/2015/06/MG_7695-Edit-853x1280.jpg"], ["created_at", "2018-02-26 14:35:37.966042"], ["updated_at", "2018-02-26 14:35:37.966042"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_tags" ("photo_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["photo_id", 4], ["tag_id", 6], ["created_at", "2018-02-26 14:35:37.967506"], ["updated_at", "2018-02-26 14:35:37.967506"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_tags" ("photo_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["photo_id", 4], ["tag_id", 16], ["created_at", "2018-02-26 14:35:37.968850"], ["updated_at", "2018-02-26 14:35:37.968850"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.4ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 1], ["tag_id", 1], ["created_at", "2018-02-26 14:35:37.999301"], ["updated_at", "2018-02-26 14:35:37.999301"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/api/v1/login" for ::1 at 2018-02-26 09:36:33 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"photographer"=>{"username"=>"thugnanny", "password"=>"[FILTERED]"}, "auth"=>{"photographer"=>{"username"=>"thugnanny", "password"=>"[FILTERED]"}}}
+  [1m[36mPhotographer Load (0.6ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."username" = $1 LIMIT $2[0m  [["username", "thugnanny"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 5.8ms)
+
+
+  
+NameError (uninitialized constant ApplicationController::JWT):
+  
+app/controllers/application_controller.rb:5:in `encode_token'
+app/controllers/api/v1/auth_controller.rb:7:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-02-26 09:37:56 -0500
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"photographer"=>{"username"=>"thugnanny", "password"=>"[FILTERED]"}, "auth"=>{"photographer"=>{"username"=>"thugnanny", "password"=>"[FILTERED]"}}}
+  [1m[36mPhotographer Load (0.4ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."username" = $1 LIMIT $2[0m  [["username", "thugnanny"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 327059ms (ActiveRecord: 0.4ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/auth_controller.rb:7:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-02-26 09:45:04 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"photographer"=>{"username"=>"thugnanny", "password"=>"[FILTERED]"}, "auth"=>{"photographer"=>{"username"=>"thugnanny", "password"=>"[FILTERED]"}}}
+  [1m[36mPhotographer Load (0.9ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."username" = $1 LIMIT $2[0m  [["username", "thugnanny"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.95ms)
+Completed 202 Accepted in 132ms (Views: 10.9ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2018-02-26 09:47:38 -0500
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"photographer"=>{"username"=>"thugnanny", "password"=>"[FILTERED]"}, "auth"=>{"photographer"=>{"username"=>"thugnanny", "password"=>"[FILTERED]"}}}
+  [1m[36mPhotographer Load (1.5ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."username" = $1 LIMIT $2[0m  [["username", "thugnanny"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.5ms)
+Completed 202 Accepted in 107ms (Views: 1.2ms | ActiveRecord: 11.9ms)
+
+
