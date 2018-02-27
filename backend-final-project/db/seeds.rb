@@ -76,22 +76,16 @@ Tag.create(name: "Medical")
 Tag.create(name: "Aerial")
 
 
-thugpic1.tags << blogger
-thugpic1.tags << fashion
-thugpic1.tags << portrait
+thugpic1.tag = blogger
 thugpic1.save
 
-thugpic2.tags << blogger
-thugpic2.tags << fashion
-thugpic2.tags << portrait
+thugpic2.tag = blogger
 thugpic2.save
 
-dclivepic1.tags << fashion
-dclivepic1.tags << portrait
+dclivepic1.tag = fashion
 dclivepic1.save
 
-dclivepic2.tags << fashion
-dclivepic2.tags << portrait
+dclivepic2.tag = fashion
 dclivepic2.save
 
 

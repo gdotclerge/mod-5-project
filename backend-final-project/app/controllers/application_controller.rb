@@ -11,9 +11,8 @@ class ApplicationController < ActionController::API
 
   def decoded_token
     if auth_header
-        token = auth_header.split(" ")[1] #header: {'Authorization': 'Bearer JWTTOKEN'}
         begin
-          JWT.decode(token, "sqlit", true, { algorithm: "HS256" })
+          JWT.decode(auth_header, "sqlit", true, { algorithm: "HS256" })
         rescue JWT::DecodeError
           [{}]
         end

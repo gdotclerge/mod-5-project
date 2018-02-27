@@ -7,9 +7,9 @@ import { fetchPhotos } from "../../actions";
 
 class PhotoList extends React.Component {
 
-  componentDidMount = () => {
-    this.props.fetchPhotos()
-  }
+  // componentDidMount = () => {
+  //   this.props.fetchPhotos()
+  // }
 
   render = () => {
     return (
@@ -30,13 +30,12 @@ class PhotoList extends React.Component {
 
 
 const mapStateToProps = (state) => {
+
   const filteredPhotos = state.photos.photos.filter( (p) => {
-    let photoTags = p.tags.map( (pt) => pt.name )
     return state.tags.selectedTags.filter( (t) => {
-      return photoTags.indexOf(t.name) > -1;
+      return p.tag.id === t.id;
     }).length === state.tags.selectedTags.length
   })
-
 
   return {
     photos: filteredPhotos

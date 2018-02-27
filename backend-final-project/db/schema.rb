@@ -34,15 +34,6 @@ ActiveRecord::Schema.define(version: 20180221202311) do
     t.index ["photographer_id"], name: "index_packages_on_photographer_id"
   end
 
-  create_table "photo_tags", force: :cascade do |t|
-    t.bigint "photo_id"
-    t.bigint "tag_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["photo_id"], name: "index_photo_tags_on_photo_id"
-    t.index ["tag_id"], name: "index_photo_tags_on_tag_id"
-  end
-
   create_table "photographers", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -57,12 +48,14 @@ ActiveRecord::Schema.define(version: 20180221202311) do
   end
 
   create_table "photos", force: :cascade do |t|
+    t.bigint "tag_id"
     t.bigint "photographer_id"
     t.string "img_src"
     t.string "img_size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["photographer_id"], name: "index_photos_on_photographer_id"
+    t.index ["tag_id"], name: "index_photos_on_tag_id"
   end
 
   create_table "tags", force: :cascade do |t|

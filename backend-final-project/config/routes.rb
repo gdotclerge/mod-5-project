@@ -11,6 +11,10 @@ Rails.application.routes.draw do
       resources :users
 
       post "/login", to: "auth#create"
+      post "/get_current_photographer", to: "auth#show"
+      post "/get_selected_photographer", to: "photographers#selected_photographer"
+
+
     end
   end
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

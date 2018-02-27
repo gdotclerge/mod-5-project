@@ -2,11 +2,40 @@ import { RestfulAdapter } from "../adapters";
 import Adapter from "../adapter";
 
 // FUNCTIONS FOR PHOTOGRAPHERS
+export function fetchAllPhotographersURLs() {
+  return dispatch => {
+    Adapter.fetchAllPhotographersURLs()
+    .then(data => dispatch(setPhotographerURLs(data)))
+  }
+}
+
+export function setPhotographerURLs(photographersURLs) {
+  return {
+    type: "SET_PHOTOGRAPHER_URLS",
+    payload: photographersURLs
+  }
+}
+
+
 export function loginPhotographer(username, password) {
   console.log(username)
   return dispatch => {
     Adapter.loginPhotographer({username, password})
     .then(data => dispatch(setCurrentPhotographer(data)))
+  }
+}
+
+export function getLoggedInPhotographer() {
+  return dispatch => {
+    Adapter.getLoggedInPhotographer()
+    .then(data => {
+      if (data) {
+        console.log("Your token returned: ", data);
+        dispatch(setCurrentPhotographer(data))
+      } else {
+        console.log('token returned null, render login page')
+      }
+    })
   }
 }
 
@@ -17,11 +46,31 @@ export function setCurrentPhotographer(photographerData) {
   }
 }
 
+export function fetchPhotographer(id) {
+  return dispatch => {
+    Adapter.fetchPhotographer(id)
+    .then(data => dispatch(setSelectedPhotographer(data)))
+  }
+}
+
+export function fetchPhotographerforRoute(route) {
+  return dispatch => {
+    Adapter.fetchPhotographerforRoute(route)
+    .then(data => dispatch(setSelectedPhotographer(data)))
+  }
+}
+
+export function setSelectedPhotographer(photographerData) {
+  return {
+    type: "SET_SELECTED_PHOTOGRAPHER",
+    payload: photographerData
+  }
+}
+
 
 
 // FUNCTIONS FOR PHOTOS
 export function fetchPhotos() {
-  console.log("i am in fetch photos")
   return dispatch => {
     Adapter.getPhotos()
     .then(data => {
