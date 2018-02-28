@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from "react-redux";
+import Calendar from "./Calendar";
 
 
 class BookPhotographerForm extends React.Component {
@@ -14,12 +15,14 @@ class BookPhotographerForm extends React.Component {
     console.log(this.state.lastname)
     console.log(this.state.date)
     return (
-      <form onSubmit={this.handleBookSubmit}>
+      <div>
         <input type="text" value={this.state.firstname} onChange={this.handleFirstName} placeholder="First Name"></input>
         <input type="text" value={this.state.lastname} onChange={this.handleLastName} placeholder="Last Name"></input>
-        <input type="datetime-local" value={this.state.date} oninput={this.handleDate} min="2018-01-02" />
-        <button type="submit">Book</button>
-      </form>
+        <br /> <br />
+        <legend> Select Session Date </legend>
+        <Calendar className='calendar-container'/>
+        <button type="submit" onClick={this.handleSubmit}>Reserve Photo Session</button>
+      </div>
     )
   }
 
@@ -35,8 +38,8 @@ class BookPhotographerForm extends React.Component {
     this.setState({ date: event.target.value })
   }
 
-  handleBookSubmit = (event) => {
-    event.preventDefault()
+  handleSubmit = (event) => {
+
     debugger
     // this.setState({ loggedIn: true })
     // this.props.loginPhotographer(this.state.username, this.state.password)
@@ -49,7 +52,9 @@ class BookPhotographerForm extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    selectedPhotographer: state.photographers.selectedPhotographer
+    selectedPhotographer: state.photographers.selectedPhotographer,
+    photoSessions: state.photographers.selectedPhotographer.photo_sessions,
+    packages: state.packages.packages
   }
 }
 

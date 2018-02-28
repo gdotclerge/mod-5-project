@@ -1,9 +1,18 @@
 import React from 'react'
+import PackageContainer from '../Package/PackageContainer'
 
 
 class SideContainer extends React.Component {
 
   render = () => {
+    if (this.props.booking){
+      return (
+        <div className="SmallContainer">
+          <PackageContainer />
+        </div>
+      )
+    }
+
     return (
       <div className="SmallContainer">
         where the profile photo will go for the photographer (component)

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       post "/login", to: "auth#create"
       post "/get_current_photographer", to: "auth#show"
       post "/get_selected_photographer", to: "photographers#selected_photographer"
+      post "/photographer_packages", to: "packages#photographer_packages"
 
 
     end

@@ -61,6 +61,19 @@ class Adapter {
   }
 
 
+  static fetchPackages = (id) => {
+    return fetch(`http://localhost:3001/api/v1/photographer_packages`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({ packages: {photographer_id: id} })
+    })
+    .then(response => response.json())
+  }
+
+
 }
 
 

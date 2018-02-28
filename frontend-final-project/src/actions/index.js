@@ -107,7 +107,14 @@ export function removeSelectedTags(tag) {
   return { type: "REMOVE_SELECTED_TAG", payload: tag }
 }
 
+// FUNCTIONS FOR packages
 
+export function fetchPackages(id) {
+  return dispatch => {
+    Adapter.fetchPackages(id)
+    .then(data => { dispatch({ type: "SELECTED_PHOTOGRAPHER_PACKAGES", payload: data }) })
+  }
+}
 
 // export function selectHobbit(hobbit) {
 //   return { type: "SELECT_HOBBIT", payload: hobbit };

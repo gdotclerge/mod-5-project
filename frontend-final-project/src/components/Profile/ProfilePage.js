@@ -14,7 +14,7 @@ class ProfilePage extends React.Component {
     return (
       <div>
         {this.state.booking ? <BookPhotographer /> : <ProfileFeed /> }
-        <SideContainer handleScheduleSession={this.handleScheduleSession} />
+        <SideContainer handleScheduleSession={this.handleScheduleSession} booking={this.state.booking} />
       </div>
     )
   }
