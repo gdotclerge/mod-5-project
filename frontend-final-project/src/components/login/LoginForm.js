@@ -1,11 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import { loginPhotographer } from "../../actions";
 
 class LoginForm extends React.Component {
-  state = {
-    username: "",
-    password: ""
+  constructor (props) {
+    super(props)
+
+    const token = localStorage.getItem("jwt")
+
+    if(token){
+      this.state = { username: "", password: "", loggedIn: true }
+    } else {
+      this.state = { username: "", password: "", loggedIn: false }
+    }
   }
 
   handleUsernameChange = (event) => {
@@ -22,11 +30,15 @@ class LoginForm extends React.Component {
 
   handleLoginSubmit = (event) => {
     event.preventDefault()
+    this.setState({ loggedIn: true })
     this.props.loginPhotographer(this.state.username, this.state.password)
   }
 
   render() {
-    console.log(this.state.username)
+    if (this.state.loggedIn){
+      return <Redirect to="/home" />
+    }
+
     return(
       <form onSubmit={this.handleLoginSubmit}>
         <input type="text" value={this.state.username} onChange={this.handleUsernameChange}></input>

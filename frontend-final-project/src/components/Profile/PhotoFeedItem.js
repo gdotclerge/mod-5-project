@@ -1,14 +1,14 @@
 import React from 'react'
 
 
-class PhotoAlbum extends React.Component {
+class PhotoFeedItem extends React.Component {
 
 
 
   render = () => {
     return (
       <div className="photo">
-        <img src={this.props.photo.img_src} alt="" />
+        <img className="photo-img" src={this.props.photo.img_src} alt="" />
         <br/>
         <div className="overlay"></div>
         <div className="photobutton" >
@@ -23,4 +23,4 @@ class PhotoAlbum extends React.Component {
 
 
 
-export default PhotoAlbum
+export default PhotoFeedItem

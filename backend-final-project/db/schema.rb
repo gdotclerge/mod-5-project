@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180221202311) do
+ActiveRecord::Schema.define(version: 20180227220431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,18 @@ ActiveRecord::Schema.define(version: 20180221202311) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["photographer_id"], name: "index_packages_on_photographer_id"
+  end
+
+  create_table "photo_sessions", force: :cascade do |t|
+    t.string "notes"
+    t.datetime "date"
+    t.boolean "reserved", default: false
+    t.bigint "user_id"
+    t.bigint "photographer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["photographer_id"], name: "index_photo_sessions_on_photographer_id"
+    t.index ["user_id"], name: "index_photo_sessions_on_user_id"
   end
 
   create_table "photographers", force: :cascade do |t|

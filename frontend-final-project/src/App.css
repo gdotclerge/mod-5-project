@@ -21,7 +21,7 @@
 
 .SmallContainer {
   grid-column-start: 5;
-  grid-row: 3;
+  /* grid-row: 3; */
 }
 
 .photo {
@@ -34,11 +34,15 @@
   overflow: auto;
 }
 
+.photo-img {
+  width: 50%;
+}
+
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 50%;
   height: 100%;
   background: rgba(0, 0, 0, 0);
   transition: background 0.5s ease;

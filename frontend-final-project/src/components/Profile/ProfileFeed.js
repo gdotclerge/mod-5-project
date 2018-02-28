@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from "react-redux";
-import PhotoAlbum from "./PhotoAlbum";
+import PhotoFeedItem from "./PhotoFeedItem";
 
 
-class PhotoFeed extends React.Component {
+class ProfileFeed extends React.Component {
 
   render = () => {
     return (
@@ -15,7 +15,7 @@ class PhotoFeed extends React.Component {
 
   createAlbums = () => {
     return this.props.photos.map( (p) => {
-      return <PhotoAlbum photo={p}/>
+      return <PhotoFeedItem photo={p}/>
     })
   }
 
@@ -34,4 +34,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect((mapStateToProps), null)(PhotoFeed)
+export default connect((mapStateToProps), null)(ProfileFeed)

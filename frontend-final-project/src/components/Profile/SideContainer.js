@@ -8,7 +8,7 @@ class SideContainer extends React.Component {
       <div className="SmallContainer">
         where the profile photo will go for the photographer (component)
         <button>Reserve</button>
-        <button>Schedule Call</button>
+        <button onClick={this.props.handleScheduleSession} >Schedule Call</button>
       </div>
     )
   }

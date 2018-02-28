@@ -36,3 +36,8 @@ const mapStateToProps = (state) => {
 
 
 export default connect((mapStateToProps), { fetchPhotographer } )(Handler)
+
+
+
+
+// the right photographer for the right occasion

@@ -12,9 +12,9 @@ class PhotoList extends React.Component {
   // }
 
   render = () => {
+    console.log("rendered Photo List")
     return (
       <div>
-        PhotoList
         {this.allPhotos()}
       </div>
     )

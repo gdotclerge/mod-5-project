@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :sessions
   namespace :api do
     namespace :v1 do
       resources :tags
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
       resources :photos
       resources :photographers
       resources :users
+      resources :photo_sessions
 
       post "/login", to: "auth#create"
       post "/get_current_photographer", to: "auth#show"

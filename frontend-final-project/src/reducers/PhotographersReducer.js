@@ -8,8 +8,6 @@ export default function photographersReducer(state = { loggedInPhotographer: nul
         photographerURLs: action.payload
       }
 
-
-
     case "SET_CURRENT_PHOTOGRAPHER":
       if (!localStorage.jwt){
         localStorage.setItem('jwt', action.payload.jwt)
@@ -20,7 +18,6 @@ export default function photographersReducer(state = { loggedInPhotographer: nul
         token: action.payload.jwt
       }
 
-
     case "SET_SELECTED_PHOTOGRAPHER":
       localStorage.setItem('selectedPhotographer', action.payload.id)
       return {
@@ -28,8 +25,12 @@ export default function photographersReducer(state = { loggedInPhotographer: nul
         selectedPhotographer: action.payload
       }
 
-
-
+    case "LOG OUT PHOTOGRAPHER":
+      localStorage.clear()
+      return {
+        ...state,
+        loggedInPhotographer: null
+      }
 
 
     default:

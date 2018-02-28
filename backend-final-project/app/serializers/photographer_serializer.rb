@@ -3,4 +3,5 @@ class PhotographerSerializer < ActiveModel::Serializer
 
   has_many :packages
   has_many :photos
+  has_many :photo_sessions
 end

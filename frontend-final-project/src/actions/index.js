@@ -46,6 +46,12 @@ export function setCurrentPhotographer(photographerData) {
   }
 }
 
+export function logOutPhotographer() {
+  return {
+    type: "LOG OUT PHOTOGRAPHER"
+  }
+}
+
 export function fetchPhotographer(id) {
   return dispatch => {
     Adapter.fetchPhotographer(id)

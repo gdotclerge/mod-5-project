@@ -18,7 +18,7 @@ class Photo extends React.Component {
 
     return (
       <div className="photo">
-        <img src={this.props.photo.img_src} alt="" />
+        <img className="photo-img" src={this.props.photo.img_src} alt="" />
         <br/>
         <div className="overlay"></div>
         <div className="photobutton" >

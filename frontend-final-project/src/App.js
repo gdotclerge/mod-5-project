@@ -3,6 +3,7 @@ import NavBar from './Navbar'
 import HomePage from './components/PageContainers/HomePageContainer'
 import ProfilePage from './components/Profile/ProfilePageContainer'
 import LoginPage from './components/login/LoginPageContainer'
+import LogOut from './components/login/LogOut'
 import SignUpPage from './components/SignUp/SignUpPageContainer'
 import './App.css';
 import Adapter from './adapter'
@@ -60,6 +61,7 @@ class App extends Component {
           <Route exact path="/home" component={HomePage} />
           <Route exact path="/profile" component={ProfilePage} />
           <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/logout" component={LogOut} />
           <Route exact path="/signup" component={SignUpPage} />
         </Switch>
       </div>
@@ -76,4 +78,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect((mapStateToProps), { getLoggedInPhotographer, fetchPhotographer, fetchPhotos, fetchAllPhotographersURLs })(App)
+export default withRouter (connect((mapStateToProps), { getLoggedInPhotographer, fetchPhotographer, fetchPhotos, fetchAllPhotographersURLs })(App))
