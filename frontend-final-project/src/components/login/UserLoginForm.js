@@ -4,17 +4,25 @@ import { Redirect } from 'react-router-dom'
 import { loginUser } from "../../actions";
 
 class UserLoginForm extends React.Component {
-  constructor (props) {
-    super(props)
-
-    const token = localStorage.getItem("jwt")
-
-    if(token){
-      this.state = { username: "", password: "", loggedIn: true }
-    } else {
-      this.state = { username: "", password: "", loggedIn: false }
-    }
+  state = {
+     username: "",
+     password: ""
   }
+
+  render() {
+    if (!!this.props.currentUser) {
+      return <Redirect to="/home" />
+    }
+
+    return(
+      <form onSubmit={this.handleLoginSubmit}>
+        <input type="text" value={this.state.username} onChange={this.handleUsernameChange} placeholder="Username" ></input> <br />
+        <input type="password" value={this.state.password} onChange={this.handlePasswordChange} placeholder="Password" ></input> <br />
+        <button type="submit">Login</button>
+      </form>
+    )
+  }
+
 
   handleUsernameChange = (event) => {
     this.setState({
@@ -34,19 +42,7 @@ class UserLoginForm extends React.Component {
     this.props.loginUser(this.state.username, this.state.password)
   }
 
-  render() {
-    if (this.state.loggedIn){
-      return <Redirect to="/home" />
-    }
 
-    return(
-      <form onSubmit={this.handleLoginSubmit}>
-        <input type="text" value={this.state.username} onChange={this.handleUsernameChange}></input>
-        <input type="password" value={this.state.password} onChange={this.handlePasswordChange}></input>
-        <button type="submit">Login</button>
-      </form>
-    )
-  }
 }
 
-export default connect(null, { loginUser })(UserLoginForm)
+export default connect((state)=>{ currentUser: state.currentUser.user }, { loginUser })(UserLoginForm)

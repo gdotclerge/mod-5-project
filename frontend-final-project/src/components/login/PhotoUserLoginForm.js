@@ -35,9 +35,9 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    if (this.state.loggedIn){
-      return <Redirect to="/home" />
-    }
+    // if (this.state.loggedIn){
+    //   return <Redirect to="/home" />
+    // }
 
     return(
       <form onSubmit={this.handleLoginSubmit}>
