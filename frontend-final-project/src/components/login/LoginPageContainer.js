@@ -1,14 +1,22 @@
 import React from 'react'
 import LoginForm from './LoginForm'
+import UserLogInForm from './UserLoginForm'
 
 
 class LoginPageContainer extends React.Component {
+  constructor (props) {
+    super(props)
+    const token = localStorage.getItem("jwt")
+    this.state = { loggedIn: !!token }
+  }
 
   render = () => {
     return (
       <div>
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
         <LoginForm />
+        User LogIN
+        <UserLogInForm />
       </div>
     )
   }

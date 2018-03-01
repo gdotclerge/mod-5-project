@@ -20,7 +20,8 @@ class BookPhotographerForm extends React.Component {
         <input type="text" value={this.state.lastname} onChange={this.handleLastName} placeholder="Last Name"></input>
         <br /> <br />
         <legend> Select Session Date </legend>
-        <Calendar className='calendar-container'/>
+        <Calendar className='calendar-container' handleSelectSlot={this.handleSelectSlot} handleCalClick={this.handleCalClick}/>
+        <textarea value={this.state.lastname} onChange={this.handleLastName} placeholder="Additional Notes..."></textarea>
         <button type="submit" onClick={this.handleSubmit}>Reserve Photo Session</button>
       </div>
     )
@@ -37,6 +38,18 @@ class BookPhotographerForm extends React.Component {
   handleDate = (event) => {
     this.setState({ date: event.target.value })
   }
+
+  handleSelectSlot = (event) => {
+    debugger
+  }
+
+  handleCalClick = (event) => {
+    debugger
+  }
+
+
+
+
 
   handleSubmit = (event) => {
 

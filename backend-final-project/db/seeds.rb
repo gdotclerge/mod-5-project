@@ -23,6 +23,9 @@ dclive = Photographer.create(
   custom_url: "dorianclive"
 )
 
+User.create(username: "Charmander", password: "hello")
+User.create(username: "Garry", password: "hello")
+
 thugnanny.photo_sessions.create(date: Date.new(2018,7,10), notes: "THUGTASTIC NOTES")
 thugnanny.photo_sessions.create(date: Date.new(2018,7,20), notes: "THUGTASTIC NOTES")
 thugnanny.photo_sessions.create(date: Date.new(2018,7,30), notes: "THUGTASTIC NOTES")
@@ -60,15 +63,22 @@ dclivepic2 = dclive.photos.build(img_src: "http://www.dorianclive.com/wp-content
 
 
 
-package = thugnanny.packages.build(price: 100.00, photos_to_deliver: "10 - 20")
-package.save
-package1 = dclive.packages.build(price: 100.00, photos_to_deliver: "10 - 20")
-package1.save
+package1 = thugnanny.packages.create(price: 175.00, photos_to_deliver: "8 - 10", hours: 1) #1 blogger
+package2 = thugnanny.packages.create(price: 500.00, photos_to_deliver: "10 - 15", hours: 2) #1 portrait
+package3 = thugnanny.packages.create(price: 600.00, photos_to_deliver: "20 - 30", hours: 2) #1 portrait
+
+package4 = dclive.packages.create(price: 300.00, photos_to_deliver: "8 - 10", hours: 1) # fashion
+package5 = dclive.packages.create(price: 500.00, photos_to_deliver: "10 - 20", hours: 2) #1 fashion
+package6 = dclive.packages.create(price: 600.00, photos_to_deliver: "20 - 30", hours: 2) #1 engagement
+
+
+
 
 
 # list of tags
 
 blogger = Tag.create(name: "Blogger")
+portrait = Tag.create(name: "Portrait")
 lifestyle = Tag.create(name: "Lifestyle")
 glamour = Tag.create(name: "Glamour")
 travel = Tag.create(name: "Travel")
@@ -83,7 +93,6 @@ babies = Tag.create(name: "Babies")
 family = Tag.create(name: "Family")
 headshot = Tag.create(name: "Headshot")
 product = Tag.create(name: "Product")
-portrait = Tag.create(name: "Portrait")
 boudoir = Tag.create(name: "Boudoir")
 social = Tag.create(name: "Social")
 surfing = Tag.create(name: "Surfing")
@@ -117,4 +126,21 @@ dclivepic2.tag = fashion
 dclivepic2.save
 
 
-PackageTag.create(tag_id: 1, package_id: 1)
+
+# thugnanny 1 2 3
+# 1 for Blogger
+# 2 and 3 for Portrait and Engagement
+
+#dclive 456
+# 1 and 2 for Fashion
+# 3 for Engagement and Portrait
+
+PackageTag.create(tag_id: blogger.id, package_id: package1.id)
+PackageTag.create(tag_id: portrait.id, package_id: package2.id)
+PackageTag.create(tag_id: engagement.id, package_id: package2.id)
+PackageTag.create(tag_id: portrait.id, package_id: package3.id)
+PackageTag.create(tag_id: engagement.id, package_id: package3.id)
+PackageTag.create(tag_id: fashion.id, package_id: package4.id)
+PackageTag.create(tag_id: fashion.id, package_id: package5.id)
+PackageTag.create(tag_id: engagement.id, package_id: package6.id)
+PackageTag.create(tag_id: portrait.id, package_id: package6.id)

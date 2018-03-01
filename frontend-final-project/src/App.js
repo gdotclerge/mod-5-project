@@ -8,7 +8,7 @@ import SignUpPage from './components/SignUp/SignUpPageContainer'
 import './App.css';
 import Adapter from './adapter'
 import { Route, Switch, Redirect, NavLink, withRouter } from 'react-router-dom'
-import { getLoggedInPhotographer, fetchPhotographer, fetchPhotos, fetchAllPhotographersURLs } from "./actions";
+import { getLoggedInPhotographer, getLoggedInUser, fetchPhotographer, fetchPhotos, fetchAllPhotographersURLs } from "./actions";
 import { connect } from "react-redux";
 import ProfilePageContainer from "./components/Profile/ProfilePageContainer";
 
@@ -25,8 +25,11 @@ class App extends Component {
     const selectedPhotographer = localStorage.getItem('selectedPhotographer')
 
     if (token){
-      this.props.getLoggedInPhotographer()
+      console.log("WE GOT A USER TOKEN IN APP COMPONENT")
+      this.props.getLoggedInUser()
     }
+
+
 
     if (selectedPhotographer){
       this.props.fetchPhotographer(selectedPhotographer)
@@ -78,4 +81,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default withRouter (connect((mapStateToProps), { getLoggedInPhotographer, fetchPhotographer, fetchPhotos, fetchAllPhotographersURLs })(App))
+export default withRouter (connect((mapStateToProps), { getLoggedInPhotographer, getLoggedInUser, fetchPhotographer, fetchPhotos, fetchAllPhotographersURLs })(App))

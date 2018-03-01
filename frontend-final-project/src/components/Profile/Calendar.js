@@ -11,7 +11,13 @@ class Calendar extends React.Component {
   render = () => {
     return (
       <div className="calendar">
-        <BigCalendar events={this.props.photoSessions} startAccessor='startDate' endAccessor='endDate' />
+        <BigCalendar
+          onClick={this.props.handleCalClick}
+          onSelectSlot={this.props.handleSelectSlot}
+          events={this.props.photoSessions}
+          startAccessor='startDate'
+          endAccessor='endDate'
+        />
       </div>
     )
   }

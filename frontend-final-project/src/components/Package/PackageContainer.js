@@ -6,16 +6,24 @@ import { fetchTags, addSelectedTags, removeSelectedTags } from "../../actions";
 
 class PackageContainer extends React.Component {
   state = {
-    selectedTag: "Blogger"
+    selectedTag: this.props.photographerTags[0],
+    filteredPackages: []
   }
 
+  componentDidMount = () => {
+    let filteredPackages = this.filterPackages(this.props.photographerTags[0])
+    this.setState({ filteredPackages })
+  }
+
+
   render = () => {
+    console.log(this.state.filteredPackages)
     return (
       <div>
-        <select onChange={this.handleSelectionChange}>
+        <select onChange={ (e) => {this.handleSelectionChange(e)} }>
           {this.mapTagOptions()}
         </select>
-        <PackageList filteredPackages={this.filteredPackages()} handleTagRemoval={this.handleTagRemoval}/>
+        <PackageList filteredPackages={this.state.filteredPackages} handleTagRemoval={this.handleTagRemoval}/>
       </div>
     )
   }
@@ -28,14 +36,17 @@ class PackageContainer extends React.Component {
   }
 
   handleSelectionChange = (e) => {
-    debugger
-    // needs to change state to handle list
+    let filteredPackages = this.filterPackages(e.target.value)
+    this.setState({
+      selectedTag: e.target.value,
+      filteredPackages: filteredPackages
+    })
   }
 
-  filteredPackages = () => {
+  filterPackages = (selectedTag) => {
     return this.props.packages.filter( p => {
       let tags = p.tags.map( t => { return t.name })
-	    return tags.filter( t => { return t === "Blogger" }).length === tags.length
+	    return tags.filter( t => { return t == selectedTag }).length > 0
     })
   }
 
@@ -69,12 +80,37 @@ const mapStateToProps = (state) => {
     return p.tags.map( t => {
         return t.name
   })})
+  let mergedTags = [].concat.apply([], tags);
 
   return {
     packages: state.packages.packages,
-    photographerTags: tags
+    photographerTags: mergedTags.unique()
   }
 }
 
 
 export default connect((mapStateToProps), { fetchTags, addSelectedTags, removeSelectedTags })(PackageContainer)
+
+
+
+
+
+
+
+
+Array.prototype.contains = function(v) {
+    for(var i = 0; i < this.length; i++) {
+        if(this[i] === v) return true;
+    }
+    return false;
+};
+
+Array.prototype.unique = function() {
+    var arr = [];
+    for(var i = 0; i < this.length; i++) {
+        if(!arr.includes(this[i])) {
+            arr.push(this[i]);
+        }
+    }
+    return arr;
+}

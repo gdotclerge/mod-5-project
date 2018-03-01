@@ -30,14 +30,36 @@ class Adapter {
     .then(response => response.json())
   }
 
-
-  static getLoggedInPhotographer = () => {
-    return fetch('http://localhost:3001/api/v1/get_current_photographer', {
+  static loginUser = ({username, password}) => {
+    return fetch('http://localhost:3001/api/v1/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({ user: {username, password} })
+    })
+    .then(response => response.json())
+  }
+
+  // static getLoggedInPhotographer = () => {
+  //   return fetch('http://localhost:3001/api/v1/current_photographer', {
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Accept': 'application/json',
+  //       'Authorization': localStorage.getItem("jwt")
+  //     },
+  //   })
+  //   .then(response => response.json())
+  // }
+
+  static getLoggedInUser = () => {
+    const token = localStorage.getItem("jwt")
+    return fetch('http://localhost:3001/api/v1/get_loggedin_user', {
+      headers: {
+        'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Authorization': localStorage.getItem("jwt")
+        'Authorization': `${token}`
       },
     })
     .then(response => response.json())

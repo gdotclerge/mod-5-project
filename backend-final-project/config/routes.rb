@@ -13,7 +13,10 @@ Rails.application.routes.draw do
       resources :photo_sessions
 
       post "/login", to: "auth#create"
-      post "/get_current_photographer", to: "auth#show"
+      get "/get_loggedin_user", to: "auth#get_current_user_or_photographer"
+
+
+
       post "/get_selected_photographer", to: "photographers#selected_photographer"
       post "/photographer_packages", to: "packages#photographer_packages"
 

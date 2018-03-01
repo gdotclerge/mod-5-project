@@ -3,26 +3,36 @@ import { connect } from "react-redux";
 import { NavLink, Link } from 'react-router-dom'
 
 const navbar = (props) => {
-  return(
-    <div className="Navbar">
-      <Link to='/home'>Home</Link>
-      {loggedInPhotographerNavbar(props)}
-      { props.loggedInPhotographer ? <Link to='/logout'>LogOut</Link> : <Link to='/login'>Log In</Link> }
-    </div>
-  )
-}
 
-  const loggedInPhotographerNavbar = (props) => {
-    if (props.loggedInPhotographer){
-      return(
-        <div>
-          <Link to='/profile'>Profile</Link>
-          <Link to='/calendar'>Calendar</Link>
-        </div>
-      )
-    }
+  if (!!props.currentPhotoUser) {
+    return (
+      <div className="Navbar">
+        <Link to='/home'>Home</Link>
+        <Link to='/profile'>Profile</Link>
+        <Link to='/calendar'>Calendar</Link>
+        <Link to='/logout'>LogOut</Link>
+      </div>
+    )
+  } else {
+    return (
+      <div className="Navbar">
+        <Link to='/home'>Home</Link>
+        <Link to='/logout'>LogOut</Link>
+      </div>
+    )
   }
 
+}
 
 
-export default connect((state) => ({loggedInPhotographer: state.photographers.loggedInPhotographer}), null )(navbar)
+
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.currentUser.user,
+    currentPhotoUser: state.currentPhotoUser.photoUser
+  }
+}
+
+
+
+export default connect((mapStateToProps), null )(navbar)

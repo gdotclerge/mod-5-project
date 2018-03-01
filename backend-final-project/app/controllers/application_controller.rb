@@ -11,23 +11,34 @@ class ApplicationController < ActionController::API
 
   def decoded_token
     if auth_header
-        begin
-          JWT.decode(auth_header, "sqlit", true, { algorithm: "HS256" })
-        rescue JWT::DecodeError
-          [{}]
-        end
+      begin
+        JWT.decode(auth_header, "sqlit", true, { algorithm: "HS256" })
+      rescue JWT::DecodeError
+        [{}]
+      end
     end
   end
 
   def current_photographer
     if decoded_token
-      photographer_id = decoded_token[0]["photographer_id"]
-      @photographer = Photographer.find(photographer_id)
+      if decoded_token[0]["photographer_id"]
+        photographer_id = decoded_token[0]["photographer_id"]
+        @photographer = Photographer.find(photographer_id)
+      end
+    end
+  end
+
+  def current_user
+    if decoded_token
+      if decoded_token[0]["user_id"]
+        user_id = decoded_token[0]["user_id"]
+        @user = User.find(user_id)
+      end
     end
   end
 
   def logged_in?
-    !!current_photographer
+    !!current_user || !!current_photographer
   end
 
   def authorized

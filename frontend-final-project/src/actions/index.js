@@ -1,22 +1,32 @@
 import { RestfulAdapter } from "../adapters";
 import Adapter from "../adapter";
 
-// FUNCTIONS FOR PHOTOGRAPHERS
-export function fetchAllPhotographersURLs() {
+// FUNCTIONS FOR USERS
+
+export function loginUser(username, password) {
   return dispatch => {
-    Adapter.fetchAllPhotographersURLs()
-    .then(data => dispatch(setPhotographerURLs(data)))
+    Adapter.loginUser({username, password})
+    .then(data => dispatch(setCurrentUser(data)))
   }
 }
 
-export function setPhotographerURLs(photographersURLs) {
+export function getLoggedInUser() {
+  return dispatch => {
+    Adapter.getLoggedInUser()
+    .then(data => dispatch(setCurrentUser(data)))
+  }
+}
+
+export function setCurrentUser(userData) {
   return {
-    type: "SET_PHOTOGRAPHER_URLS",
-    payload: photographersURLs
+    type: "SET_CURRENT_USER",
+    payload: userData
   }
 }
 
 
+
+// FUNCTIONS FOR PHOTOGRAPHERS
 export function loginPhotographer(username, password) {
   console.log(username)
   return dispatch => {
@@ -49,6 +59,20 @@ export function setCurrentPhotographer(photographerData) {
 export function logOutPhotographer() {
   return {
     type: "LOG OUT PHOTOGRAPHER"
+  }
+}
+
+export function fetchAllPhotographersURLs() {
+  return dispatch => {
+    Adapter.fetchAllPhotographersURLs()
+    .then(data => dispatch(setPhotographerURLs(data)))
+  }
+}
+
+export function setPhotographerURLs(photographersURLs) {
+  return {
+    type: "SET_PHOTOGRAPHER_URLS",
+    payload: photographersURLs
   }
 }
 

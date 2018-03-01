@@ -1,12 +1,25 @@
 .App {
+  /* position: absolute;
   display: grid;
-  grid-template-columns: 30px 1fr 1fr 1fr 1fr 30px;
-  grid-gap: 10px;
-  grid-auto-rows: minmax(50px, auto);
+  /* grid-template-columns: 30px 1fr 1fr 1fr 1fr 30px; */
+
+  /* display: grid; */
+   /* grid-template-rows: 200px 200px 200px;
+   grid-template-columns: 200px 200px 200px; */
+  /* grid-gap: 10px; */
+  /* grid-auto-rows: minmax(50px, auto); */
+  /* border: 5px solid blue; */
 }
 
 .Navbar {
-  grid-row: 1;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ececec;
+  height: 30px;
+
+  /* position: absolute;
+  top: inherit;
+  border: 2px solid red;
+  display: grid; */
 }
 
 
