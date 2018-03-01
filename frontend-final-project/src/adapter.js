@@ -1,5 +1,32 @@
 class Adapter {
 
+  static logIn = (data) => {
+    return fetch('http://localhost:3001/api/v1/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+  }
+
+  static signUp = (data) => {
+    return fetch(`http://localhost:3001/api/v1/${Object.keys(data)[0]}s`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+  }
+
+
+
+
 
   static getPhotos = () => {
     return fetch("http://localhost:3001/api/v1/photos")
@@ -18,29 +45,8 @@ class Adapter {
   }
 
 
-  static loginPhotographer = ({username, password}) => {
-    return fetch('http://localhost:3001/api/v1/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({ photographer: {username, password} })
-    })
-    .then(response => response.json())
-  }
 
-  static loginUser = ({username, password}) => {
-    return fetch('http://localhost:3001/api/v1/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({ user: {username, password} })
-    })
-    .then(response => response.json())
-  }
+
 
   // static getLoggedInPhotographer = () => {
   //   return fetch('http://localhost:3001/api/v1/current_photographer', {

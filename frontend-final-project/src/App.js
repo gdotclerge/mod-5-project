@@ -9,7 +9,7 @@ import WelcomePage from './components/Welcome/WelcomePageContainer'
 import './App.css';
 import Adapter from './adapter'
 import { Route, Switch, Redirect, NavLink, withRouter } from 'react-router-dom'
-import { getLoggedInPhotographer, getLoggedInUser, fetchPhotographer, fetchPhotos, fetchAllPhotographersURLs } from "./actions";
+import { getLoggedInUser, fetchPhotographer, fetchPhotos, fetchAllPhotographersURLs } from "./actions";
 import { connect } from "react-redux";
 import ProfilePageContainer from "./components/Profile/ProfilePageContainer";
 
@@ -86,4 +86,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default withRouter (connect((mapStateToProps), { getLoggedInPhotographer, getLoggedInUser, fetchPhotographer, fetchPhotos, fetchAllPhotographersURLs })(App))
+export default withRouter (connect((mapStateToProps), { getLoggedInUser, fetchPhotographer, fetchPhotos, fetchAllPhotographersURLs })(App))

@@ -1,20 +1,28 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import { loginPhotographer } from "../../actions";
+import { logIn } from "../../actions";
 
-class LoginForm extends React.Component {
-  constructor (props) {
-    super(props)
-
-    const token = localStorage.getItem("jwt")
-
-    if(token){
-      this.state = { username: "", password: "", loggedIn: true }
-    } else {
-      this.state = { username: "", password: "", loggedIn: false }
-    }
+class PhotoUserLoginForm extends React.Component {
+  state = {
+     username: "",
+     password: ""
   }
+
+  render() {
+    if (!!this.props.currentPhotoUser) {
+      return <Redirect to="/home" />
+    }
+
+    return(
+      <form onSubmit={this.handleLoginSubmit}>
+        <input type="text" value={this.state.username} onChange={this.handleUsernameChange} placeholder="Username" ></input> <br />
+        <input type="password" value={this.state.password} onChange={this.handlePasswordChange} placeholder="Password" ></input> <br />
+        <button type="submit">Login</button>
+      </form>
+    )
+  }
+
 
   handleUsernameChange = (event) => {
     this.setState({
@@ -30,23 +38,15 @@ class LoginForm extends React.Component {
 
   handleLoginSubmit = (event) => {
     event.preventDefault()
-    this.setState({ loggedIn: true })
-    this.props.loginPhotographer(this.state.username, this.state.password)
+    this.props.logIn({ photographer: {
+      username: this.state.username,
+      password: this.state.password
+    } })
   }
 
-  render() {
-    // if (this.state.loggedIn){
-    //   return <Redirect to="/home" />
-    // }
 
-    return(
-      <form onSubmit={this.handleLoginSubmit}>
-        <input type="text" value={this.state.username} onChange={this.handleUsernameChange}></input>
-        <input type="password" value={this.state.password} onChange={this.handlePasswordChange}></input>
-        <button type="submit">Login</button>
-      </form>
-    )
-  }
+
+
 }
 
-export default connect(null, { loginPhotographer })(LoginForm)
+export default connect((state)=>{ currentPhotoUser: state.currentUser.user }, { logIn })(PhotoUserLoginForm)

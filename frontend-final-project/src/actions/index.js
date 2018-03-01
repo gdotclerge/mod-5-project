@@ -1,11 +1,11 @@
 import { RestfulAdapter } from "../adapters";
 import Adapter from "../adapter";
 
-// FUNCTIONS FOR USERS
+// FUNCTIONS FOR USERS and PHOTO USERS
 
-export function loginUser(username, password) {
+export function logIn(logInData) {
   return dispatch => {
-    Adapter.loginUser({username, password})
+    Adapter.logIn(logInData)
     .then(data => dispatch(setCurrentUser(data)))
   }
 }
@@ -17,42 +17,17 @@ export function getLoggedInUser() {
   }
 }
 
+export function signUp(signUpData) {
+  return dispatch => {
+    Adapter.signUp(signUpData)
+    .then(data => dispatch(setCurrentUser(data)))
+  }
+} 
+
 export function setCurrentUser(userData) {
   return {
     type: "SET_CURRENT_USER",
     payload: userData
-  }
-}
-
-
-
-// FUNCTIONS FOR PHOTOGRAPHERS
-export function loginPhotographer(username, password) {
-  console.log(username)
-  return dispatch => {
-    Adapter.loginPhotographer({username, password})
-    .then(data => dispatch(setCurrentPhotographer(data)))
-  }
-}
-
-export function getLoggedInPhotographer() {
-  return dispatch => {
-    Adapter.getLoggedInPhotographer()
-    .then(data => {
-      if (data) {
-        console.log("Your token returned: ", data);
-        dispatch(setCurrentPhotographer(data))
-      } else {
-        console.log('token returned null, render login page')
-      }
-    })
-  }
-}
-
-export function setCurrentPhotographer(photographerData) {
-  return {
-    type: "SET_CURRENT_PHOTOGRAPHER",
-    payload: photographerData
   }
 }
 
@@ -61,6 +36,15 @@ export function logOutPhotographer() {
     type: "LOG OUT PHOTOGRAPHER"
   }
 }
+
+
+
+// FUNCTIONS FOR PHOTOGRAPHERS
+
+
+
+
+
 
 export function fetchAllPhotographersURLs() {
   return dispatch => {

@@ -40949,3 +40949,1780 @@ No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES
 Completed 202 Accepted in 52ms (Views: 4.5ms | ActiveRecord: 11.0ms)
 
 
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 15:43:25 -0500
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 15:43:25 -0500
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 15:43:25 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (24.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::PhotosController#index as */*
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+  [1m[36mPhotographer Load (9.5ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+  [1m[36mPhoto Load (14.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.2ms)
+Completed 200 OK in 74ms (Views: 7.9ms | ActiveRecord: 22.2ms)
+
+
+  [1m[36mPhotographer Load (0.9ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (36.2ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (0.7ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (1.5ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (1.9ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (1.6ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (53.63ms)
+  [1m[36mPackage Load (2.2ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+Completed 200 OK in 178ms (Views: 94.6ms | ActiveRecord: 66.0ms)
+
+
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhotoSession Load (0.5ms)[0m  [1m[34mSELECT "photo_sessions".* FROM "photo_sessions" WHERE "photo_sessions"."photographer_id" = $1[0m  [["photographer_id", 1]]
+No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES", date: "2018-07-10 00:00:00", reserved: false, user_id: nil, photographer_id: 1, created_at: "2018-03-01 01:19:40", updated_at: "2018-03-01 01:19:40">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.21ms)
+Completed 202 Accepted in 238ms (Views: 21.6ms | ActiveRecord: 101.4ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 15:44:27 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 15:44:27 -0500
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 15:44:27 -0500
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+  [1m[36mPhotographer Load (12.4ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.12ms)
+Completed 200 OK in 15ms (Views: 1.2ms | ActiveRecord: 12.4ms)
+
+
+  [1m[36mPhotographer Load (3.9ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.7ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhoto Load (4.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhotoSession Load (3.4ms)[0m  [1m[34mSELECT "photo_sessions".* FROM "photo_sessions" WHERE "photo_sessions"."photographer_id" = $1[0m  [["photographer_id", 1]]
+No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES", date: "2018-07-10 00:00:00", reserved: false, user_id: nil, photographer_id: 1, created_at: "2018-03-01 01:19:40", updated_at: "2018-03-01 01:19:40">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.18ms)
+  [1m[36mPhoto Load (9.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Completed 202 Accepted in 59ms (Views: 5.8ms | ActiveRecord: 12.7ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (4.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.13ms)
+Completed 200 OK in 88ms (Views: 53.3ms | ActiveRecord: 34.3ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 15:48:38 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 15:48:38 -0500
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 15:48:38 -0500
+  Parameters: {"auth"=>{}}
+  [1m[36mPhoto Load (3.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhotographer Load (1.8ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (3.3ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mTag Load (3.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+No serializer found for resource: "thugnanny"
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.11ms)
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (1.9ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 8.7ms | ActiveRecord: 3.3ms)
+
+
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPackage Load (2.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (27.88ms)
+Completed 200 OK in 41ms (Views: 30.4ms | ActiveRecord: 9.8ms)
+
+
+  [1m[36mPhoto Load (3.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhotoSession Load (0.7ms)[0m  [1m[34mSELECT "photo_sessions".* FROM "photo_sessions" WHERE "photo_sessions"."photographer_id" = $1[0m  [["photographer_id", 1]]
+No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES", date: "2018-07-10 00:00:00", reserved: false, user_id: nil, photographer_id: 1, created_at: "2018-03-01 01:19:40", updated_at: "2018-03-01 01:19:40">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.09ms)
+Completed 202 Accepted in 52ms (Views: 5.4ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 15:51:59 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 15:51:59 -0500
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 15:51:59 -0500
+Processing by Api::V1::PhotosController#index as */*
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+  [1m[36mPhoto Load (2.9ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mPhotographer Load (4.2ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.11ms)
+Completed 200 OK in 9ms (Views: 1.0ms | ActiveRecord: 4.2ms)
+
+
+  [1m[36mPhotographer Load (6.3ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (13.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (1.8ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (31.04ms)
+  [1m[36mPackage Load (6.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+Completed 200 OK in 38ms (Views: 19.7ms | ActiveRecord: 17.9ms)
+
+
+  [1m[36mPhoto Load (0.8ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhotoSession Load (0.5ms)[0m  [1m[34mSELECT "photo_sessions".* FROM "photo_sessions" WHERE "photo_sessions"."photographer_id" = $1[0m  [["photographer_id", 1]]
+No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES", date: "2018-07-10 00:00:00", reserved: false, user_id: nil, photographer_id: 1, created_at: "2018-03-01 01:19:40", updated_at: "2018-03-01 01:19:40">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.02ms)
+Completed 202 Accepted in 55ms (Views: 4.5ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 15:52:14 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 15:52:14 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 15:52:14 -0500
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  [1m[36mPhoto Load (2.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  Parameters: {"auth"=>{}}
+[active_model_serializers]   [1m[36mTag Load (1.7ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (4.5ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+No serializer found for resource: "thugnanny"
+  [1m[36mPhotographer Load (1.2ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.11ms)
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (3.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 6.5ms | ActiveRecord: 4.5ms)
+
+
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (29.11ms)
+Completed 200 OK in 36ms (Views: 27.4ms | ActiveRecord: 7.9ms)
+
+
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.9ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhotoSession Load (1.2ms)[0m  [1m[34mSELECT "photo_sessions".* FROM "photo_sessions" WHERE "photo_sessions"."photographer_id" = $1[0m  [["photographer_id", 1]]
+No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES", date: "2018-07-10 00:00:00", reserved: false, user_id: nil, photographer_id: 1, created_at: "2018-03-01 01:19:40", updated_at: "2018-03-01 01:19:40">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.04ms)
+Completed 202 Accepted in 57ms (Views: 5.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 15:54:57 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 15:54:57 -0500
+Processing by Api::V1::PhotosController#index as */*
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhotographer Load (1.4ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+  [1m[36mPhoto Load (2.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.6ms)
+Completed 200 OK in 39ms (Views: 20.0ms | ActiveRecord: 1.4ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (3.8ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (2.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.98ms)
+Completed 200 OK in 79ms (Views: 66.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 15:54:57 -0500
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+  [1m[36mPhotographer Load (1.2ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.1ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackage Load (1.8ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhotoSession Load (4.9ms)[0m  [1m[34mSELECT "photo_sessions".* FROM "photo_sessions" WHERE "photo_sessions"."photographer_id" = $1[0m  [["photographer_id", 1]]
+No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES", date: "2018-07-10 00:00:00", reserved: false, user_id: nil, photographer_id: 1, created_at: "2018-03-01 01:19:40", updated_at: "2018-03-01 01:19:40">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (16.36ms)
+Completed 202 Accepted in 82ms (Views: 20.4ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 15:55:31 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 15:55:31 -0500
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 15:55:31 -0500
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  [1m[36mPhoto Load (0.9ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  Parameters: {"auth"=>{}}
+  [1m[36mPhotographer Load (3.9ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mTag Load (3.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+No serializer found for resource: "thugnanny"
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (3.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.17ms)
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (4.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 20ms (Views: 11.4ms | ActiveRecord: 3.9ms)
+
+
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (30.84ms)
+Completed 200 OK in 41ms (Views: 32.1ms | ActiveRecord: 8.5ms)
+
+
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.6ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhotoSession Load (0.7ms)[0m  [1m[34mSELECT "photo_sessions".* FROM "photo_sessions" WHERE "photo_sessions"."photographer_id" = $1[0m  [["photographer_id", 1]]
+No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES", date: "2018-07-10 00:00:00", reserved: false, user_id: nil, photographer_id: 1, created_at: "2018-03-01 01:19:40", updated_at: "2018-03-01 01:19:40">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.44ms)
+Completed 202 Accepted in 59ms (Views: 5.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 15:58:53 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 15:58:53 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 15:58:53 -0500
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhoto Load (2.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  Parameters: {"auth"=>{}}
+  [1m[36mPhotographer Load (2.0ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mTag Load (2.6ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+No serializer found for resource: "thugnanny"
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (4.3ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.12ms)
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (5.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 20ms (Views: 11.4ms | ActiveRecord: 2.0ms)
+
+
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (30.57ms)
+Completed 200 OK in 43ms (Views: 31.8ms | ActiveRecord: 10.7ms)
+
+
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.6ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhotoSession Load (0.7ms)[0m  [1m[34mSELECT "photo_sessions".* FROM "photo_sessions" WHERE "photo_sessions"."photographer_id" = $1[0m  [["photographer_id", 1]]
+No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES", date: "2018-07-10 00:00:00", reserved: false, user_id: nil, photographer_id: 1, created_at: "2018-03-01 01:19:40", updated_at: "2018-03-01 01:19:40">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.22ms)
+Completed 202 Accepted in 56ms (Views: 6.2ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 16:02:45 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 16:02:45 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 16:02:45 -0500
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+  [1m[36mPhoto Load (2.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mPhotographer Load (2.7ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+  [1m[36mPhotographer Load (3.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+No serializer found for resource: "thugnanny"
+[active_model_serializers]   [1m[36mTag Load (1.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.14ms)
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 8.1ms | ActiveRecord: 2.7ms)
+
+
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (1.9ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (22.36ms)
+Completed 200 OK in 79ms (Views: 27.5ms | ActiveRecord: 5.9ms)
+
+
+  [1m[36mPackage Load (1.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhotoSession Load (0.4ms)[0m  [1m[34mSELECT "photo_sessions".* FROM "photo_sessions" WHERE "photo_sessions"."photographer_id" = $1[0m  [["photographer_id", 1]]
+No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES", date: "2018-07-10 00:00:00", reserved: false, user_id: nil, photographer_id: 1, created_at: "2018-03-01 01:19:40", updated_at: "2018-03-01 01:19:40">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.87ms)
+Completed 202 Accepted in 47ms (Views: 3.9ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 16:04:02 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 16:04:02 -0500
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhoto Load (1.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 16:04:02 -0500
+[active_model_serializers]   [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  [1m[36mPhotographer Load (5.9ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"auth"=>{}}
+No serializer found for resource: "thugnanny"
+[active_model_serializers]   [1m[36mTag Load (1.9ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.11ms)
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (1.9ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 20ms (Views: 7.6ms | ActiveRecord: 5.9ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (20.9ms)
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 29.1ms | ActiveRecord: 4.2ms)
+
+
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackage Load (3.0ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhotoSession Load (0.7ms)[0m  [1m[34mSELECT "photo_sessions".* FROM "photo_sessions" WHERE "photo_sessions"."photographer_id" = $1[0m  [["photographer_id", 1]]
+No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES", date: "2018-07-10 00:00:00", reserved: false, user_id: nil, photographer_id: 1, created_at: "2018-03-01 01:19:40", updated_at: "2018-03-01 01:19:40">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.52ms)
+Completed 202 Accepted in 49ms (Views: 6.7ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 16:13:53 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 16:13:53 -0500
+Processing by Api::V1::PhotosController#index as */*
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mPhotographer Load (0.6ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.12ms)
+Completed 200 OK in 11ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (9.6ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (19.66ms)
+Completed 200 OK in 28ms (Views: 16.8ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 16:13:53 -0500
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+  [1m[36mPhotographer Load (0.5ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackage Load (8.0ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhoto Load (1.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhotoSession Load (0.4ms)[0m  [1m[34mSELECT "photo_sessions".* FROM "photo_sessions" WHERE "photo_sessions"."photographer_id" = $1[0m  [["photographer_id", 1]]
+No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES", date: "2018-07-10 00:00:00", reserved: false, user_id: nil, photographer_id: 1, created_at: "2018-03-01 01:19:40", updated_at: "2018-03-01 01:19:40">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.1ms)
+Completed 202 Accepted in 44ms (Views: 7.6ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 16:16:10 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 16:16:10 -0500
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 16:16:10 -0500
+Processing by Api::V1::PhotosController#index as */*
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+  [1m[36mPhoto Load (7.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mPhotographer Load (1.5ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.12ms)
+Completed 200 OK in 19ms (Views: 0.9ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mPhotographer Load (12.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (26.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (48.24ms)
+  [1m[36mPackage Load (3.6ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+Completed 200 OK in 63ms (Views: 27.9ms | ActiveRecord: 34.0ms)
+
+
+  [1m[36mPhoto Load (1.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhotoSession Load (0.6ms)[0m  [1m[34mSELECT "photo_sessions".* FROM "photo_sessions" WHERE "photo_sessions"."photographer_id" = $1[0m  [["photographer_id", 1]]
+No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES", date: "2018-07-10 00:00:00", reserved: false, user_id: nil, photographer_id: 1, created_at: "2018-03-01 01:19:40", updated_at: "2018-03-01 01:19:40">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.2ms)
+Completed 202 Accepted in 80ms (Views: 6.0ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 16:20:58 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 16:20:58 -0500
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 16:20:58 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  [1m[35m (33.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  Parameters: {"auth"=>{}}
+Processing by Api::V1::PhotosController#index as */*
+  [1m[36mPhotographer Load (9.4ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.78ms)
+Completed 200 OK in 80ms (Views: 6.4ms | ActiveRecord: 17.1ms)
+
+
+  [1m[36mPhotographer Load (22.2ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (1.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (1.7ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (1.7ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (1.9ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (92.8ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (3.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPackage Load (2.5ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (167.44ms)
+Completed 200 OK in 261ms (Views: 132.4ms | ActiveRecord: 121.9ms)
+
+
+  [1m[36mPhoto Load (0.8ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhotoSession Load (0.8ms)[0m  [1m[34mSELECT "photo_sessions".* FROM "photo_sessions" WHERE "photo_sessions"."photographer_id" = $1[0m  [["photographer_id", 1]]
+No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES", date: "2018-07-10 00:00:00", reserved: false, user_id: nil, photographer_id: 1, created_at: "2018-03-01 01:19:40", updated_at: "2018-03-01 01:19:40">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.51ms)
+Completed 202 Accepted in 439ms (Views: 23.8ms | ActiveRecord: 136.5ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-03-01 16:21:27 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"first_name"=>"Garry", "last_name"=>"Clerge", "username"=>"gdot", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"hello@yahoo.com", "city"=>"Brooklyn"}}
+Unpermitted parameter: :city
+Unpermitted parameter: :city
+Completed 204 No Content in 228283ms (ActiveRecord: 15.0ms)
+
+
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 16:26:29 -0500
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 16:26:29 -0500
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 16:26:30 -0500
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+Processing by Api::V1::PhotosController#index as */*
+  [1m[35m (78.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhotographer Load (2.1ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+  [1m[36mPhoto Load (1.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.56ms)
+Completed 200 OK in 48ms (Views: 6.2ms | ActiveRecord: 7.4ms)
+
+
+  [1m[36mPhotographer Load (8.8ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (0.5ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (36.3ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (1.0ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (1.9ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackage Load (1.2ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (23.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPhoto Load (2.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (8.8ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (101.26ms)
+Completed 200 OK in 242ms (Views: 109.3ms | ActiveRecord: 100.8ms)
+
+
+  [1m[36mPhotoSession Load (1.0ms)[0m  [1m[34mSELECT "photo_sessions".* FROM "photo_sessions" WHERE "photo_sessions"."photographer_id" = $1[0m  [["photographer_id", 1]]
+No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES", date: "2018-07-10 00:00:00", reserved: false, user_id: nil, photographer_id: 1, created_at: "2018-03-01 01:19:40", updated_at: "2018-03-01 01:19:40">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.7ms)
+Completed 202 Accepted in 313ms (Views: 25.6ms | ActiveRecord: 85.4ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-03-01 16:27:02 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"first_name"=>"Garry", "last_name"=>"Clerge", "username"=>"gdot", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"g@c.com", "city"=>"Selden"}}
+Completed 500 Internal Server Error in 37514ms (ActiveRecord: 12.4ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/users_controller.rb:9:in `create'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (622.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "backend-final-project_development"[0m
+  [1m[35m (425.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "backend-final-project_test"[0m
+  [1m[35m (750.8ms)[0m  [1m[35mCREATE DATABASE "backend-final-project_development" ENCODING = 'unicode'[0m
+  [1m[35m (583.7ms)[0m  [1m[35mCREATE DATABASE "backend-final-project_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "package_tags" CASCADE[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "package_tags" ("id" bigserial primary key, "package_id" bigint, "tag_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_package_tags_on_package_id" ON "package_tags"  ("package_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_package_tags_on_tag_id" ON "package_tags"  ("tag_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "packages" CASCADE[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "packages" ("id" bigserial primary key, "photographer_id" bigint, "price" float, "hours" timestamp, "photos_to_deliver" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_packages_on_photographer_id" ON "packages"  ("photographer_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "photo_sessions" CASCADE[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "photo_sessions" ("id" bigserial primary key, "notes" character varying, "date" timestamp, "reserved" boolean DEFAULT 'f', "user_id" bigint, "photographer_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_photo_sessions_on_photographer_id" ON "photo_sessions"  ("photographer_id")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_photo_sessions_on_user_id" ON "photo_sessions"  ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "photographers" CASCADE[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "photographers" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "website" character varying, "custom_url" character varying, "business_name" character varying, "profile_photo" character varying, "instagram_url" character varying, "facebook_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "photos" CASCADE[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "photos" ("id" bigserial primary key, "tag_id" bigint, "photographer_id" bigint, "img_src" character varying, "img_size" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCREATE  INDEX  "index_photos_on_photographer_id" ON "photos"  ("photographer_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_photos_on_tag_id" ON "photos"  ("tag_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "tags" CASCADE[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "first_name" character varying, "last_name" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180227220431)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180221185228),
+(20180221185355),
+(20180221185505),
+(20180221185731),
+(20180221185836),
+(20180221202311);
+
+[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-01 21:27:58.420161"], ["updated_at", "2018-03-01 21:27:58.420161"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "package_tags" CASCADE[0m
+  [1m[35m (14.8ms)[0m  [1m[35mCREATE TABLE "package_tags" ("id" bigserial primary key, "package_id" bigint, "tag_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_package_tags_on_package_id" ON "package_tags"  ("package_id")[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE  INDEX  "index_package_tags_on_tag_id" ON "package_tags"  ("tag_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "packages" CASCADE[0m
+  [1m[35m (18.6ms)[0m  [1m[35mCREATE TABLE "packages" ("id" bigserial primary key, "photographer_id" bigint, "price" float, "hours" timestamp, "photos_to_deliver" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_packages_on_photographer_id" ON "packages"  ("photographer_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "photo_sessions" CASCADE[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "photo_sessions" ("id" bigserial primary key, "notes" character varying, "date" timestamp, "reserved" boolean DEFAULT 'f', "user_id" bigint, "photographer_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_photo_sessions_on_photographer_id" ON "photo_sessions"  ("photographer_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_photo_sessions_on_user_id" ON "photo_sessions"  ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "photographers" CASCADE[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "photographers" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "website" character varying, "custom_url" character varying, "business_name" character varying, "profile_photo" character varying, "instagram_url" character varying, "facebook_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "photos" CASCADE[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "photos" ("id" bigserial primary key, "tag_id" bigint, "photographer_id" bigint, "img_src" character varying, "img_size" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_photos_on_photographer_id" ON "photos"  ("photographer_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_photos_on_tag_id" ON "photos"  ("tag_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "tags" CASCADE[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "first_name" character varying, "last_name" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180227220431)[0m
+  [1m[35m (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180221185228),
+(20180221185355),
+(20180221185505),
+(20180221185731),
+(20180221185836),
+(20180221202311);
+
+[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-01 21:27:58.597462"], ["updated_at", "2018-03-01 21:27:58.597462"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-03-01 21:27:58.603049"], ["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "photographers" ("username", "password_digest", "website", "custom_url", "profile_photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "thugnanny"], ["password_digest", "$2a$10$hKK8tFPm51omzb1lIL.O6u/zWQFL.uRvj7uFOOxWE.sDvm9MclGeu"], ["website", "http://www.denissebenitez.co/"], ["custom_url", "thugnanny"], ["profile_photo", "https://static1.squarespace.com/static/54465cf1e4b09d4e92ebfe2d/t/5a2ed6f68165f58c217d3189/1513019145997/self.png?format=500w"], ["created_at", "2018-03-01 21:27:58.755777"], ["updated_at", "2018-03-01 21:27:58.755777"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photographers" ("username", "password_digest", "website", "custom_url", "profile_photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "dclive"], ["password_digest", "$2a$10$wqgswm8MdKSN/YJimVoac.aS5.//qBXVSJj2IqRFv5EAnKmXgF5Im"], ["website", "http://www.dorianclive.com/"], ["custom_url", "dorianclive"], ["profile_photo", "http://www.dorianclive.com/wp-content/uploads/2015/05/about-1273x854.jpg"], ["created_at", "2018-03-01 21:27:58.841222"], ["updated_at", "2018-03-01 21:27:58.841222"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Charmander"], ["password_digest", "$2a$10$7QpAvXBhFv07NsP927Fg3OTzJVj8lfpULWreYa.iTKAMtC1IZD8SK"], ["created_at", "2018-03-01 21:27:58.943711"], ["updated_at", "2018-03-01 21:27:58.943711"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Garry"], ["password_digest", "$2a$10$bUtv2vZ8Eu/e1zuPxjDuv.ALpk3OmAsdxM0oGEiU1EONS9kNAcwty"], ["created_at", "2018-03-01 21:27:59.030295"], ["updated_at", "2018-03-01 21:27:59.030295"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.2ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-10 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:27:59.078948"], ["updated_at", "2018-03-01 21:27:59.078948"]]
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-20 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:27:59.107316"], ["updated_at", "2018-03-01 21:27:59.107316"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-30 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:27:59.112294"], ["updated_at", "2018-03-01 21:27:59.112294"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-11 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:27:59.116420"], ["updated_at", "2018-03-01 21:27:59.116420"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-22 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:27:59.120072"], ["updated_at", "2018-03-01 21:27:59.120072"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-12 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:27:59.123284"], ["updated_at", "2018-03-01 21:27:59.123284"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-13 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:27:59.126437"], ["updated_at", "2018-03-01 21:27:59.126437"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-14 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:27:59.129638"], ["updated_at", "2018-03-01 21:27:59.129638"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-16 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:27:59.132570"], ["updated_at", "2018-03-01 21:27:59.132570"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-18 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:27:59.135532"], ["updated_at", "2018-03-01 21:27:59.135532"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-19 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:27:59.138405"], ["updated_at", "2018-03-01 21:27:59.138405"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-21 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:27:59.141636"], ["updated_at", "2018-03-01 21:27:59.141636"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-10 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:27:59.165171"], ["updated_at", "2018-03-01 21:27:59.165171"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-20 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:27:59.169370"], ["updated_at", "2018-03-01 21:27:59.169370"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-30 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:27:59.173275"], ["updated_at", "2018-03-01 21:27:59.173275"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-11 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:27:59.176063"], ["updated_at", "2018-03-01 21:27:59.176063"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-22 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:27:59.179699"], ["updated_at", "2018-03-01 21:27:59.179699"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-12 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:27:59.182712"], ["updated_at", "2018-03-01 21:27:59.182712"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-13 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:27:59.185579"], ["updated_at", "2018-03-01 21:27:59.185579"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-14 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:27:59.188323"], ["updated_at", "2018-03-01 21:27:59.188323"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-16 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:27:59.191086"], ["updated_at", "2018-03-01 21:27:59.191086"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-18 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:27:59.193848"], ["updated_at", "2018-03-01 21:27:59.193848"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-19 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:27:59.196653"], ["updated_at", "2018-03-01 21:27:59.196653"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-21 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:27:59.199335"], ["updated_at", "2018-03-01 21:27:59.199335"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "packages" ("photographer_id", "price", "photos_to_deliver", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["photographer_id", 1], ["price", 175.0], ["photos_to_deliver", "8 - 10"], ["created_at", "2018-03-01 21:27:59.228816"], ["updated_at", "2018-03-01 21:27:59.228816"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "packages" ("photographer_id", "price", "photos_to_deliver", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["photographer_id", 1], ["price", 500.0], ["photos_to_deliver", "10 - 15"], ["created_at", "2018-03-01 21:27:59.233319"], ["updated_at", "2018-03-01 21:27:59.233319"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "packages" ("photographer_id", "price", "photos_to_deliver", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["photographer_id", 1], ["price", 600.0], ["photos_to_deliver", "20 - 30"], ["created_at", "2018-03-01 21:27:59.236097"], ["updated_at", "2018-03-01 21:27:59.236097"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "packages" ("photographer_id", "price", "photos_to_deliver", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["photographer_id", 2], ["price", 300.0], ["photos_to_deliver", "8 - 10"], ["created_at", "2018-03-01 21:27:59.239255"], ["updated_at", "2018-03-01 21:27:59.239255"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "packages" ("photographer_id", "price", "photos_to_deliver", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["photographer_id", 2], ["price", 500.0], ["photos_to_deliver", "10 - 20"], ["created_at", "2018-03-01 21:27:59.242179"], ["updated_at", "2018-03-01 21:27:59.242179"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "packages" ("photographer_id", "price", "photos_to_deliver", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["photographer_id", 2], ["price", 600.0], ["photos_to_deliver", "20 - 30"], ["created_at", "2018-03-01 21:27:59.245013"], ["updated_at", "2018-03-01 21:27:59.245013"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Blogger"], ["created_at", "2018-03-01 21:27:59.260468"], ["updated_at", "2018-03-01 21:27:59.260468"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Portrait"], ["created_at", "2018-03-01 21:27:59.265313"], ["updated_at", "2018-03-01 21:27:59.265313"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lifestyle"], ["created_at", "2018-03-01 21:27:59.267554"], ["updated_at", "2018-03-01 21:27:59.267554"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Glamour"], ["created_at", "2018-03-01 21:27:59.269601"], ["updated_at", "2018-03-01 21:27:59.269601"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Travel"], ["created_at", "2018-03-01 21:27:59.271824"], ["updated_at", "2018-03-01 21:27:59.271824"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Food"], ["created_at", "2018-03-01 21:27:59.273914"], ["updated_at", "2018-03-01 21:27:59.273914"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fashion"], ["created_at", "2018-03-01 21:27:59.275945"], ["updated_at", "2018-03-01 21:27:59.275945"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Wedding"], ["created_at", "2018-03-01 21:27:59.277949"], ["updated_at", "2018-03-01 21:27:59.277949"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "New Born"], ["created_at", "2018-03-01 21:27:59.280172"], ["updated_at", "2018-03-01 21:27:59.280172"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Birth"], ["created_at", "2018-03-01 21:27:59.282784"], ["updated_at", "2018-03-01 21:27:59.282784"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Engagement"], ["created_at", "2018-03-01 21:27:59.285016"], ["updated_at", "2018-03-01 21:27:59.285016"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Kids"], ["created_at", "2018-03-01 21:27:59.286985"], ["updated_at", "2018-03-01 21:27:59.286985"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Babies"], ["created_at", "2018-03-01 21:27:59.288933"], ["updated_at", "2018-03-01 21:27:59.288933"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Family"], ["created_at", "2018-03-01 21:27:59.291206"], ["updated_at", "2018-03-01 21:27:59.291206"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Headshot"], ["created_at", "2018-03-01 21:27:59.293430"], ["updated_at", "2018-03-01 21:27:59.293430"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Product"], ["created_at", "2018-03-01 21:27:59.295497"], ["updated_at", "2018-03-01 21:27:59.295497"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Boudoir"], ["created_at", "2018-03-01 21:27:59.297498"], ["updated_at", "2018-03-01 21:27:59.297498"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Social"], ["created_at", "2018-03-01 21:27:59.299520"], ["updated_at", "2018-03-01 21:27:59.299520"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Surfing"], ["created_at", "2018-03-01 21:27:59.301542"], ["updated_at", "2018-03-01 21:27:59.301542"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Landscape"], ["created_at", "2018-03-01 21:27:59.303597"], ["updated_at", "2018-03-01 21:27:59.303597"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Wildlife"], ["created_at", "2018-03-01 21:27:59.306115"], ["updated_at", "2018-03-01 21:27:59.306115"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Aerial"], ["created_at", "2018-03-01 21:27:59.308874"], ["updated_at", "2018-03-01 21:27:59.308874"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Action"], ["created_at", "2018-03-01 21:27:59.310942"], ["updated_at", "2018-03-01 21:27:59.310942"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sports"], ["created_at", "2018-03-01 21:27:59.312955"], ["updated_at", "2018-03-01 21:27:59.312955"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pets"], ["created_at", "2018-03-01 21:27:59.315035"], ["updated_at", "2018-03-01 21:27:59.315035"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Event"], ["created_at", "2018-03-01 21:27:59.317107"], ["updated_at", "2018-03-01 21:27:59.317107"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Real Estate"], ["created_at", "2018-03-01 21:27:59.319133"], ["updated_at", "2018-03-01 21:27:59.319133"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Architecture"], ["created_at", "2018-03-01 21:27:59.321182"], ["updated_at", "2018-03-01 21:27:59.321182"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Journalism"], ["created_at", "2018-03-01 21:27:59.323251"], ["updated_at", "2018-03-01 21:27:59.323251"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Musical Concert"], ["created_at", "2018-03-01 21:27:59.325221"], ["updated_at", "2018-03-01 21:27:59.325221"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Macro"], ["created_at", "2018-03-01 21:27:59.327251"], ["updated_at", "2018-03-01 21:27:59.327251"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Medical"], ["created_at", "2018-03-01 21:27:59.329299"], ["updated_at", "2018-03-01 21:27:59.329299"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Aerial"], ["created_at", "2018-03-01 21:27:59.331581"], ["updated_at", "2018-03-01 21:27:59.331581"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "photos" ("tag_id", "photographer_id", "img_src", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["tag_id", 1], ["photographer_id", 1], ["img_src", "https://static1.squarespace.com/static/54465cf1e4b09d4e92ebfe2d/t/5a2ed9768165f58c217dbe76/1513019808003/IMG_1700.JPG?format=500w"], ["created_at", "2018-03-01 21:27:59.335053"], ["updated_at", "2018-03-01 21:27:59.335053"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photos" ("tag_id", "photographer_id", "img_src", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["tag_id", 1], ["photographer_id", 1], ["img_src", "https://static1.squarespace.com/static/54465cf1e4b09d4e92ebfe2d/t/5a2ed662c83025e9c486290a/1513019086951/IMG_5725.JPG?format=500w"], ["created_at", "2018-03-01 21:27:59.342112"], ["updated_at", "2018-03-01 21:27:59.342112"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photos" ("tag_id", "photographer_id", "img_src", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["tag_id", 7], ["photographer_id", 2], ["img_src", "http://www.dorianclive.com/wp-content/uploads/2015/05/MG_8234-Edit-2-853x1280.jpg"], ["created_at", "2018-03-01 21:27:59.344485"], ["updated_at", "2018-03-01 21:27:59.344485"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photos" ("tag_id", "photographer_id", "img_src", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["tag_id", 7], ["photographer_id", 2], ["img_src", "http://www.dorianclive.com/wp-content/uploads/2015/06/MG_7695-Edit-853x1280.jpg"], ["created_at", "2018-03-01 21:27:59.346681"], ["updated_at", "2018-03-01 21:27:59.346681"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.4ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 1], ["tag_id", 1], ["created_at", "2018-03-01 21:27:59.370901"], ["updated_at", "2018-03-01 21:27:59.370901"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.3ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 2], ["tag_id", 2], ["created_at", "2018-03-01 21:27:59.384593"], ["updated_at", "2018-03-01 21:27:59.384593"]]
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.3ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 2], ["tag_id", 11], ["created_at", "2018-03-01 21:27:59.396991"], ["updated_at", "2018-03-01 21:27:59.396991"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.3ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 3], ["tag_id", 2], ["created_at", "2018-03-01 21:27:59.403532"], ["updated_at", "2018-03-01 21:27:59.403532"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.3ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 3], ["tag_id", 11], ["created_at", "2018-03-01 21:27:59.409886"], ["updated_at", "2018-03-01 21:27:59.409886"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.2ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 4], ["tag_id", 7], ["created_at", "2018-03-01 21:27:59.415122"], ["updated_at", "2018-03-01 21:27:59.415122"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.2ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 5], ["tag_id", 7], ["created_at", "2018-03-01 21:27:59.419454"], ["updated_at", "2018-03-01 21:27:59.419454"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.2ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 6], ["tag_id", 11], ["created_at", "2018-03-01 21:27:59.423714"], ["updated_at", "2018-03-01 21:27:59.423714"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.2ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 6], ["tag_id", 2], ["created_at", "2018-03-01 21:27:59.427967"], ["updated_at", "2018-03-01 21:27:59.427967"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 16:28:15 -0500
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 16:28:15 -0500
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 16:28:15 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+Processing by Api::V1::PhotosController#index as */*
+Processing by Api::V1::PhotographersController#index as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mPhotographer Load (4.0ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+  [1m[36mPhoto Load (1.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+No serializer found for resource: "thugnanny"
+  [1m[36mPhotographer Load (16.6ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.46ms)
+Completed 200 OK in 88ms (Views: 9.4ms | ActiveRecord: 12.6ms)
+
+
+  [1m[36mPhotographer Load (0.7ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (27.9ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (1.9ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (1.9ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.6ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (17.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPhoto Load (1.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+[active_model_serializers]   [1m[36mTag Load (7.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (98.66ms)
+Completed 200 OK in 238ms (Views: 136.6ms | ActiveRecord: 67.8ms)
+
+
+  [1m[36mPhotoSession Load (1.0ms)[0m  [1m[34mSELECT "photo_sessions".* FROM "photo_sessions" WHERE "photo_sessions"."photographer_id" = $1[0m  [["photographer_id", 1]]
+No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES", date: "2018-07-10 00:00:00", reserved: false, user_id: nil, photographer_id: 1, created_at: "2018-03-01 21:27:59", updated_at: "2018-03-01 21:27:59">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.7ms)
+Completed 202 Accepted in 302ms (Views: 20.7ms | ActiveRecord: 87.9ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-03-01 16:28:34 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"first_name"=>"Garry", "last_name"=>"Clerge", "username"=>"gdot", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"g@c.com", "city"=>"Selden"}}
+Completed 500 Internal Server Error in 144804ms (ActiveRecord: 14.5ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/users_controller.rb:9:in `create'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (209.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "backend-final-project_development"[0m
+  [1m[35m (217.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "backend-final-project_test"[0m
+  [1m[35m (51.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (38.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3293780597352050820)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180221185228)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (33.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "first_name" character varying, "last_name" character varying, "email" character varying, "city" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180221185228"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePhotographers (20180221185355)
+  [1m[35m (5.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.6ms)[0m  [1m[35mCREATE TABLE "photographers" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "website" character varying, "custom_url" character varying, "business_name" character varying, "profile_photo" character varying, "instagram_url" character varying, "facebook_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180221185355"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePhotos (20180221185505)
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (33.0ms)[0m  [1m[35mCREATE TABLE "photos" ("id" bigserial primary key, "tag_id" bigint, "photographer_id" bigint, "img_src" character varying, "img_size" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_photos_on_tag_id" ON "photos"  ("tag_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_photos_on_photographer_id" ON "photos"  ("photographer_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180221185505"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePackages (20180221185731)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (28.3ms)[0m  [1m[35mCREATE TABLE "packages" ("id" bigserial primary key, "photographer_id" bigint, "price" float, "hours" timestamp, "photos_to_deliver" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_packages_on_photographer_id" ON "packages"  ("photographer_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180221185731"]]
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePackageTags (20180221185836)
+  [1m[35m (6.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.9ms)[0m  [1m[35mCREATE TABLE "package_tags" ("id" bigserial primary key, "package_id" bigint, "tag_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_package_tags_on_package_id" ON "package_tags"  ("package_id")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_package_tags_on_tag_id" ON "package_tags"  ("tag_id")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180221185836"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTags (20180221202311)
+  [1m[35m (6.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.6ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180221202311"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePhotoSessions (20180227220431)
+  [1m[35m (6.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.8ms)[0m  [1m[35mCREATE TABLE "photo_sessions" ("id" bigserial primary key, "notes" character varying, "date" timestamp, "reserved" boolean DEFAULT 'f', "user_id" bigint, "photographer_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE  INDEX  "index_photo_sessions_on_user_id" ON "photo_sessions"  ("user_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_photo_sessions_on_photographer_id" ON "photo_sessions"  ("photographer_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180227220431"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-01 21:32:08.006234"], ["updated_at", "2018-03-01 21:32:08.006234"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3293780597352050820)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "photographers" ("username", "password_digest", "website", "custom_url", "profile_photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "thugnanny"], ["password_digest", "$2a$10$nDuIDNTfhE.YTXcS8t56T.Wq63ujEOft/BE7gHdAI3N2qHmdYUzBG"], ["website", "http://www.denissebenitez.co/"], ["custom_url", "thugnanny"], ["profile_photo", "https://static1.squarespace.com/static/54465cf1e4b09d4e92ebfe2d/t/5a2ed6f68165f58c217d3189/1513019145997/self.png?format=500w"], ["created_at", "2018-03-01 21:32:16.461973"], ["updated_at", "2018-03-01 21:32:16.461973"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photographers" ("username", "password_digest", "website", "custom_url", "profile_photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "dclive"], ["password_digest", "$2a$10$brYJaZtC/jcdLp56tLmfMeVJl83jEEKo0LKzhRNzvZiilLwTzrbq."], ["website", "http://www.dorianclive.com/"], ["custom_url", "dorianclive"], ["profile_photo", "http://www.dorianclive.com/wp-content/uploads/2015/05/about-1273x854.jpg"], ["created_at", "2018-03-01 21:32:16.549747"], ["updated_at", "2018-03-01 21:32:16.549747"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Charmander"], ["password_digest", "$2a$10$a59Lwg2Ofm6ggsjnK3xsQ.KvNj/3OvkpwuaQ5DJLrwiffx7nIjH2e"], ["created_at", "2018-03-01 21:32:16.651281"], ["updated_at", "2018-03-01 21:32:16.651281"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Garry"], ["password_digest", "$2a$10$SmzZIY1qlzcmDUZqtoNzwOPqKLmaNYaSjl7zhkfzwVtodpJPLfvU."], ["created_at", "2018-03-01 21:32:16.737465"], ["updated_at", "2018-03-01 21:32:16.737465"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (14.7ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-10 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:32:16.791583"], ["updated_at", "2018-03-01 21:32:16.791583"]]
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-20 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:32:16.818824"], ["updated_at", "2018-03-01 21:32:16.818824"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-30 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:32:16.822755"], ["updated_at", "2018-03-01 21:32:16.822755"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-11 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:32:16.825751"], ["updated_at", "2018-03-01 21:32:16.825751"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-22 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:32:16.828655"], ["updated_at", "2018-03-01 21:32:16.828655"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-12 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:32:16.831432"], ["updated_at", "2018-03-01 21:32:16.831432"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-13 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:32:16.834371"], ["updated_at", "2018-03-01 21:32:16.834371"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-14 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:32:16.837945"], ["updated_at", "2018-03-01 21:32:16.837945"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-16 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:32:16.841101"], ["updated_at", "2018-03-01 21:32:16.841101"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-18 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:32:16.843941"], ["updated_at", "2018-03-01 21:32:16.843941"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-19 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:32:16.846801"], ["updated_at", "2018-03-01 21:32:16.846801"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "THUGTASTIC NOTES"], ["date", "2018-07-21 00:00:00"], ["photographer_id", 1], ["created_at", "2018-03-01 21:32:16.849664"], ["updated_at", "2018-03-01 21:32:16.849664"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-10 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:32:16.871060"], ["updated_at", "2018-03-01 21:32:16.871060"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-20 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:32:16.874948"], ["updated_at", "2018-03-01 21:32:16.874948"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-30 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:32:16.878504"], ["updated_at", "2018-03-01 21:32:16.878504"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-11 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:32:16.881647"], ["updated_at", "2018-03-01 21:32:16.881647"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-22 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:32:16.884537"], ["updated_at", "2018-03-01 21:32:16.884537"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-12 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:32:16.887359"], ["updated_at", "2018-03-01 21:32:16.887359"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-13 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:32:16.890154"], ["updated_at", "2018-03-01 21:32:16.890154"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-14 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:32:16.892975"], ["updated_at", "2018-03-01 21:32:16.892975"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-16 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:32:16.895813"], ["updated_at", "2018-03-01 21:32:16.895813"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-18 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:32:16.898658"], ["updated_at", "2018-03-01 21:32:16.898658"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-19 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:32:16.901496"], ["updated_at", "2018-03-01 21:32:16.901496"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "photo_sessions" ("notes", "date", "photographer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["notes", "WE CLIVE NOTES"], ["date", "2018-07-21 00:00:00"], ["photographer_id", 2], ["created_at", "2018-03-01 21:32:16.904225"], ["updated_at", "2018-03-01 21:32:16.904225"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "packages" ("photographer_id", "price", "photos_to_deliver", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["photographer_id", 1], ["price", 175.0], ["photos_to_deliver", "8 - 10"], ["created_at", "2018-03-01 21:32:16.927000"], ["updated_at", "2018-03-01 21:32:16.927000"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "packages" ("photographer_id", "price", "photos_to_deliver", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["photographer_id", 1], ["price", 500.0], ["photos_to_deliver", "10 - 15"], ["created_at", "2018-03-01 21:32:16.933096"], ["updated_at", "2018-03-01 21:32:16.933096"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "packages" ("photographer_id", "price", "photos_to_deliver", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["photographer_id", 1], ["price", 600.0], ["photos_to_deliver", "20 - 30"], ["created_at", "2018-03-01 21:32:16.938931"], ["updated_at", "2018-03-01 21:32:16.938931"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "packages" ("photographer_id", "price", "photos_to_deliver", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["photographer_id", 2], ["price", 300.0], ["photos_to_deliver", "8 - 10"], ["created_at", "2018-03-01 21:32:16.942258"], ["updated_at", "2018-03-01 21:32:16.942258"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "packages" ("photographer_id", "price", "photos_to_deliver", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["photographer_id", 2], ["price", 500.0], ["photos_to_deliver", "10 - 20"], ["created_at", "2018-03-01 21:32:16.945262"], ["updated_at", "2018-03-01 21:32:16.945262"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "packages" ("photographer_id", "price", "photos_to_deliver", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["photographer_id", 2], ["price", 600.0], ["photos_to_deliver", "20 - 30"], ["created_at", "2018-03-01 21:32:16.948158"], ["updated_at", "2018-03-01 21:32:16.948158"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Blogger"], ["created_at", "2018-03-01 21:32:16.964012"], ["updated_at", "2018-03-01 21:32:16.964012"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Portrait"], ["created_at", "2018-03-01 21:32:16.968182"], ["updated_at", "2018-03-01 21:32:16.968182"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lifestyle"], ["created_at", "2018-03-01 21:32:16.971289"], ["updated_at", "2018-03-01 21:32:16.971289"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Glamour"], ["created_at", "2018-03-01 21:32:16.973602"], ["updated_at", "2018-03-01 21:32:16.973602"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Travel"], ["created_at", "2018-03-01 21:32:16.976033"], ["updated_at", "2018-03-01 21:32:16.976033"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Food"], ["created_at", "2018-03-01 21:32:16.978552"], ["updated_at", "2018-03-01 21:32:16.978552"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fashion"], ["created_at", "2018-03-01 21:32:16.980791"], ["updated_at", "2018-03-01 21:32:16.980791"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Wedding"], ["created_at", "2018-03-01 21:32:16.982898"], ["updated_at", "2018-03-01 21:32:16.982898"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "New Born"], ["created_at", "2018-03-01 21:32:16.985177"], ["updated_at", "2018-03-01 21:32:16.985177"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Birth"], ["created_at", "2018-03-01 21:32:16.987415"], ["updated_at", "2018-03-01 21:32:16.987415"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Engagement"], ["created_at", "2018-03-01 21:32:16.989481"], ["updated_at", "2018-03-01 21:32:16.989481"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Kids"], ["created_at", "2018-03-01 21:32:16.991843"], ["updated_at", "2018-03-01 21:32:16.991843"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Babies"], ["created_at", "2018-03-01 21:32:16.994097"], ["updated_at", "2018-03-01 21:32:16.994097"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Family"], ["created_at", "2018-03-01 21:32:16.996326"], ["updated_at", "2018-03-01 21:32:16.996326"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Headshot"], ["created_at", "2018-03-01 21:32:16.999269"], ["updated_at", "2018-03-01 21:32:16.999269"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Product"], ["created_at", "2018-03-01 21:32:17.001618"], ["updated_at", "2018-03-01 21:32:17.001618"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Boudoir"], ["created_at", "2018-03-01 21:32:17.003872"], ["updated_at", "2018-03-01 21:32:17.003872"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Social"], ["created_at", "2018-03-01 21:32:17.006047"], ["updated_at", "2018-03-01 21:32:17.006047"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Surfing"], ["created_at", "2018-03-01 21:32:17.008270"], ["updated_at", "2018-03-01 21:32:17.008270"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Landscape"], ["created_at", "2018-03-01 21:32:17.010407"], ["updated_at", "2018-03-01 21:32:17.010407"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Wildlife"], ["created_at", "2018-03-01 21:32:17.012520"], ["updated_at", "2018-03-01 21:32:17.012520"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Aerial"], ["created_at", "2018-03-01 21:32:17.014616"], ["updated_at", "2018-03-01 21:32:17.014616"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Action"], ["created_at", "2018-03-01 21:32:17.016836"], ["updated_at", "2018-03-01 21:32:17.016836"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sports"], ["created_at", "2018-03-01 21:32:17.019115"], ["updated_at", "2018-03-01 21:32:17.019115"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pets"], ["created_at", "2018-03-01 21:32:17.021335"], ["updated_at", "2018-03-01 21:32:17.021335"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Event"], ["created_at", "2018-03-01 21:32:17.023566"], ["updated_at", "2018-03-01 21:32:17.023566"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Real Estate"], ["created_at", "2018-03-01 21:32:17.026386"], ["updated_at", "2018-03-01 21:32:17.026386"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Architecture"], ["created_at", "2018-03-01 21:32:17.029006"], ["updated_at", "2018-03-01 21:32:17.029006"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Journalism"], ["created_at", "2018-03-01 21:32:17.031379"], ["updated_at", "2018-03-01 21:32:17.031379"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Musical Concert"], ["created_at", "2018-03-01 21:32:17.033532"], ["updated_at", "2018-03-01 21:32:17.033532"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Macro"], ["created_at", "2018-03-01 21:32:17.035754"], ["updated_at", "2018-03-01 21:32:17.035754"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Medical"], ["created_at", "2018-03-01 21:32:17.038137"], ["updated_at", "2018-03-01 21:32:17.038137"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Aerial"], ["created_at", "2018-03-01 21:32:17.040590"], ["updated_at", "2018-03-01 21:32:17.040590"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "photos" ("tag_id", "photographer_id", "img_src", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["tag_id", 1], ["photographer_id", 1], ["img_src", "https://static1.squarespace.com/static/54465cf1e4b09d4e92ebfe2d/t/5a2ed9768165f58c217dbe76/1513019808003/IMG_1700.JPG?format=500w"], ["created_at", "2018-03-01 21:32:17.043856"], ["updated_at", "2018-03-01 21:32:17.043856"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "photos" ("tag_id", "photographer_id", "img_src", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["tag_id", 1], ["photographer_id", 1], ["img_src", "https://static1.squarespace.com/static/54465cf1e4b09d4e92ebfe2d/t/5a2ed662c83025e9c486290a/1513019086951/IMG_5725.JPG?format=500w"], ["created_at", "2018-03-01 21:32:17.048828"], ["updated_at", "2018-03-01 21:32:17.048828"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photos" ("tag_id", "photographer_id", "img_src", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["tag_id", 7], ["photographer_id", 2], ["img_src", "http://www.dorianclive.com/wp-content/uploads/2015/05/MG_8234-Edit-2-853x1280.jpg"], ["created_at", "2018-03-01 21:32:17.051297"], ["updated_at", "2018-03-01 21:32:17.051297"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "photos" ("tag_id", "photographer_id", "img_src", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["tag_id", 7], ["photographer_id", 2], ["img_src", "http://www.dorianclive.com/wp-content/uploads/2015/06/MG_7695-Edit-853x1280.jpg"], ["created_at", "2018-03-01 21:32:17.053532"], ["updated_at", "2018-03-01 21:32:17.053532"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.4ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (14.5ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 1], ["tag_id", 1], ["created_at", "2018-03-01 21:32:17.079884"], ["updated_at", "2018-03-01 21:32:17.079884"]]
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.2ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 2], ["tag_id", 2], ["created_at", "2018-03-01 21:32:17.105325"], ["updated_at", "2018-03-01 21:32:17.105325"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.3ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 2], ["tag_id", 11], ["created_at", "2018-03-01 21:32:17.110562"], ["updated_at", "2018-03-01 21:32:17.110562"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.2ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 3], ["tag_id", 2], ["created_at", "2018-03-01 21:32:17.115280"], ["updated_at", "2018-03-01 21:32:17.115280"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.5ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 3], ["tag_id", 11], ["created_at", "2018-03-01 21:32:17.122398"], ["updated_at", "2018-03-01 21:32:17.122398"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.2ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 4], ["tag_id", 7], ["created_at", "2018-03-01 21:32:17.127728"], ["updated_at", "2018-03-01 21:32:17.127728"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.2ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 5], ["tag_id", 7], ["created_at", "2018-03-01 21:32:17.132429"], ["updated_at", "2018-03-01 21:32:17.132429"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.2ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 6], ["tag_id", 11], ["created_at", "2018-03-01 21:32:17.137222"], ["updated_at", "2018-03-01 21:32:17.137222"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPackage Load (0.2ms)[0m  [1m[34mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "package_tags" ("package_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["package_id", 6], ["tag_id", 2], ["created_at", "2018-03-01 21:32:17.141952"], ["updated_at", "2018-03-01 21:32:17.141952"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/api/v1/users" for ::1 at 2018-03-01 16:32:53 -0500
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"first_name"=>"Garry", "last_name"=>"Clerge", "username"=>"gdot", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"g@c.com", "city"=>"Selden"}}
+Completed 500 Internal Server Error in 447991ms (ActiveRecord: 5.7ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/users_controller.rb:9:in `create'
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 16:40:23 -0500
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 16:40:38 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 16:40:38 -0500
+Processing by Api::V1::PhotosController#index as */*
+  [1m[36mPhoto Load (2.8ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers]   [1m[36mTag Load (1.9ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (3.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (355.88ms)
+Completed 200 OK in 667ms (Views: 583.0ms | ActiveRecord: 31.1ms)
+
+
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+Processing by Api::V1::PhotographersController#index as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mPhotographer Load (2.7ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+  [1m[36mPhotographer Load (7.1ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.4ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+No serializer found for resource: "thugnanny"
+  [1m[36mCACHE Photographer Load (0.3ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.12ms)
+  [1m[36mCACHE Photographer Load (3.5ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 574ms (Views: 160.8ms | ActiveRecord: 34.8ms)
+
+
+  [1m[36mCACHE Photographer Load (0.3ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackage Load (1.9ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhoto Load (2.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhotoSession Load (1.6ms)[0m  [1m[34mSELECT "photo_sessions".* FROM "photo_sessions" WHERE "photo_sessions"."photographer_id" = $1[0m  [["photographer_id", 1]]
+No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES", date: "2018-07-10 00:00:00", reserved: false, user_id: nil, photographer_id: 1, created_at: "2018-03-01 21:32:16", updated_at: "2018-03-01 21:32:16">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (71.32ms)
+Completed 202 Accepted in 1931ms (Views: 119.7ms | ActiveRecord: 95.6ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-03-01 16:41:48 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"first_name"=>"Garry", "last_name"=>"Clerge", "username"=>"gdot", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"g@c.com", "city"=>"Selden"}}
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "email", "city", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "gdot"], ["first_name", "Garry"], ["last_name", "Clerge"], ["email", "g@c.com"], ["city", "Selden"], ["password_digest", "$2a$10$rQLMqYjsrZAqeN9d0/kIueJUTkTv3gaJl4YKc9EIUAGrVW/jlINZW"], ["created_at", "2018-03-01 21:41:49.287360"], ["updated_at", "2018-03-01 21:41:49.287360"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (11.91ms)
+Completed 202 Accepted in 408ms (Views: 20.6ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 16:48:56 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 16:48:56 -0500
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 16:48:56 -0500
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhoto Load (32.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+  [1m[36mPhotographer Load (4.1ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.54ms)
+Completed 200 OK in 175ms (Views: 25.6ms | ActiveRecord: 4.1ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (19.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.7ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (10.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.8ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1008.02ms)
+  [1m[36mPhotographer Load (193.8ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.8ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1331ms (Views: 1137.5ms | ActiveRecord: 79.8ms)
+
+
+  [1m[36mCACHE Photographer Load (1.4ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.7ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Photographer Load (0.5ms)[0m  [1m[34mSELECT  "photographers".* FROM "photographers" WHERE "photographers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackage Load (5.5ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhoto Load (7.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."photographer_id" = $1[0m  [["photographer_id", 1]]
+  [1m[36mPhotoSession Load (3.5ms)[0m  [1m[34mSELECT "photo_sessions".* FROM "photo_sessions" WHERE "photo_sessions"."photographer_id" = $1[0m  [["photographer_id", 1]]
+No serializer found for resource: #<PhotoSession id: 1, notes: "THUGTASTIC NOTES", date: "2018-07-10 00:00:00", reserved: false, user_id: nil, photographer_id: 1, created_at: "2018-03-01 21:32:16", updated_at: "2018-03-01 21:32:16">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (140.1ms)
+Completed 202 Accepted in 2237ms (Views: 180.8ms | ActiveRecord: 743.0ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 16:50:43 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 16:50:43 -0500
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhoto Load (13.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mPhotographer Load (93.5ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mTag Load (15.9ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (4.08ms)
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.8ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 318ms (Views: 134.2ms | ActiveRecord: 93.5ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (11.8ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (539.25ms)
+Completed 200 OK in 712ms (Views: 660.6ms | ActiveRecord: 42.3ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 16:51:41 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 16:51:41 -0500
+Processing by Api::V1::PhotosController#index as */*
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhoto Load (16.9ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mPhotographer Load (50.3ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.86ms)
+Completed 200 OK in 163ms (Views: 38.1ms | ActiveRecord: 50.3ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (25.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.9ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (8.6ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (337.27ms)
+Completed 200 OK in 433ms (Views: 344.7ms | ActiveRecord: 83.5ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2018-03-01 16:53:13 -0500
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>["Garry"], "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>["Garry"], "password"=>"[FILTERED]"}}}
+Unpermitted parameters: :username, :password
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.95ms)
+Completed 401 Unauthorized in 106ms (Views: 25.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 16:53:17 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 16:53:17 -0500
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::PhotosController#index as */*
+  [1m[36mPhotographer Load (8.6ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+  [1m[36mPhoto Load (7.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (3.98ms)
+Completed 200 OK in 123ms (Views: 45.9ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 16:53:17 -0500
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.03ms)
+[active_model_serializers]   [1m[36mTag Load (73.8ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Filter chain halted as :authorized rendered or redirected
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 91ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (16.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.9ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (332.95ms)
+Completed 200 OK in 511ms (Views: 405.6ms | ActiveRecord: 98.3ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2018-03-01 16:54:21 -0500
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>"Garry", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Garry", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Garry"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.63ms)
+Completed 202 Accepted in 42923ms (Views: 4.1ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 17:00:05 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 17:00:05 -0500
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 17:00:05 -0500
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (33.71ms)
+Completed 200 OK in 77ms (Views: 51.4ms | ActiveRecord: 16.4ms)
+
+
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhotographer Load (0.3ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.11ms)
+Completed 200 OK in 40ms (Views: 3.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 17:03:41 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 17:03:41 -0500
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::PhotosController#index as */*
+  [1m[36mPhotographer Load (3.7ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.14ms)
+Completed 200 OK in 9ms (Views: 1.1ms | ActiveRecord: 3.7ms)
+
+
+  [1m[36mPhoto Load (1.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (37.41ms)
+Completed 200 OK in 84ms (Views: 50.3ms | ActiveRecord: 24.4ms)
+
+
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 17:03:41 -0500
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 17:07:53 -0500
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 17:07:54 -0500
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 17:07:54 -0500
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mPhotographer Load (0.8ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+No serializer found for resource: "thugnanny"
+  [1m[36mPhoto Load (1.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.17ms)
+Completed 200 OK in 15ms (Views: 4.1ms | ActiveRecord: 0.8ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (4.6ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.27ms)
+Completed 200 OK in 31ms (Views: 23.3ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 17:09:30 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 17:09:30 -0500
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 17:09:30 -0500
+Processing by Api::V1::PhotosController#index as */*
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.82ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mPhotographer Load (6.4ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.22ms)
+Completed 200 OK in 39ms (Views: 1.5ms | ActiveRecord: 6.4ms)
+
+
+  [1m[36mPhoto Load (13.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers]   [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (33.58ms)
+Completed 200 OK in 93ms (Views: 68.2ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 17:10:04 -0500
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 17:10:04 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 17:10:04 -0500
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+Processing by Api::V1::PhotographersController#index as */*
+  Parameters: {"auth"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.53ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mPhotographer Load (1.8ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.1ms)
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mPhoto Load (9.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers]   [1m[36mTag Load (2.8ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.06ms)
+Completed 200 OK in 31ms (Views: 17.6ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 17:10:35 -0500
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 17:10:35 -0500
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 17:10:35 -0500
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mPhotographer Load (1.3ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.12ms)
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 3.6ms | ActiveRecord: 1.3ms)
+
+
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.6ms)
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-03-01 17:15:46 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"user"=>{"first_name"=>"Garry", "last_name"=>"Clerge", "username"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"g@c.com", "city"=>"Selden"}}}
+Unpermitted parameter: :user
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 27.4ms)
+
+
+  
+NoMethodError (undefined method `error' for #<User:0x007fc57dccb768>
+Did you mean?  errors):
+  
+app/controllers/api/v1/users_controller.rb:10:in `create'
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 17:15:49 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 17:15:49 -0500
+Processing by Api::V1::PhotosController#index as */*
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  [1m[36mPhotographer Load (4.0ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.12ms)
+Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 4.0ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (2.9ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.37ms)
+Completed 200 OK in 21ms (Views: 16.1ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 17:15:50 -0500
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-03-01 17:17:27 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"user"=>{"first_name"=>"Garry", "last_name"=>"Clerge", "username"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"g@c.com", "city"=>"Selden"}}}
+Unpermitted parameter: :user
+Unpermitted parameter: :user
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 17:18:04 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 17:18:52 -0500
+Unpermitted parameter: :user
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 84123ms (ActiveRecord: 15.7ms)
+
+
+  
+NoMethodError (undefined method `error' for #<User:0x007fc57d9338f8>
+Did you mean?  errors):
+  
+app/controllers/api/v1/users_controller.rb:11:in `create'
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 17:18:52 -0500
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+  [1m[36mPhotographer Load (28.5ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 14ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mPhoto Load (4.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.19ms)
+Completed 200 OK in 109ms (Views: 6.9ms | ActiveRecord: 49.8ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (2.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (78.35ms)
+Completed 200 OK in 192ms (Views: 85.3ms | ActiveRecord: 92.8ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-03-01 17:20:19 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"first_name"=>"Garry", "last_name"=>"Clerge", "username"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"g@c.com", "city"=>"Selden"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 16532ms (ActiveRecord: 7.0ms)
+
+
+  
+NoMethodError (undefined method `error' for #<User:0x007fc58229cee0>
+Did you mean?  errors):
+  
+app/controllers/api/v1/users_controller.rb:11:in `create'
+Started POST "/api/v1/users" for ::1 at 2018-03-01 17:28:05 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"first_name"=>"Garry", "last_name"=>"Clerge", "username"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"g@c.com", "city"=>"Selden"}}
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 17:31:22 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 17:31:22 -0500
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 17:31:22 -0500
+  [1m[35m (145.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (100.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 401 Unauthorized in 196800ms (Views: 13.0ms | ActiveRecord: 283.8ms)
+
+
+Processing by Api::V1::PhotographersController#index as */*
+Processing by Api::V1::PhotosController#index as */*
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 17:31:23 -0500
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+  Parameters: {"auth"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.95ms)
+Filter chain halted as :authorized rendered or redirected
+  [1m[36mPhoto Load (17.9ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Completed 401 Unauthorized in 19ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 17:31:23 -0500
+Processing by Api::V1::PhotographersController#index as */*
+  [1m[36mPhotographer Load (53.1ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+  [1m[36mPhotographer Load (1.6ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.1ms)
+Completed 200 OK in 57ms (Views: 3.4ms | ActiveRecord: 19.6ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 17:31:23 -0500
+Processing by Api::V1::PhotosController#index as */*
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.09ms)
+Completed 200 OK in 148ms (Views: 1.1ms | ActiveRecord: 120.2ms)
+
+
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 17:31:23 -0500
+Processing by Api::V1::PhotographersController#index as */*
+[active_model_serializers]   [1m[36mTag Load (2.7ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (15.8ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhotographer Load (1.7ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+No serializer found for resource: "thugnanny"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.13ms)
+Completed 200 OK in 18ms (Views: 1.0ms | ActiveRecord: 1.7ms)
+
+
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (5.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (6.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (46.32ms)
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 58ms (Views: 48.6ms | ActiveRecord: 8.9ms)
+
+
+  [1m[36mPhoto Load (2.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (72.27ms)
+Completed 200 OK in 188ms (Views: 114.5ms | ActiveRecord: 61.4ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.2ms)
+Completed 200 OK in 198ms (Views: 78.8ms | ActiveRecord: 70.8ms)
+
+
+Started GET "/api/v1/photos" for ::1 at 2018-03-01 17:31:33 -0500
+Processing by Api::V1::PhotosController#index as */*
+Started GET "/api/v1/get_loggedin_user" for ::1 at 2018-03-01 17:31:33 -0500
+Started GET "/api/v1/photographers" for ::1 at 2018-03-01 17:31:33 -0500
+Processing by Api::V1::AuthController#get_current_user_or_photographer as JSON
+Processing by Api::V1::PhotographersController#index as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mPhoto Load (3.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authorized rendered or redirected
+  [1m[36mPhotographer Load (3.1ms)[0m  [1m[34mSELECT "photographers".* FROM "photographers"[0m
+[active_model_serializers]   [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: "thugnanny"
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.14ms)
+Completed 200 OK in 12ms (Views: 5.4ms | ActiveRecord: 3.1ms)
+
+
+[active_model_serializers]   [1m[36mTag Load (1.8ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.85ms)
+Completed 200 OK in 25ms (Views: 18.4ms | ActiveRecord: 5.9ms)
+
+

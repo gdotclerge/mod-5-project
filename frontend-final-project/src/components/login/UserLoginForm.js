@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import { loginUser } from "../../actions";
+import { logIn } from "../../actions";
 
 class UserLoginForm extends React.Component {
   state = {
@@ -38,11 +38,13 @@ class UserLoginForm extends React.Component {
 
   handleLoginSubmit = (event) => {
     event.preventDefault()
-    this.setState({ loggedIn: true })
-    this.props.loginUser(this.state.username, this.state.password)
+    this.props.logIn({ user: {
+      username: this.state.username,
+      password: this.state.password
+    } })
   }
 
 
 }
 
-export default connect((state)=>{ currentUser: state.currentUser.user }, { loginUser })(UserLoginForm)
+export default connect((state)=>{ currentUser: state.currentUser.user }, { logIn })(UserLoginForm)
