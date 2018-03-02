@@ -1,5 +1,5 @@
 class Adapter {
-
+  // FUNCTIONS FOR AUTH OF USERS AND PHOTOUSERS
   static logIn = (data) => {
     return fetch('http://localhost:3001/api/v1/login', {
       method: 'POST',
@@ -20,6 +20,18 @@ class Adapter {
         'Accept': 'application/json'
       },
       body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+  }
+
+  static getLoggedInUser = () => {
+    const token = localStorage.getItem("jwt")
+    return fetch('http://localhost:3001/api/v1/get_loggedin_user', {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `${token}`
+      },
     })
     .then(response => response.json())
   }
@@ -59,17 +71,7 @@ class Adapter {
   //   .then(response => response.json())
   // }
 
-  static getLoggedInUser = () => {
-    const token = localStorage.getItem("jwt")
-    return fetch('http://localhost:3001/api/v1/get_loggedin_user', {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Authorization': `${token}`
-      },
-    })
-    .then(response => response.json())
-  }
+
 
   static fetchPhotographer = (id) => {
     return fetch(`http://localhost:3001/api/v1/photographers/${id}`)

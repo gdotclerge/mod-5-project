@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { signUp } from "../../actions";
 
-
 class UserSignUpForm extends React.Component {
   state = {
      firstname: "",
@@ -13,11 +12,12 @@ class UserSignUpForm extends React.Component {
      pwConfirm: "",
      email: "",
      state: "",
-     city: ""
+     city: "",
+     loggingIn: false
   }
 
   render() {
-    if (!!this.props.currentPhotoUser) {
+    if (this.logInCheck()) {
       return <Redirect to="/home" />
     }
 
@@ -52,10 +52,14 @@ class UserSignUpForm extends React.Component {
       email: this.state.email,
       city: this.state.city
     } })
+    this.setState({ loggingIn: true })
   }
 
-
+  logInCheck = () => {
+    const token = localStorage.getItem("jwt")
+    return !!token
+  }
 
 }
 
-export default connect((state)=>{ currentPhotoUser: state.currentUser.user }, { signUp })(UserSignUpForm)
+export default connect((state)=>({ currentPhotoUser: state.currentUser.user }), { signUp })(UserSignUpForm)

@@ -22,7 +22,7 @@ export function signUp(signUpData) {
     Adapter.signUp(signUpData)
     .then(data => dispatch(setCurrentUser(data)))
   }
-} 
+}
 
 export function setCurrentUser(userData) {
   return {
@@ -31,9 +31,9 @@ export function setCurrentUser(userData) {
   }
 }
 
-export function logOutPhotographer() {
+export function logOut() {
   return {
-    type: "LOG OUT PHOTOGRAPHER"
+    type: "LOG_OUT_USER"
   }
 }
 

@@ -13,11 +13,11 @@ export default function currentPhotographerReducer(state = { photoUser: null }, 
         return state
       }
 
-    case "LOG OUT PHOTOGRAPHER":
+    case "LOG_OUT_USER":
       localStorage.clear()
       return {
         ...state,
-        loggedInPhotographer: null
+        photoUser: null
       }
 
     default:

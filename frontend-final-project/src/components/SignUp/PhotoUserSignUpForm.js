@@ -13,11 +13,12 @@ class PhotoUserSignUpForm extends React.Component {
      pwConfirm: "",
      email: "",
      state: "",
-     city: ""
+     city: "",
+     loggingIn: false
   }
 
   render() {
-    if (!!this.props.currentPhotoUser) {
+    if (this.logInCheck()) {
       return <Redirect to="/home" />
     }
 
@@ -52,9 +53,15 @@ class PhotoUserSignUpForm extends React.Component {
       email: this.state.email,
       city: this.state.city
     } })
+    this.setState({ loggingIn: true })
+  }
+
+  logInCheck = () => {
+    const token = localStorage.getItem("jwt")
+    return !!token
   }
 
 
 }
 
-export default connect((state)=>{ currentPhotoUser: state.currentUser.user }, { signUp })(PhotoUserSignUpForm)
+export default connect((state)=>({ currentPhotoUser: state.currentUser.user }), { signUp })(PhotoUserSignUpForm)

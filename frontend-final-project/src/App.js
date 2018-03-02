@@ -16,14 +16,16 @@ import ProfilePageContainer from "./components/Profile/ProfilePageContainer";
 
 class App extends Component {
 
+
   componentDidMount = () => {
     this.props.fetchPhotos()
     this.props.fetchAllPhotographersURLs()
 
-    const token = localStorage.getItem('jwt')
-    if (token){
-      this.props.getLoggedInUser()
-    }
+    // const token = localStorage.getItem('jwt')
+    // if (!!token){
+    //   this.props.getLoggedInUser()
+    //   this.setState({ notloggedIn: false })
+    // }
 
 
     const selectedPhotographer = localStorage.getItem('selectedPhotographer')
@@ -39,7 +41,7 @@ class App extends Component {
   createPhotographerPaths = () => {
     return this.props.photographerURLs.map( (url) => {
       const pathName = `/${url}`
-      return (<Route exact path={pathName} render={this.renderPhotographerPaths} />)
+      return (<Route exact path={pathName} key={url} render={this.renderPhotographerPaths} />)
     })
   }
 
@@ -51,10 +53,10 @@ class App extends Component {
 
 
   render() {
-    if(!this.props.currentPhotoUser || !this.props.currentUser) {
+    if(!this.logInCheck()) {
       return (
         <Switch>
-          <Route exact path="/welcome" component={WelcomePage} />
+          <Route exact path="/welcome" render={this.handleWelcomPage} />
           <Redirect from="/" to="/welcome" />
         </Switch>
       )
@@ -73,14 +75,23 @@ class App extends Component {
     }
   }
 
+  handleWelcomPage = (routerProps) => {
+    return <WelcomePage handlelogIn={this.handlelogIn}/>
+  }
+
+  logInCheck = () => {
+    const token = localStorage.getItem("jwt")
+    return !!token
+  }
+
+
+
 }
 
 
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: state.currentUser.user,
-    currentPhotoUser: state.currentPhotoUser.photoUser,
     selectedPhotographer: state.photographers.selectedPhotographer,
     photographerURLs: state.photographers.photographerURLs
   }

@@ -6,11 +6,12 @@ import { logIn } from "../../actions";
 class UserLoginForm extends React.Component {
   state = {
      username: "",
-     password: ""
+     password: "",
+     loggingIn: false
   }
 
   render() {
-    if (!!this.props.currentUser) {
+    if (this.logInCheck()) {
       return <Redirect to="/home" />
     }
 
@@ -42,9 +43,15 @@ class UserLoginForm extends React.Component {
       username: this.state.username,
       password: this.state.password
     } })
+    this.setState({ loggingIn: true })
+  }
+
+  logInCheck = () => {
+    const token = localStorage.getItem("jwt")
+    return !!token
   }
 
 
 }
 
-export default connect((state)=>{ currentUser: state.currentUser.user }, { logIn })(UserLoginForm)
+export default connect((state)=>({ currentUser: state.currentUser.user }), { logIn })(UserLoginForm)

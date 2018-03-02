@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from "react-redux";
 import UserLogInForm from '../login/UserLoginForm'
 import PhotoUserLogInForm from '../login/PhotoUserLoginForm'
 import UserSignUpForm from '../SignUp/UserSignUpForm'
@@ -12,7 +11,6 @@ class WelcomePageContainer extends React.Component {
   }
 
   render = () => {
-    console.log("RENDERED WELCOME")
     if (this.state.showSignUp) {
       return (
         <div>
@@ -63,72 +61,4 @@ class WelcomePageContainer extends React.Component {
 }
 
 
-// return (
-//   <div>
-//     <div class="g-signin2" data-onsuccess="onSignIn"></div>
-//     <LoginForm />
-//     User LogIN
-//     <UserLogInForm />
-//   </div>
-// )
-
-//
-// const mapStateToProps = (state) => {
-//   return {
-//     currentUser: state.currentUser.user,
-//     currentPhotoUser: state.currentPhotoUser.photoUser
-//   }
-// }
-
-export default connect(null, null)(WelcomePageContainer)
-
-
-
-
-
-// if (this.state.showSignUp) {
-//   if (this.state.photoUser) {
-//     return (
-//       <div>
-//         <PhotoUserSignUpForm />
-//         <label class="switch">
-//           <input type="checkbox" onChange={this.handleSwitch} />
-//           <span class="slider round"></span>
-//         </label>
-//       </div>
-//     )
-//   } else {
-//     return (
-//       <div>
-//         <UserSignUpForm />
-//         <label class="switch">
-//           <input type="checkbox" onChange={this.handleSwitch} />
-//           <span class="slider round"></span>
-//         </label>
-//       </div>
-//     )
-//   }
-// } else {
-//   if (this.state.photoUser) {
-//     return (
-//       <div>
-//         <PhotoUserLogInForm />
-//         <label class="switch">
-//           <input type="checkbox" onChange={this.handleSwitch} />
-//           <span class="slider round"></span>
-//         </label>
-//       </div>
-//     )
-//   } else {
-//     return (
-//       <div>
-//         <UserLogInForm />
-//         <label class="switch">
-//           <input type="checkbox" onChange={this.handleSwitch} />
-//           <span class="slider round"></span>
-//         </label>
-//       </div>
-//     )
-//   }
-// }
-// }
+export default WelcomePageContainer

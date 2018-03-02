@@ -13,14 +13,11 @@ export default function currentUserReducer(state = { user: null }, action) {
         return state
       }
 
-
-
-
-    case "LOG OUT PHOTOGRAPHER":
+    case "LOG_OUT_USER":
       localStorage.clear()
       return {
         ...state,
-        loggedInPhotographer: null
+        user: null
       }
 
 
