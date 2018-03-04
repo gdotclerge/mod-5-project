@@ -1,39 +1,45 @@
 import React from 'react'
-import ProfilePage from './ProfilePage'
-import ProfileEditPage from './ProfileEditPage'
+import ProfileFeed from './ProfileFeed'
+import Loading from '../Loading'
 import { connect } from "react-redux";
-import { fetchPhotographerforRoute, fetchPackages } from "../../actions";
+import SideContainer from "./SideContainer";
+import BookPhotographer from "./BookPhotographerForm";
+import { fetchPhotographer } from "../../actions";
 
 
 class ProfilePageContainer extends React.Component {
-
-  componentWillMount = () => {
-    if (this.props.route){
-      this.props.fetchPhotographerforRoute(this.props.route)
-    }
+  state = {
+    booking: false
   }
 
   componentDidMount = () => {
-    this.props.fetchPackages(this.props.selectedPhotographerID)
+    this.props.fetchPhotographer(this.props.url)
   }
 
   render = () => {
-    console.log("Profile Page Container Rendered")
+    if (this.props.loading) {
+      return (<Loading />)
+    }
+
     return (
       <div>
-        {!!this.props.loggedInPhotographer ? <ProfileEditPage /> : <ProfilePage />}
+        {this.state.booking ? <BookPhotographer /> : <ProfileFeed /> }
+        <SideContainer handleScheduleSession={this.handleScheduleSession} booking={this.state.booking} />
       </div>
     )
   }
 
-}
-
-
-const mapStateToProps = (state) => {
-  return {
-    loggedInPhotographer: state.photographers.loggedInPhotographer,
-    selectedPhotographerID: state.photographers.selectedPhotographer.id
+  handleScheduleSession = (e) => {
+    this.setState({ booking: true })
   }
 }
 
-export default connect((mapStateToProps),{ fetchPhotographerforRoute, fetchPackages })(ProfilePageContainer)
+
+const mapStateToProps = (state, props) => {
+  return {
+    url: props.routerProps.match.params.slug,
+    loading: state.photographers.loading
+  }
+}
+
+export default connect((mapStateToProps),{ fetchPhotographer })(ProfilePageContainer)

@@ -1,8 +1,6 @@
 import React from 'react'
 import PackageList from './PackageList'
 import { connect } from "react-redux";
-import { fetchTags, addSelectedTags, removeSelectedTags } from "../../actions";
-
 
 class PackageContainer extends React.Component {
   state = {
@@ -15,9 +13,7 @@ class PackageContainer extends React.Component {
     this.setState({ filteredPackages })
   }
 
-
   render = () => {
-    console.log(this.state.filteredPackages)
     return (
       <div>
         <select onChange={ (e) => {this.handleSelectionChange(e)} }>
@@ -30,8 +26,8 @@ class PackageContainer extends React.Component {
 
   mapTagOptions = () => {
     return this.props.photographerTags.map( (pt) => {
-      let key = `${pt}-option`;
-      return <option value={pt}>{pt}</option>
+      let optionKey = `${pt}-option`;
+      return <option value={pt} key={optionKey}>{pt}</option>
     })
   }
 
@@ -49,27 +45,6 @@ class PackageContainer extends React.Component {
 	    return tags.filter( t => { return t == selectedTag }).length > 0
     })
   }
-
-
-
-
-
-  //
-  // handleSearch = (e) => {
-  //   const selectedTag = this.props.tags.find( (t) => {
-  //     return t.name === e.target.value
-  //   })
-  //
-  //   if (selectedTag){
-  //     this.props.addSelectedTags(selectedTag)
-  //     e.target.value = ""
-  //   }
-  // }
-  //
-  // handleTagRemoval = (tag) => {
-  //   this.props.removeSelectedTags(tag)
-  // }
-
 }
 
 
@@ -83,18 +58,14 @@ const mapStateToProps = (state) => {
   let mergedTags = [].concat.apply([], tags);
 
   return {
+    photographer: state.photographers.selectedPhotographer,
     packages: state.packages.packages,
     photographerTags: mergedTags.unique()
   }
 }
 
 
-export default connect((mapStateToProps), { fetchTags, addSelectedTags, removeSelectedTags })(PackageContainer)
-
-
-
-
-
+export default connect((mapStateToProps), null)(PackageContainer)
 
 
 

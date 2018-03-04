@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import '../../CSS/Calendar.css';
 
 BigCalendar.momentLocalizer(moment)
 

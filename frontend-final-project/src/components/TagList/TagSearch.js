@@ -6,7 +6,7 @@ class TagSearch extends React.Component {
 
   render = () => {
     return (
-      <div>
+      <div className="tag-search">
         <input list="data" type="text" onChange={this.props.handleSearch} placeholder="Search Tags"/>
         <datalist id="data" >
             {this.props.tags.map( (t) => {

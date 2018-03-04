@@ -1,4 +1,4 @@
-export default function photographersReducer(state = { loggedInPhotographer: null, selectedPhotographer: null, photographerURLs: [] }, action) {
+export default function photographersReducer(state = { selectedPhotographer: null, photographerURLs: [], loading: false }, action) {
   //TODO: fill this bad boy out
   switch (action.type) {
 
@@ -7,6 +7,29 @@ export default function photographersReducer(state = { loggedInPhotographer: nul
         ...state,
         photographerURLs: action.payload
       }
+
+    case "SET_SELECTED_PHOTOGRAPHER":
+      console.log("in Select PHoto Reducer")
+      return {
+        ...state,
+        selectedPhotographer: action.payload,
+        loading: false
+      }
+
+    case "LOADING":
+      return {
+        ...state,
+        loading: true
+      }
+
+
+
+
+
+
+
+
+
 
     case "SET_CURRENT_PHOTOGRAPHER":
       if (!localStorage.jwt){
@@ -18,12 +41,7 @@ export default function photographersReducer(state = { loggedInPhotographer: nul
         token: action.payload.jwt
       }
 
-    case "SET_SELECTED_PHOTOGRAPHER":
-      localStorage.setItem('selectedPhotographer', action.payload.id)
-      return {
-        ...state,
-        selectedPhotographer: action.payload
-      }
+
 
     case "LOG OUT PHOTOGRAPHER":
       localStorage.clear()

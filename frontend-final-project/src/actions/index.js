@@ -37,40 +37,34 @@ export function logOut() {
   }
 }
 
-
-
 // FUNCTIONS FOR PHOTOGRAPHERS
 
+// export function fetchPhotographerURLs() {
+//   return dispatch => {
+//     Adapter.fetchPhotographerURLs()
+//     .then(data => dispatch(setPhotographerPaths(data)))
+//   }
+// }
 
+// export function setPhotographerPaths(photoURLs) {
+//   return {
+//     type: "SET_PHOTOGRAPHER_URLS",
+//     payload: photoURLs
+//   }
+// }
 
-
-
-
-export function fetchAllPhotographersURLs() {
+export function fetchPhotographer(url) {
   return dispatch => {
-    Adapter.fetchAllPhotographersURLs()
-    .then(data => dispatch(setPhotographerURLs(data)))
+    dispatch(loading())
+    Adapter.fetchPhotographer(url)
+    .then(data => dispatch(dispatchPhotographer(data)))
   }
 }
 
-export function setPhotographerURLs(photographersURLs) {
-  return {
-    type: "SET_PHOTOGRAPHER_URLS",
-    payload: photographersURLs
-  }
-}
-
-export function fetchPhotographer(id) {
+export function dispatchPhotographer(photographerData) {
   return dispatch => {
-    Adapter.fetchPhotographer(id)
-    .then(data => dispatch(setSelectedPhotographer(data)))
-  }
-}
-
-export function fetchPhotographerforRoute(route) {
-  return dispatch => {
-    Adapter.fetchPhotographerforRoute(route)
-    .then(data => dispatch(setSelectedPhotographer(data)))
+    dispatch(setSelectedPhotographer(photographerData))
+    dispatch(fetchPackages(photographerData.id))
   }
 }
 
@@ -80,6 +74,27 @@ export function setSelectedPhotographer(photographerData) {
     payload: photographerData
   }
 }
+
+export function loading() {
+  return {
+    type: "LOADING"
+  }
+}
+
+
+
+
+
+
+
+// export function fetchPhotographerforRoute(route) {
+//   return dispatch => {
+//     Adapter.fetchPhotographerforRoute(route)
+//     .then(data => dispatch(setSelectedPhotographer(data)))
+//   }
+// }
+
+
 
 
 

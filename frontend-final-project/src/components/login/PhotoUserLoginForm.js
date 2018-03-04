@@ -48,7 +48,7 @@ class PhotoUserLoginForm extends React.Component {
 
   logInCheck = () => {
     const token = localStorage.getItem("jwt")
-    return !!token
+    return !!token && token !== "undefined"
   }
 
 

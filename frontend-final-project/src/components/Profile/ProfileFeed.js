@@ -1,10 +1,8 @@
 import React from 'react'
 import { connect } from "react-redux";
-import PhotoFeedItem from "./PhotoFeedItem";
-
+import PhotoFeedItem from "../Photo/PhotoFeedItem";
 
 class ProfileFeed extends React.Component {
-
   render = () => {
     return (
       <div>
@@ -15,16 +13,15 @@ class ProfileFeed extends React.Component {
 
   createAlbums = () => {
     return this.props.photos.map( (p) => {
-      return <PhotoFeedItem photo={p}/>
+      return <PhotoFeedItem photo={p} key={p.id}/>
     })
   }
-
 }
 
 
 const mapStateToProps = (state) => {
-  const photos = state.photos.photos.filter( (p)=> {
-    return p.photographer_id === state.photographers.selectedPhotographer.id
+  const photos = state.photos.photographerPhotos.filter( (p)=> {
+    return p.profileURL === state.photographers.selectedPhotographer.custom_url
   })
 
   return {
@@ -32,6 +29,5 @@ const mapStateToProps = (state) => {
     photos: photos
   }
 }
-
 
 export default connect((mapStateToProps), null)(ProfileFeed)

@@ -1,6 +1,6 @@
 import React from 'react'
-import UserLogInForm from '../login/UserLoginForm'
-import PhotoUserLogInForm from '../login/PhotoUserLoginForm'
+import UserLogInForm from '../Login/UserLoginForm'
+import PhotoUserLogInForm from '../Login/PhotoUserLoginForm'
 import UserSignUpForm from '../SignUp/UserSignUpForm'
 import PhotoUserSignUpForm from '../SignUp/PhotoUserSignUpForm'
 
@@ -16,9 +16,9 @@ class WelcomePageContainer extends React.Component {
         <div>
           { this.state.photoUser ? <PhotoUserSignUpForm /> : <UserSignUpForm /> }
           <h4> Photographer? </h4>
-          <label class="switch">
+          <label className="switch">
             <input type="checkbox" onChange={this.handleSwitch} />
-            <span class="slider round"></span>
+            <span className="slider round"></span>
           </label>
           <h4> Already work with us? </h4>
           <button onClick={this.handleLogInSignUpClick} value="LogIn" >Log In</button>
@@ -29,9 +29,9 @@ class WelcomePageContainer extends React.Component {
         <div>
           { this.state.photoUser ? <PhotoUserLogInForm /> : <UserLogInForm /> }
           <h4> Photographer? </h4>
-          <label class="switch">
+          <label className="switch">
             <input type="checkbox" onChange={this.handleSwitch} />
-            <span class="slider round"></span>
+            <span className="slider round"></span>
           </label>
           <h4> New to PicMe? </h4>
           <button onClick={this.handleLogInSignUpClick} value="SignUp" >Sign Up</button>

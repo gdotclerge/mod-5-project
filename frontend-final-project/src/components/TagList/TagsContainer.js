@@ -15,7 +15,7 @@ class TagsContainer extends React.Component {
 
   render = () => {
     return (
-      <div>
+      <div className="tags-container">
         <TagSearch handleSearch={this.handleSearch} />
         <TagList handleTagRemoval={this.handleTagRemoval}/>
       </div>

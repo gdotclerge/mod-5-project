@@ -10,7 +10,7 @@ class Api::V1::PhotographersController < ApplicationController
 
 
   def selected_photographer
-    @photographer = Photographer.find_by(custom_url: photographer_params[:custom_url][1..-1])
+    @photographer = Photographer.find_by(custom_url: photographer_params[:custom_url])
     render json: @photographer, status: 200
   end
 

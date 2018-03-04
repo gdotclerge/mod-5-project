@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
 
 
-      post "/get_selected_photographer", to: "photographers#selected_photographer"
+      post "/selected_photographer", to: "photographers#selected_photographer"
       post "/photographer_packages", to: "packages#photographer_packages"
 
 

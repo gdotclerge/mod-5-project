@@ -20,7 +20,6 @@ export default function currentUserReducer(state = { user: null }, action) {
         user: null
       }
 
-
     default:
       return state
   }

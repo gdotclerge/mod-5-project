@@ -1,12 +1,13 @@
 import React from 'react'
 import { connect } from "react-redux";
 import { NavLink, Link } from 'react-router-dom'
+import './CSS/Nav.css';
 
 const navbar = (props) => {
 
   if (!!props.currentPhotoUser) {
     return (
-      <div className="Navbar">
+      <div className="navbar">
         <Link to='/home'>Home</Link>
         <Link to='/profile'>Profile</Link>
         <Link to='/calendar'>Calendar</Link>
@@ -15,7 +16,7 @@ const navbar = (props) => {
     )
   } else {
     return (
-      <div className="Navbar">
+      <div className="navbar">
         <Link to='/home'>Home</Link>
         <Link to='/logout'>LogOut</Link>
       </div>
@@ -28,7 +29,6 @@ const navbar = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: state.currentUser.user,
     currentPhotoUser: state.currentPhotoUser.photoUser
   }
 }

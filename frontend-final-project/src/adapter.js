@@ -36,6 +36,28 @@ class Adapter {
     .then(response => response.json())
   }
 
+  // FUNCTIONS FOR PHOTOGRAPHERS
+
+  static fetchPhotographerURLs = () => {
+    return fetch("http://localhost:3001/api/v1/photographers")
+    .then(resp => resp.json())
+  }
+
+  static fetchPhotographer = (url) => {
+    return fetch('http://localhost:3001/api/v1/selected_photographer', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({ photographer: {custom_url: url} })
+    })
+    .then(response => response.json())
+  }
+
+
+
+
 
 
 
@@ -45,10 +67,7 @@ class Adapter {
     .then(resp => resp.json())
   }
 
-  static fetchAllPhotographersURLs = () => {
-    return fetch("http://localhost:3001/api/v1/photographers")
-    .then(resp => resp.json())
-  }
+
 
 
   static getTags = () => {
@@ -73,10 +92,6 @@ class Adapter {
 
 
 
-  static fetchPhotographer = (id) => {
-    return fetch(`http://localhost:3001/api/v1/photographers/${id}`)
-    .then(response => response.json())
-  }
 
   static fetchPhotographerforRoute = (route) => {
     return fetch(`http://localhost:3001/api/v1/get_selected_photographer`, {
