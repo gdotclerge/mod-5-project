@@ -1,5 +1,5 @@
 export default function sessionsReducer (
-  state = { userSessions: [], photographerSessions: [], bookedSession: "", loading: false, redirect: false },
+  state = { userSessions: [], photographerSessions: [] },
   action
 ) {
   switch (action.type) {
@@ -10,24 +10,16 @@ export default function sessionsReducer (
         userSessions: [...state.userSessions, action.payload]
       };
 
-    case "BOOK_SESSION":
-      return {
-        ...state,
-        bookedSession: action.payload,
-        loading: false,
-        redirect: true
-      };
-
     case "GET_SESSIONS":
       return {
         ...state,
         userSessions: action.payload
       };
 
-    case "LOADING":
+    case "CANCEL_SESSION":
       return {
         ...state,
-        loading: true
+        userSessions: action.payload
       }
 
     default:

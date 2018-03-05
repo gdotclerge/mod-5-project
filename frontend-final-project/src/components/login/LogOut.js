@@ -7,7 +7,7 @@ import { logOut } from "../../actions";
 class LoginPageContainer extends React.Component {
 
   componentWillMount = () => {
-    localStorage.clear()
+    localStorage.removeItem("jwt")
   }
 
   render = () => {

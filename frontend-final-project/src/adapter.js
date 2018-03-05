@@ -147,6 +147,19 @@ class Adapter {
     .then(response => response.json())
   }
 
+  static cancelSession = (id) => {
+    const token = localStorage.getItem("jwt")
+    return fetch(`http://localhost:3001/api/v1/photo_sessions/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `${token}`
+      }
+    })
+    .then(response => response.json())
+  }
+
 
 }
 

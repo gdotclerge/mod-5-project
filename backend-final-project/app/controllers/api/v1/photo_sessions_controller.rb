@@ -15,13 +15,20 @@ class Api::V1::PhotoSessionsController < ApplicationController
     if @photo_session.save
       render json: @photo_session
     else
-      render json: @user.errors.full_messages, status: 401
+      render json: @photo_session.errors.full_messages, status: 401
     end
   end
 
 
   def update
     byebug
+  end
+
+  def destroy
+    @photo_session = PhotoSession.find(params[:id])
+    @photo_session.destroy
+    @photo_sessions = PhotoSession.all
+    render json: @photo_sessions, status: 202
   end
 
 

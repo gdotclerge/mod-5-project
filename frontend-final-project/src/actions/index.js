@@ -155,3 +155,10 @@ export function fetchSessions() {
     .then(data => { dispatch({ type: "GET_SESSIONS", payload: data }) })
   }
 }
+
+export function cancelSession(id) {
+  return dispatch => {
+    Adapter.cancelSession(id)
+    .then(data => { dispatch({ type: "CANCEL_SESSION", payload: data }) })
+  }
+}
