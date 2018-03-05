@@ -2,7 +2,11 @@ import React from 'react'
 import { connect } from "react-redux";
 import Calendar from "./Calendar";
 import PackageContainer from '../Package/PackageContainer'
+import Confirmation from '../Confirmation'
 import { bookSession } from '../../actions'
+import { Redirect } from 'react-router-dom';
+import Modal from 'react-responsive-modal/lib/css'
+import 'react-responsive-modal/lib/react-responsive-modal.css';
 
 class BookPhotographerForm extends React.Component {
   state = {
@@ -19,10 +23,18 @@ class BookPhotographerForm extends React.Component {
     hours: "",
     min_photos: "",
     max_photos: "",
-    session_type: ""
+    session_type: "",
+    open: false,
+    redirect: false
   }
 
   render = () => {
+    if (this.state.redirect){
+      return <Redirect to="/sessions" />
+    }
+
+
+    const { open } = this.state;
     return (
       <div>
         <br /> <br />
@@ -35,6 +47,21 @@ class BookPhotographerForm extends React.Component {
         <PackageContainer handlePackageSelection={this.handlePackageSelection}/>
         <textarea value={this.state.additional_notes} onChange={this.handleChange} placeholder="Additional Notes..." name="additional_notes"></textarea>
         <button type="submit" onClick={this.handleSubmit}>Reserve Photo Session</button>
+
+        <Modal
+          open={open}
+          onClose={this.onCloseModal}
+          little
+          classNames={{
+            transitionEnter: 'transition-enter',
+            transitionEnterActive: 'transition-enter-active',
+            transitionExit: 'transition-exit-active',
+            transitionExitActive: 'transition-exit-active',
+          }}
+          animationDuration={1000}
+        >
+          <Confirmation />
+        </Modal>
       </div>
     )
   }
@@ -59,11 +86,19 @@ class BookPhotographerForm extends React.Component {
     })
   }
 
-
   handleSubmit = (event) => {
     console.log(this.state)
-    this.props.bookSession(this.state)
+    // this.props.bookSession(this.state)
+    this.onOpenModal()
   }
+
+  onOpenModal = () => {
+    this.setState({ open: true });
+  };
+
+  onCloseModal = () => {
+    this.setState({ redirect: true });
+  };
 
 
 }

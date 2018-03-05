@@ -143,6 +143,7 @@ export function fetchPackages(id) {
 
 export function bookSession(sessionData) {
   return dispatch => {
+    dispatch(loading())
     Adapter.bookSession(sessionData)
     .then(data => { dispatch({ type: "BOOK_SESSION", payload: data }) })
   }
