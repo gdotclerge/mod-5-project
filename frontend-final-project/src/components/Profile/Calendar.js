@@ -12,7 +12,7 @@ class Calendar extends React.Component {
   render = () => {
     return (
       <div className="calendar">
-        
+
         <BigCalendar
           selectable
           events={this.props.photoSessions}
@@ -27,12 +27,6 @@ class Calendar extends React.Component {
       </div>
     )
   }
-
-  handleDateSubmit = (event) => {
-    event.preventDefault()
-    debugger
-  }
-
 
 }
 

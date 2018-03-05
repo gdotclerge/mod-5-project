@@ -4,7 +4,8 @@ import Loading from '../Loading'
 import { connect } from "react-redux";
 import SideContainer from "./SideContainer";
 import BookPhotographer from "./BookPhotographerForm";
-import { fetchPhotographer } from "../../actions";
+import { fetchPhotographer, bookSession } from "../../actions";
+import { Redirect } from 'react-router-dom';
 
 
 class ProfilePageContainer extends React.Component {
@@ -17,6 +18,7 @@ class ProfilePageContainer extends React.Component {
   }
 
   render = () => {
+    console.log("RENDERING PROFILE PAGE")
     if (this.props.loading) {
       return (<Loading />)
     }
@@ -42,4 +44,4 @@ const mapStateToProps = (state, props) => {
   }
 }
 
-export default connect((mapStateToProps),{ fetchPhotographer })(ProfilePageContainer)
+export default connect((mapStateToProps),{ fetchPhotographer, bookSession })(ProfilePageContainer)

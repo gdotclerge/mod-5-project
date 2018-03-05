@@ -60,7 +60,7 @@ class BookPhotographerForm extends React.Component {
           }}
           animationDuration={1000}
         >
-          <Confirmation />
+          <Confirmation session={this.state} />
         </Modal>
       </div>
     )
@@ -87,19 +87,13 @@ class BookPhotographerForm extends React.Component {
   }
 
   handleSubmit = (event) => {
-    console.log(this.state)
-    // this.props.bookSession(this.state)
-    this.onOpenModal()
+    this.setState({ open: true });
   }
 
-  onOpenModal = () => {
-    this.setState({ open: true });
-  };
-
   onCloseModal = () => {
-    this.setState({ redirect: true });
-  };
-
+    this.props.bookSession(this.state)
+    this.setState({redirect: true})
+  }
 
 }
 
@@ -110,7 +104,7 @@ const mapStateToProps = (state) => {
     currentUser: state.currentUser.user,
     selectedPhotographer: state.photographers.selectedPhotographer,
     photoSessions: state.photographers.selectedPhotographer.photo_sessions,
-    packages: state.packages.packages
+    packages: state.packages.packages,
   }
 }
 
