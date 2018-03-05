@@ -12,12 +12,17 @@ class Calendar extends React.Component {
   render = () => {
     return (
       <div className="calendar">
+        
         <BigCalendar
-          onClick={this.props.handleCalClick}
-          onSelectSlot={this.props.handleSelectSlot}
+          selectable
           events={this.props.photoSessions}
-          startAccessor='startDate'
-          endAccessor='endDate'
+          defaultView="week"
+          scrollToTime={new Date(1970, 1, 1, 6)}
+          defaultDate={new Date(2018, 3, 12)}
+          onSelectEvent={event => alert(event.title)}
+          onSelectSlot={slotInfo => this.props.handleSelectSlot(
+            [slotInfo.start.toLocaleString(), slotInfo.end.toLocaleString()]
+          ) }
         />
       </div>
     )

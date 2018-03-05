@@ -8,7 +8,6 @@ class SideContainer extends React.Component {
     if (this.props.booking){
       return (
         <div className="SmallContainer">
-          <PackageContainer />
         </div>
       )
     }

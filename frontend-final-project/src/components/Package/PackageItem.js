@@ -6,7 +6,7 @@ const packageItem = (props) => {
       Price: ${props.packageItem.price} <br />
       Hours: {props.packageItem.hours} <br />
       Photos: {props.packageItem.photos_to_deliver} <br />
-      <input type="checkbox" />
+      <input type="checkbox" value={props.packageItem.id} onChange={ (event) => props.handlePackageSelection(props.packageItem) }/>
     </div>
   )
 }

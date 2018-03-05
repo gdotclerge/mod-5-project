@@ -1,4 +1,4 @@
-export default function tagsReducer (
+export default function packagesReducer (
   state = { packages: [] },
   action
 ) {

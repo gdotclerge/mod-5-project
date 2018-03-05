@@ -139,48 +139,18 @@ export function fetchPackages(id) {
   }
 }
 
-// export function selectHobbit(hobbit) {
-//   return { type: "SELECT_HOBBIT", payload: hobbit };
-// }
+// FUNCTIONS FOR SESSIONS
 
+export function bookSession(sessionData) {
+  return dispatch => {
+    Adapter.bookSession(sessionData)
+    .then(data => { dispatch({ type: "BOOK_SESSION", payload: data }) })
+  }
+}
 
-
-// export function selectHobbit(hobbit) {
-//   return { type: "SELECT_HOBBIT", payload: tag };
-// }
-//
-// export function updateHobbit({ id, name, title, key_skill }) {
-//   return dispatch => {
-//     RestfulAdapter.editFetch("hobbits", id, {
-//       hobbit: { name, title, key_skill }
-//     }).then(data => {
-//       dispatch(setHobbit(data));
-//     });
-//   };
-// }
-
-
-
-
-//
-// export function selectHobbit(hobbit) {
-//   return { type: "SELECT_HOBBIT", payload: hobbit };
-// }
-//
-// export function updateHobbit({ id, name, title, key_skill }) {
-//   return dispatch => {
-//     RestfulAdapter.editFetch("hobbits", id, {
-//       hobbit: { name, title, key_skill }
-//     }).then(data => {
-//       dispatch(setHobbit(data));
-//     });
-//   };
-// }
-
-// export function setPhoto(photo) {
-//   return { type: "SET_PHOTO", payload: photo };
-// }
-
-// export function updateForm(formData) {
-//   return { type: "UPDATE_FORM", payload: formData };
-// }
+export function fetchSessions() {
+  return dispatch => {
+    Adapter.fetchSessions()
+    .then(data => { dispatch({ type: "GET_SESSIONS", payload: data }) })
+  }
+}

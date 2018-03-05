@@ -4,6 +4,7 @@ import HomePage from './components/HomePage/HomePageContainer'
 import ProfilePage from './components/Profile/ProfilePageContainer'
 import LogOut from './components/Login/LogOut'
 import WelcomePage from './components/Welcome/WelcomePageContainer'
+import SessionPage from './components/Session/SessionPageContainer'
 // import './App.css';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
 import { getLoggedInUser } from "./actions";
@@ -33,6 +34,7 @@ class App extends Component {
           <Switch>
             <Route path="/photographers/:slug" render={this.renderPhotographerPaths} />
             <Route exact path="/home" component={HomePage} />
+            <Route exact path="/sessions" component={SessionPage} />
             <Route exact path="/profile" component={ProfilePage} />
             <Route exact path="/logout" component={LogOut} />
           </Switch>

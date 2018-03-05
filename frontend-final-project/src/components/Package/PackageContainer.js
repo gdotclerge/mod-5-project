@@ -19,7 +19,7 @@ class PackageContainer extends React.Component {
         <select onChange={ (e) => {this.handleSelectionChange(e)} }>
           {this.mapTagOptions()}
         </select>
-        <PackageList filteredPackages={this.state.filteredPackages} handleTagRemoval={this.handleTagRemoval}/>
+        <PackageList filteredPackages={this.state.filteredPackages} handlePackageSelection={this.props.handlePackageSelection}/>
       </div>
     )
   }

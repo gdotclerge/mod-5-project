@@ -18,6 +18,7 @@ const navbar = (props) => {
     return (
       <div className="navbar">
         <Link to='/home'>Home</Link>
+        <Link to='/sessions'>Sessions</Link>
         <Link to='/logout'>LogOut</Link>
       </div>
     )
@@ -32,7 +33,5 @@ const mapStateToProps = (state) => {
     currentPhotoUser: state.currentPhotoUser.photoUser
   }
 }
-
-
 
 export default connect((mapStateToProps), null )(navbar)

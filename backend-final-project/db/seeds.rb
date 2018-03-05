@@ -26,40 +26,19 @@ dclive = Photographer.create(
 User.create(username: "Charmander", password: "hello")
 User.create(username: "Garry", password: "hello")
 
-thugnanny.photo_sessions.create(date: Date.new(2018,7,10), notes: "THUGTASTIC NOTES")
-thugnanny.photo_sessions.create(date: Date.new(2018,7,20), notes: "THUGTASTIC NOTES")
-thugnanny.photo_sessions.create(date: Date.new(2018,7,30), notes: "THUGTASTIC NOTES")
-thugnanny.photo_sessions.create(date: Date.new(2018,7,11), notes: "THUGTASTIC NOTES")
-thugnanny.photo_sessions.create(date: Date.new(2018,7,22), notes: "THUGTASTIC NOTES")
-thugnanny.photo_sessions.create(date: Date.new(2018,7,12), notes: "THUGTASTIC NOTES")
-thugnanny.photo_sessions.create(date: Date.new(2018,7,13), notes: "THUGTASTIC NOTES")
-thugnanny.photo_sessions.create(date: Date.new(2018,7,14), notes: "THUGTASTIC NOTES")
-thugnanny.photo_sessions.create(date: Date.new(2018,7,16), notes: "THUGTASTIC NOTES")
-thugnanny.photo_sessions.create(date: Date.new(2018,7,18), notes: "THUGTASTIC NOTES")
-thugnanny.photo_sessions.create(date: Date.new(2018,7,19), notes: "THUGTASTIC NOTES")
-thugnanny.photo_sessions.create(date: Date.new(2018,7,21), notes: "THUGTASTIC NOTES")
+thugnanny.photo_sessions.create()
+thugnanny.photo_sessions.create()
+
+thugpic1 = thugnanny.photos.create(img_src: "https://static1.squarespace.com/static/54465cf1e4b09d4e92ebfe2d/t/5a2ed9768165f58c217dbe76/1513019808003/IMG_1700.JPG?format=500w")
+thugpic2 = thugnanny.photos.create(img_src: "https://static1.squarespace.com/static/54465cf1e4b09d4e92ebfe2d/t/5a2ed662c83025e9c486290a/1513019086951/IMG_5725.JPG?format=500w")
+
+dclive.photo_sessions.create()
+dclive.photo_sessions.create()
 
 
-thugpic1 = thugnanny.photos.build(img_src: "https://static1.squarespace.com/static/54465cf1e4b09d4e92ebfe2d/t/5a2ed9768165f58c217dbe76/1513019808003/IMG_1700.JPG?format=500w")
-thugpic2 = thugnanny.photos.build(img_src: "https://static1.squarespace.com/static/54465cf1e4b09d4e92ebfe2d/t/5a2ed662c83025e9c486290a/1513019086951/IMG_5725.JPG?format=500w")
 
-
-dclive.photo_sessions.create(date: Date.new(2018,7,10), notes: "WE CLIVE NOTES")
-dclive.photo_sessions.create(date: Date.new(2018,7,20), notes: "WE CLIVE NOTES")
-dclive.photo_sessions.create(date: Date.new(2018,7,30), notes: "WE CLIVE NOTES")
-dclive.photo_sessions.create(date: Date.new(2018,7,11), notes: "WE CLIVE NOTES")
-dclive.photo_sessions.create(date: Date.new(2018,7,22), notes: "WE CLIVE NOTES")
-dclive.photo_sessions.create(date: Date.new(2018,7,12), notes: "WE CLIVE NOTES")
-dclive.photo_sessions.create(date: Date.new(2018,7,13), notes: "WE CLIVE NOTES")
-dclive.photo_sessions.create(date: Date.new(2018,7,14), notes: "WE CLIVE NOTES")
-dclive.photo_sessions.create(date: Date.new(2018,7,16), notes: "WE CLIVE NOTES")
-dclive.photo_sessions.create(date: Date.new(2018,7,18), notes: "WE CLIVE NOTES")
-dclive.photo_sessions.create(date: Date.new(2018,7,19), notes: "WE CLIVE NOTES")
-dclive.photo_sessions.create(date: Date.new(2018,7,21), notes: "WE CLIVE NOTES")
-
-
-dclivepic1 = dclive.photos.build(img_src: "http://www.dorianclive.com/wp-content/uploads/2015/05/MG_8234-Edit-2-853x1280.jpg")
-dclivepic2 = dclive.photos.build(img_src: "http://www.dorianclive.com/wp-content/uploads/2015/06/MG_7695-Edit-853x1280.jpg")
+dclivepic1 = dclive.photos.create(img_src: "http://www.dorianclive.com/wp-content/uploads/2015/05/MG_8234-Edit-2-853x1280.jpg")
+dclivepic2 = dclive.photos.create(img_src: "http://www.dorianclive.com/wp-content/uploads/2015/06/MG_7695-Edit-853x1280.jpg")
 
 
 

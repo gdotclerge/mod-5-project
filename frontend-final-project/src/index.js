@@ -12,6 +12,7 @@ import packagesReducer from "./reducers/PackagesReducer";
 import tagsReducer from "./reducers/TagsReducer";
 import currentUserReducer from "./reducers/CurrentUserReducer";
 import currentPhotographerReducer from "./reducers/CurrentPhotographerReducer";
+import sessionsReducer from "./reducers/SessionsReducer";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from 'redux-devtools-extension';
 
@@ -20,6 +21,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 const rootReducer = combineReducers({
   currentUser: currentUserReducer,
   currentPhotoUser: currentPhotographerReducer,
+  sessions: sessionsReducer,
   photographers: photographersReducer,
   packages: packagesReducer,
   photos: photosReducer,

@@ -12,7 +12,7 @@ const packageList = (props) => {
 
 const listPackages = (props) => {
   return props.filteredPackages.map( (p) => {
-    return(<PackageItem packageItem={p} key={p.id} handlePackageSelection={props.handleTagRemoval}/>)
+    return(<PackageItem packageItem={p} key={p.id} handlePackageSelection={props.handlePackageSelection}/>)
   })
 }
 

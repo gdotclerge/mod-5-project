@@ -119,6 +119,35 @@ class Adapter {
   }
 
 
+// FUNCTIONS FOR SESSIONS
+
+  static bookSession = (sessionData) => {
+    const token = localStorage.getItem("jwt")
+    return fetch("http://localhost:3001/api/v1/photo_sessions", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `${token}`
+      },
+      body: JSON.stringify({ photo_session: sessionData })
+    })
+    .then(response => response.json())
+  }
+
+  static fetchSessions = () => {
+    const token = localStorage.getItem("jwt")
+    return fetch("http://localhost:3001/api/v1/photo_sessions", {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `${token}`
+      }
+    })
+    .then(response => response.json())
+  }
+
+
 }
 
 
