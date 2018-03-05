@@ -1,5 +1,5 @@
 import React from 'react'
-import Session from './Session'
+import Session from './SessionModal'
 import { connect } from "react-redux";
 
 const sessionsList = (props) => {
