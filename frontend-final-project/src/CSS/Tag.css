@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
+
+.tag-search-container {
+  margin-left: 20%;
+  margin-top: 9%;
+  display: inline-block;
+  position: fixed;
+  height: 60px;
+}
+
+input[type="text"] {
+  height: 20px;
+  font-size: 20px;
+  display: inline-block;
+  font-family: "Lato";
+  font-weight: 100;
+  border: none;
+  outline: none;
+  color: #555;
+  padding: 3px;
+  padding-right: 35px;
+  width: 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  z-index: 3;
+  transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+  cursor: pointer;
+  border-bottom: 1px solid #BBB;
+  width: 125px;
+}
+
+#search-submit {
+  width: 30px;
+  display: inline-block;
+  float: right;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity .4s ease;
+}
+
+#search-submit:hover {
+  opacity: 0.8;
+}
+
+/*     TAGS CONTAINER     */
+
+.tags-container {
+  /* background-color: blue; */
+}
+
+/*     TAGS LIST     */
+
+.tags-list {
+  position: fixed;
+  margin-top: 13%;
+  margin-left: 7%;
+  height: 40%;
+  overflow: auto;
+}

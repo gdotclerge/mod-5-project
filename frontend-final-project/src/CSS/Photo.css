@@ -47,6 +47,14 @@
   text-align: center;
   opacity: 0;
   transition: opacity .35s ease;
+  background-color: transparent;
+  border-color: #fff;
+  border-width: 1px;
+  border-radius: 0.7em;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Lato";
+  color: #fff;
 }
 
 .photo-container:hover .button {

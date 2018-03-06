@@ -9,28 +9,6 @@
 
 
 
-.tags-container {
-  /* background-color: blue; */
-}
-
-.tag-search {
-  margin-left: 6%;
-  margin-top: 9%;
-  position: fixed;
-  /* border: solid black;
-  position: fixed;
-  grid-column-start: 1;
-  grid-column-end: 2;  */
-}
-
-.tags-list {
-  position: fixed;
-  margin-top: 13%;
-  margin-left: 7%;
-  height: 40%;
-  overflow: auto;
-}
-
 
 
 
