@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { NavLink, Link } from 'react-router-dom'
 import './CSS/Nav.css';
 
+
 const navbar = (props) => {
 
   if (!!props.currentPhotoUser) {
@@ -16,16 +17,18 @@ const navbar = (props) => {
     )
   } else {
     return (
-      <div className="navbar">
-        <Link to='/home'>Home</Link>
-        <Link to='/sessions'>Sessions</Link>
-        <Link to='/logout'>LogOut</Link>
+      <div className="nav-container">
+        <div className="menu-button">Menu</div>
+        <ul className="flexnav" data-breakpoint="800">
+          <li><Link to='/home'>Home</Link></li>
+          <li><Link to='/sessions'>Sessions</Link></li>
+          <li><Link to='/logout'>LogOut</Link></li>
+        </ul>
       </div>
     )
   }
 
 }
-
 
 
 const mapStateToProps = (state) => {

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom';
+import '../../CSS/Photo.css';
 
 class Photo extends React.Component {
   state = {
@@ -14,11 +15,10 @@ class Photo extends React.Component {
 
     return (
       <div className="photo-container">
-        <img className="photo" src={this.props.photo.img_src} alt="" />
-        <br/>
-        <div className="overlay">Hello</div>
-        <div className="photobutton" >
-          <button className="button" onClick={ (e)=> {this.handleProfileClick(this.props.photo)} } >View Profile</button>
+        <div className="container reflection">
+          <img className="photo" src={this.props.photo.img_src} alt="" />
+          <div className="overlay"></div>
+          <button className="button" onClick={ (e)=> {this.handleProfileClick(this.props.photo)} } >@{this.props.photo.photoUser}</button>
         </div>
       </div>
     )

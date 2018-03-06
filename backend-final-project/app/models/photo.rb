@@ -6,4 +6,8 @@ class Photo < ApplicationRecord
   def profileURL
     self.photographer.custom_url
   end
+
+  def photoUser
+    self.photographer.username
+  end
 end
