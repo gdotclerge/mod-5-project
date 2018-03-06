@@ -39,20 +39,6 @@ export function logOut() {
 
 // FUNCTIONS FOR PHOTOGRAPHERS
 
-// export function fetchPhotographerURLs() {
-//   return dispatch => {
-//     Adapter.fetchPhotographerURLs()
-//     .then(data => dispatch(setPhotographerPaths(data)))
-//   }
-// }
-
-// export function setPhotographerPaths(photoURLs) {
-//   return {
-//     type: "SET_PHOTOGRAPHER_URLS",
-//     payload: photoURLs
-//   }
-// }
-
 export function fetchPhotographer(url) {
   return dispatch => {
     dispatch(loading())
@@ -81,24 +67,8 @@ export function loading() {
   }
 }
 
-
-
-
-
-
-
-// export function fetchPhotographerforRoute(route) {
-//   return dispatch => {
-//     Adapter.fetchPhotographerforRoute(route)
-//     .then(data => dispatch(setSelectedPhotographer(data)))
-//   }
-// }
-
-
-
-
-
 // FUNCTIONS FOR PHOTOS
+
 export function fetchPhotos() {
   return dispatch => {
     Adapter.getPhotos()
@@ -108,8 +78,8 @@ export function fetchPhotos() {
   };
 }
 
-
 // FUNCTIONS FOR TAGS
+
 export function fetchTags() {
   console.log("i am in fetch tags")
   return dispatch => {
@@ -130,7 +100,7 @@ export function removeSelectedTags(tag) {
   return { type: "REMOVE_SELECTED_TAG", payload: tag }
 }
 
-// FUNCTIONS FOR packages
+// FUNCTIONS FOR PACKAGES
 
 export function fetchPackages(id) {
   return dispatch => {
@@ -143,9 +113,15 @@ export function fetchPackages(id) {
 
 export function bookSession(sessionData) {
   return dispatch => {
-    // dispatch(loading())
     Adapter.bookSession(sessionData)
-    .then(data => { dispatch({ type: "BOOK_SESSION", payload: data }) })
+    .then(data => { dispatch(addSession(sessionData)) })
+  }
+}
+
+export function addSession(sesssionData) {
+  return {
+    type: "BOOK_SESSION",
+    payload: sesssionData
   }
 }
 

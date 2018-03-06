@@ -12,7 +12,7 @@ const sessionsList = (props) => {
 
 const listSessions = (props) => {
   return props.sessions.map( (s) => {
-    return(<Session session={s} key={s.id} />)
+    return(<Session session={s} key={s.id} handleUpdate={props.handleUpdate}/>)
   })
 }
 

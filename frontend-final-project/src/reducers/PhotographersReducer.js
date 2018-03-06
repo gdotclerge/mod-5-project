@@ -9,7 +9,6 @@ export default function photographersReducer(state = { selectedPhotographer: nul
       }
 
     case "SET_SELECTED_PHOTOGRAPHER":
-      console.log("in Select PHoto Reducer")
       return {
         ...state,
         selectedPhotographer: action.payload,

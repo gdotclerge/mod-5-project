@@ -8,6 +8,7 @@ class SessionModal extends React.Component {
   state = {
     openFirstModal: false,
     openSecondModal: false,
+    date: new Date(this.props.session.start_date).toString().split(" ")
   }
 
   onOpenFirstModal = () => {
@@ -41,7 +42,7 @@ class SessionModal extends React.Component {
           <p>{this.props.session.session_type} Photography Session</p>
 
           <p>
-            Date: {this.props.session.start_date}
+            Date: {this.state.date[0]} {this.state.date[1]} {this.state.date[2]}
           </p>
           <p>
             Location: <br/>
@@ -54,6 +55,7 @@ class SessionModal extends React.Component {
             {this.props.session.hours} hour session at ${this.props.session.price}<br/>
             {this.props.session.min_photos} to {this.props.session.max_photos} photos to be delivered
           </p>
+          <button onClick={ (e)=> this.props.handleUpdate(this.props.session) }>Update Session</button>
           <button onClick={this.onOpenSecondModal}>Cancel Session</button>
         </Modal>
 
@@ -70,6 +72,8 @@ class SessionModal extends React.Component {
   handleCancel = (event) => {
     this.props.cancelSession(this.props.session.id)
   }
+
+
 
 }
 

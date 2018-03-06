@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 20180227220431) do
 
   create_table "photo_sessions", force: :cascade do |t|
     t.string "session_type"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.string "start_date"
+    t.string "end_date"
     t.string "address"
     t.string "city"
     t.string "state"

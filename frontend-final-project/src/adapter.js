@@ -122,6 +122,7 @@ class Adapter {
 // FUNCTIONS FOR SESSIONS
 
   static bookSession = (sessionData) => {
+    debugger
     const token = localStorage.getItem("jwt")
     return fetch("http://localhost:3001/api/v1/photo_sessions", {
       method: 'POST',

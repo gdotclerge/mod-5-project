@@ -3,7 +3,7 @@ import ProfileFeed from './ProfileFeed'
 import Loading from '../Loading'
 import { connect } from "react-redux";
 import SideContainer from "./SideContainer";
-import BookPhotographer from "./BookPhotographerForm";
+import ReserveSessionForm from "../Session/ReserveSessionForm";
 import { fetchPhotographer, bookSession } from "../../actions";
 import { Redirect } from 'react-router-dom';
 
@@ -25,7 +25,7 @@ class ProfilePageContainer extends React.Component {
 
     return (
       <div>
-        {this.state.booking ? <BookPhotographer /> : <ProfileFeed /> }
+        {this.state.booking ? <ReserveSessionForm /> : <ProfileFeed /> }
         <SideContainer handleScheduleSession={this.handleScheduleSession} booking={this.state.booking} />
       </div>
     )

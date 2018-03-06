@@ -3,24 +3,28 @@ import { connect } from "react-redux";
 import { fetchSessions } from "../../actions";
 import Loading from '../Loading';
 import SessionsList from './SessionsList';
+import UpdateSessionForm from './UpdateSessionForm';
 import '../../CSS/Home.css';
 
 class SessionPageContainer extends React.Component {
+  state = {
+    update: false
+  }
 
   componentDidMount = () => {
     this.props.fetchSessions()
   }
 
   render = () => {
-    if (!!this.props.loading){
-      return <Loading />
-    }
-
     return (
       <div>
-        <SessionsList />
+        { this.state.update ? <UpdateSessionForm session={this.state.session}/> : <SessionsList handleUpdate={this.handleUpdate} /> }
       </div>
     )
+  }
+
+  handleUpdate = (sessionInfo) => {
+    this.setState({ update: true, session: sessionInfo })
   }
 }
 

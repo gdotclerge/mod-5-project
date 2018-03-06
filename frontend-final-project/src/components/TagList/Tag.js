@@ -1,8 +1,6 @@
 import React from 'react'
 import { handleTagRemoval } from "../../actions";
 
-
-
 const tag = (props) => {
 
   return (
@@ -13,6 +11,5 @@ const tag = (props) => {
   )
 
 }
-
 
 export default tag
