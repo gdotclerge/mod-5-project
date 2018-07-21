@@ -12,8 +12,10 @@ class Api::V1::PhotoSessionsController < ApplicationController
 
   def create
     @photo_session = PhotoSession.new(photo_session_params)
+    @photo_session.reserved = true
     if @photo_session.save
-      render json: @photo_session
+      @photogapher = @photo_session.photographer
+      render json: { photo_session: @photo_sessions, photographer: @photogapher }
     else
       render json: @photo_session.errors.full_messages, status: 401
     end

@@ -3,8 +3,10 @@ class CreatePackages < ActiveRecord::Migration[5.1]
     create_table :packages do |t|
       t.belongs_to :photographer
       t.float :price
-      t.datetime :hours
-      t.string :photos_to_deliver
+      t.float :hours
+      t.integer :min_photos
+      t.integer :max_photos
+      t.string :notes
 
       t.timestamps
     end

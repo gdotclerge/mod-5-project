@@ -6,4 +6,15 @@ class Photographer < ApplicationRecord
 
 
   has_secure_password
+
+
+  def booked_photo_sessions
+    self.photo_sessions.select { |ps| ps.reserved === true }
+  end
+
+  def open_photo_sessions
+    self.photo_sessions.select { |ps| ps.reserved === false }
+  end
+
+
 end

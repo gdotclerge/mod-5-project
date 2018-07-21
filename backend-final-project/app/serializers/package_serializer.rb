@@ -1,5 +1,5 @@
 class PackageSerializer < ActiveModel::Serializer
-  attributes :id, :price, :hours, :photos_to_deliver
+  attributes :id, :price, :hours
 
   has_many :tags
 end
