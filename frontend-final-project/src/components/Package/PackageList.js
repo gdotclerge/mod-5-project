@@ -4,7 +4,6 @@ import PackageItem from './PackageItem'
 const packageList = (props) => {
   return (
     <div>
-      Packages
       {listPackages(props)}
     </div>
   )

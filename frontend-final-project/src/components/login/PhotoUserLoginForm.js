@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { logIn } from "../../actions";
+import { Form } from 'semantic-ui-react';
 
 class PhotoUserLoginForm extends React.Component {
   state = {
@@ -16,11 +17,13 @@ class PhotoUserLoginForm extends React.Component {
     }
 
     return(
-      <form onSubmit={this.handleLoginSubmit}>
-        <input type="text" value={this.state.username} onChange={this.handleUsernameChange} placeholder="Username" ></input> <br />
-        <input type="password" value={this.state.password} onChange={this.handlePasswordChange} placeholder="Password" ></input> <br />
-        <button type="submit">Login</button>
-      </form>
+      <Form onSubmit={this.handleLoginSubmit}>
+        <Form.Field>
+          <input type="text" value={this.state.username} onChange={this.handleUsernameChange} placeholder="Username/Profile Handle" ></input> <br /> <br />
+          <input type="password" value={this.state.password} onChange={this.handlePasswordChange} placeholder="Password" ></input> <br /> <br />
+          <button type="submit">Login</button>
+        </Form.Field>
+      </Form>
     )
   }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { fetchSessions } from "../../actions";
+import { fetchSessions, load } from "../../actions";
 import Loading from '../Loading';
 import SessionsList from './SessionsList';
 import UpdateSessionForm from './UpdateSessionForm';
@@ -31,9 +31,8 @@ class SessionPageContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    loading: state.photographers.loading,
     user: state.currentUser.user
   }
 }
 
-export default connect((mapStateToProps), { fetchSessions })(SessionPageContainer)
+export default connect((mapStateToProps), { fetchSessions, load })(SessionPageContainer)

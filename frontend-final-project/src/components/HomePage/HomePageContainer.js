@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { fetchPhotos } from "../../actions";
+import { fetchPhotos, fetchSessions } from "../../actions";
 import Loading from '../Loading';
 import PhotoList from '../Photo/PhotoList';
 import TagsContainer from '../TagList/TagsContainer';
@@ -35,4 +35,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect((mapStateToProps), { fetchPhotos })(HomePageContainer)
+export default connect((mapStateToProps), { fetchPhotos, fetchSessions })(HomePageContainer)

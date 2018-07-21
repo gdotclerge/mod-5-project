@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { signUp } from "../../actions";
+import { Form } from 'semantic-ui-react';
 
 class UserSignUpForm extends React.Component {
   state = {
@@ -22,16 +23,18 @@ class UserSignUpForm extends React.Component {
     }
 
     return(
-      <form onSubmit={this.handleLoginSubmit}>
-        <input type="text" value={this.state.firstname} onChange={this.handleChange} placeholder="First Name" name="firstname"></input> <br />
-        <input type="text" value={this.state.lastname} onChange={this.handleChange} placeholder="Last Name" name="lastname"></input> <br />
-        <input type="text" value={this.state.username} onChange={this.handleChange} placeholder="Username" name="username"></input> <br />
-        <input type="password" value={this.state.password} onChange={this.handleChange} placeholder="Password" name="password"></input> <br />
-        <input type="password" value={this.state.pwConfirm} onChange={this.handleChange} placeholder="Password Confirmation" name="pwConfirm"></input> <br />
-        <input type="text" value={this.state.email} onChange={this.handleChange} placeholder="Email" name="email"></input> <br />
-        <input type="text" value={this.state.city} onChange={this.handleChange} placeholder="City" name="city"></input> <br />
-        <button type="submit">Sign Up</button>
-      </form>
+      <Form onSubmit={this.handleLoginSubmit}>
+        <Form.Field>
+          <input type="text" value={this.state.firstname} onChange={this.handleChange} placeholder="First Name" name="firstname"></input> <br /> <br />
+          <input type="text" value={this.state.lastname} onChange={this.handleChange} placeholder="Last Name" name="lastname"></input> <br /> <br />
+          <input type="text" value={this.state.username} onChange={this.handleChange} placeholder="Username" name="username"></input> <br /> <br />
+          <input type="password" value={this.state.password} onChange={this.handleChange} placeholder="Password" name="password"></input> <br /> <br />
+          <input type="password" value={this.state.pwConfirm} onChange={this.handleChange} placeholder="Password Confirmation" name="pwConfirm"></input> <br /> <br />
+          <input type="text" value={this.state.email} onChange={this.handleChange} placeholder="Email" name="email"></input> <br /> <br />
+          <input type="text" value={this.state.city} onChange={this.handleChange} placeholder="City" name="city"></input> <br /> <br />
+          <button type="submit">Sign Up</button>  
+        </Form.Field>
+      </Form>
     )
   }
 

@@ -1,0 +1,92 @@
+.profile-page {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  background-size: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.photo-feed {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: 20%
+}
+
+.photo-feed-container {
+  width: 40%;
+  margin-top: 7%;
+  padding-left: 10%;
+  position: relative;
+}
+
+.feed-container {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.feed-photo {
+  height: 500px;
+  -webkit-box-reflect:below 0px linear-gradient(to top, rgba(0, 0, 0, .3), rgba(255,255,255,0) 12%);
+  margin:auto;
+}
+
+.feed-album-title {
+  position: absolute;
+  width: 50%;
+  height: 50px;
+  left: 25%;
+  top: 50%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .35s ease;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.photo-feed-container:hover .overlay {
+  display: block;
+  background: rgba(0, 0, 0, .3);
+}
+
+.profile-card {
+  margin-top: 5%;
+  width: 250px;
+  position: fixed;
+}
+
+.profile-card *{
+  font-family: Lato,Helvetica,sans-serif;
+}
+
+.profile-card-image {
+  max-height: 250px;
+  overflow: hidden;
+}
+
+.profile-card-button-container {
+  text-align: center;
+}
+
+.profile-card-button {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid $red;
+  border-radius: 0.6em;
+  color: $red;
+  cursor: pointer;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1;
+  margin: 12px;
+  padding: 0.6em 1.0em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+}

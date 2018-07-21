@@ -15,7 +15,7 @@ class PackageContainer extends React.Component {
 
   render = () => {
     return (
-      <div>
+      <div className="package-container">
         <select onChange={ (e) => {this.handleSelectionChange(e)} }>
           {this.mapTagOptions()}
         </select>

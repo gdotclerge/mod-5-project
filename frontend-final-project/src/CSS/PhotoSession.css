@@ -1,0 +1,105 @@
+.reserve-session-form {
+  /* border: solid 5px black; */
+  display: flex;
+  margin-top: 50px;
+}
+
+.calendar {
+  height: 300px;
+  width: 450px
+}
+
+.calendar-container {
+  height: 300px;
+  width: auto;
+  text-align: center;
+}
+
+.rbc-calendar {
+  margin-left: 2%;
+}
+
+.rbc-month-view {
+  margin-left: 10%;
+}
+
+.package-container {
+  margin-left: 125px;
+  margin-top: 75px;
+  width: 175px;
+}
+
+.package-item {
+  margin-top: 5px;
+  text-align: left;
+}
+
+.session-form {
+  margin-left: 17%;
+  margin-top: 10%;
+}
+
+.session-form * {
+  font-family: Lato,Helvetica,sans-serif;
+}
+
+.reserve-session-button {
+  margin-left: 200px;
+}
+
+.my-sessions-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-left: 90px;
+}
+
+.my-session {
+  /* border: solid 5px black; */
+  margin: 30px;
+}
+
+.my-session-card {
+  position: absolute;
+  overflow: hidden;
+
+
+}
+
+.my-session-card *{
+  font-family: Lato,Helvetica,sans-serif;
+}
+
+.my-session-image-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.session-card-image {
+  /* height: 300px; */
+  top: -20px;
+}
+
+.my-session-modal * {
+  font-family: Lato,Helvetica,sans-serif;
+}
+
+.my-session-modal-button {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid $red;
+  border-radius: 0.6em;
+  color: $red;
+  cursor: pointer;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1;
+  margin: 12px;
+  padding: 0.6em 1.0em;
+  text-decoration: none;
+  text-align: center;
+  /* text-transform: uppercase; */
+  font-weight: 500;
+}

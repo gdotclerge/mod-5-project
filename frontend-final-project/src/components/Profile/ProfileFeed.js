@@ -5,7 +5,7 @@ import PhotoFeedItem from "../Photo/PhotoFeedItem";
 class ProfileFeed extends React.Component {
   render = () => {
     return (
-      <div>
+      <div className="photo-feed">
         {this.createAlbums()}
       </div>
     )

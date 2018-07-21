@@ -22,12 +22,16 @@ const navbar = (props) => {
         <ul className="flexnav" data-breakpoint="800">
           <li><Link to='/home'>Home</Link></li>
           <li><Link to='/sessions'>Sessions</Link></li>
-          <li><Link to='/logout'>LogOut</Link></li>
+          <li><Link to="/welcome" onClick={ (e)=> handleLogOut()}>LogOut</Link></li>
         </ul>
       </div>
     )
   }
 
+}
+
+const handleLogOut = () => {
+  localStorage.removeItem("jwt")
 }
 
 

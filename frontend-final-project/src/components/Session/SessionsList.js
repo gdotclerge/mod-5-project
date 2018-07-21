@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 const sessionsList = (props) => {
   return (
-    <div>
+    <div className="my-sessions-list">
       {listSessions(props)}
     </div>
   )

@@ -2,12 +2,15 @@ import React from 'react'
 import { connect } from "react-redux";
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
-import "react-big-calendar/lib/css/react-big-calendar.css";
-import '../../CSS/Calendar.css';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+
 
 BigCalendar.momentLocalizer(moment)
 
 class Calendar extends React.Component {
+  state = {
+    allEvents: [...this.props.openSessions, ...this.props.bookedSessions]
+  }
 
   render = () => {
     return (
@@ -15,7 +18,7 @@ class Calendar extends React.Component {
 
         <BigCalendar
           selectable
-          events={this.props.photographerSessions}
+          events={this.state.allEvents}
           defaultView="month"
           scrollToTime={new Date(1970, 1, 1, 6)}
           defaultDate={new Date(2018, 3, 12)}
@@ -28,14 +31,26 @@ class Calendar extends React.Component {
     )
   }
 
+  setEvents = (selectedDate) => {
+    // this.props.handleSelectSlot(selectedDate)
+    this.setState( (preState) => {
+      allEvents: [...preState.allEvents, {
+        title: 'My Session',
+        start: selectedDate[0],
+        end: selectedDate[1],
+        allDay: false
+      }]
+    })
+  }
+
 }
 
 
 
 const mapStateToProps = (state) => {
   return {
-    selectedPhotographer: state.photographers.selectedPhotographer,
-    photographerSessions: state.sessions.selectedPhotographerSessions
+    openSessions: state.sessions.selectedPhotographerOpenSessions,
+    bookedSessions: state.sessions.selectedPhotographerBookedSessions
   }
 }
 

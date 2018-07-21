@@ -3,9 +3,11 @@ import ProfileFeed from './ProfileFeed'
 import Loading from '../Loading'
 import { connect } from "react-redux";
 import SideContainer from "./SideContainer";
+import ProfileCard from "./ProfileCard";
 import ReserveSessionForm from "../Session/ReserveSessionForm";
 import { fetchPhotographer, bookSession } from "../../actions";
 import { Redirect } from 'react-router-dom';
+import '../../CSS/Profile.css';
 
 
 class ProfilePageContainer extends React.Component {
@@ -24,15 +26,19 @@ class ProfilePageContainer extends React.Component {
     }
 
     return (
-      <div>
+      <div className="profile-page">
         {this.state.booking ? <ReserveSessionForm /> : <ProfileFeed /> }
-        <SideContainer handleScheduleSession={this.handleScheduleSession} booking={this.state.booking} />
+        <ProfileCard handleScheduleSession={this.handleScheduleSession} booking={this.state.booking} />
       </div>
     )
   }
 
   handleScheduleSession = (e) => {
-    this.setState({ booking: true })
+    if (e.target.value === "Reserve") {
+      this.setState({ booking: true })
+    } else {
+      this.setState({ booking: false })
+    }
   }
 }
 

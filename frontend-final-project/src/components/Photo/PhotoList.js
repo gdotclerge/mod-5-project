@@ -25,11 +25,15 @@ const mapStateToProps = (state) => {
   const filteredPhotos = state.photos.photos.filter( (p) => {
     return state.tags.selectedTags.filter( (t) => {
       return p.tag.id === t.id;
-    }).length === state.tags.selectedTags.length
+    }).length === 1
   })
-  return {
-    photos: filteredPhotos
+
+  if (state.tags.selectedTags.length > 0) {
+    return { photos: filteredPhotos }
   }
+  else {
+    return { photos: state.photos.photos }
+  }  
 }
 
 export default connect((mapStateToProps), null)(PhotoList)

@@ -4,9 +4,11 @@ import Calendar from "../Calendar";
 import PackageContainer from '../Package/PackageContainer'
 import Confirmation from '../Confirmation'
 import { bookSession } from '../../actions'
-import { Redirect } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 import Modal from 'react-responsive-modal/lib/css'
 import 'react-responsive-modal/lib/react-responsive-modal.css';
+import '../../CSS/PhotoSession.css';
+import { Form } from 'semantic-ui-react'
 
 class ReserveSessionForm extends React.Component {
   state = {
@@ -24,6 +26,7 @@ class ReserveSessionForm extends React.Component {
     min_photos: "",
     max_photos: "",
     session_type: "",
+    reserved: true,
     open: false,
     redirect: false
   }
@@ -36,17 +39,28 @@ class ReserveSessionForm extends React.Component {
 
     const { open } = this.state;
     return (
-      <div>
-        <br /> <br />
-        <legend> Select Session Date </legend>
-        <Calendar className='calendar-container' handleSelectSlot={this.handleSelectSlot} handleCalClick={this.handleCalClick}/>
-        <input type="text" value={this.state.address} onChange={this.handleChange} placeholder="Address" name="address"></input> <br />
-        <input type="text" value={this.state.city} onChange={this.handleChange} placeholder="City" name="city"></input> <br />
-        <input type="text" value={this.state.state} onChange={this.handleChange} placeholder="State" name="state"></input> <br />
-        <input type="text" value={this.state.zip} onChange={this.handleChange} placeholder="Zip Code" name="zip"></input> <br />
+      <div className="reserve-session-form">
+
+        <div>
+          <Calendar className='calendar-container' handleSelectSlot={this.handleSelectSlot} handleCalClick={this.handleCalClick}/>
+          <Form className="session-form">
+            <Form.Field>
+              <input type="text" value={this.state.address} onChange={this.handleChange} placeholder="Address" name="address"></input> <br />
+              <input type="text" value={this.state.city} onChange={this.handleChange} placeholder="City" name="city"></input> <br />
+              <input type="text" value={this.state.state} onChange={this.handleChange} placeholder="State" name="state"></input> <br />
+              <input type="number" value={this.state.zip} onChange={this.handleChange} placeholder="Zip Code" name="zip"></input> <br />
+              <textarea value={this.state.additional_notes} onChange={this.handleChange} placeholder="Additional Notes..." name="additional_notes"></textarea>
+            </Form.Field>
+          </Form>
+
+          <div className="reserve-session-button">
+            <button className="profile-card-button" onClick={this.handleSubmit}>Reserve</button>
+          </div>
+        </div>
+
         <PackageContainer handlePackageSelection={this.handlePackageSelection}/>
-        <textarea value={this.state.additional_notes} onChange={this.handleChange} placeholder="Additional Notes..." name="additional_notes"></textarea>
-        <button type="submit" onClick={this.handleSubmit}>Reserve Photo Session</button>
+
+
 
         <Modal
           open={open}
@@ -92,10 +106,11 @@ class ReserveSessionForm extends React.Component {
 
   onCloseModal = () => {
     this.props.bookSession(this.state)
-    this.setState({redirect: true})
+    this.props.history.push("/sessions")
   }
 
 }
+
 
 
 
@@ -108,4 +123,11 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect((mapStateToProps),{ bookSession })(ReserveSessionForm)
+export default withRouter(connect((mapStateToProps),{ bookSession })(ReserveSessionForm))
+
+
+//
+// <Form.Input fluid label='Address' placeholder="Address" name="address" value={this.state.address} onChange={this.handleChange} />
+// <Form.Input fluid label='City' placeholder="City" name="city" value={this.state.city} onChange={this.handleChange} />
+// <Form.Input fluid label='State' placeholder="State" name="state" value={this.state.state} onChange={this.handleChange} />
+// <Form.TextArea label='Notes' placeholder='Tell us more...' name="additional_notes" value={this.state.additional_notes} onChange={this.handleChange}/>

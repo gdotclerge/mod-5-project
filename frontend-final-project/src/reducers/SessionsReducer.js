@@ -1,5 +1,5 @@
 export default function sessionsReducer (
-  state = { userSessions: [], photographerSessions: [], selectedPhotographerSessions: [] },
+  state = { userSessions: [], photoUserSessions: [], selectedPhotographerOpenSessions: [], selectedPhotographerBookedSessions: [], loading:false },
   action
 ) {
   switch (action.type) {
@@ -7,7 +7,7 @@ export default function sessionsReducer (
     case "BOOK_SESSION":
       return {
         ...state,
-        userSessions: [...state.userSessions, action.payload]
+        userSessions: action.payload
       };
 
     case "GET_SESSIONS":
@@ -25,14 +25,28 @@ export default function sessionsReducer (
     case "SET_SELECTED_PHOTOGRAPHER":
       return {
         ...state,
-        selectedPhotographerSessions: action.payload.photo_sessions.map( (p)=> 
+        selectedPhotographerOpenSessions: action.payload.open_photo_sessions.map( (p)=>
                       ({
-                        title: `${p.session_type} session`,
+                        title: 'AVAILABLE',
                         start: p.start_date,
                         end: p.end_date,
-                        allDay: false
-                      }))
+                        allDay: true
+                      })),
+        selectedPhotographerBookedSessions: action.payload.booked_photo_sessions.map( (p)=>
+                      ({
+                        title: 'RESERVED',
+                        start: p.start_date,
+                        end: p.end_date,
+                        allDay: true
+                      })),
+        loading: false
       }
+
+      case "SESSION_LOAD":
+        return {
+          ...state,
+          loading: true
+        }
 
     default:
       return state;

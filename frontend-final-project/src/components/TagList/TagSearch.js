@@ -15,7 +15,7 @@ class TagSearch extends React.Component {
                 return <option value={t.name} key={tagKey}/>
             })}
         </datalist>
-        <i class="material-icons" id="search-submit">search</i>
+        <i className="material-icons" id="search-submit">search</i>
       </div>
     )
   }

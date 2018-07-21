@@ -114,16 +114,24 @@ export function fetchPackages(id) {
 export function bookSession(sessionData) {
   return dispatch => {
     Adapter.bookSession(sessionData)
-    .then(data => { dispatch(addSession(sessionData)) })
   }
 }
 
-export function addSession(sesssionData) {
+// export function addSession(sesssionData) {
+//   debugger
+//   return {
+//     type: "BOOK_SESSION",
+//     payload: sesssionData
+//   }
+// }
+
+export function load() {
   return {
-    type: "BOOK_SESSION",
-    payload: sesssionData
+    type: "SESSION_LOAD"
   }
 }
+
+
 
 export function fetchSessions() {
   return dispatch => {

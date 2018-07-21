@@ -6,11 +6,10 @@ import { logOut } from "../../actions";
 
 class LoginPageContainer extends React.Component {
 
-  componentWillMount = () => {
-    localStorage.removeItem("jwt")
-  }
+
 
   render = () => {
+    localStorage.removeItem("jwt")
     return (
       <div>
         <Redirect to="/welcome" />

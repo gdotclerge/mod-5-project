@@ -1,14 +1,20 @@
 import React from 'react'
-import { cancelSession } from "../../actions";
+import { cancelSession, load } from "../../actions";
 import { connect } from 'react-redux'
 import Modal from 'react-responsive-modal'
 import 'react-responsive-modal/lib/react-responsive-modal.css';
+import { Card, Icon, Image } from 'semantic-ui-react'
+import Loading from '../Loading';
 
 class SessionModal extends React.Component {
   state = {
     openFirstModal: false,
     openSecondModal: false,
     date: new Date(this.props.session.start_date).toString().split(" ")
+  }
+
+  componentDidMount = () => {
+    this.props.load()
   }
 
   onOpenFirstModal = () => {
@@ -29,16 +35,31 @@ class SessionModal extends React.Component {
 
 
   render = () => {
+    console.log(this.props.session)
+  
+
+
     const { openFirstModal, openSecondModal } = this.state;
     return (
       <div>
-        <div onClick={this.onOpenFirstModal}>
-          {this.props.session.session_type} Session <br />
-          <h4>Photography Company Name / Name of Photographer</h4>
+        <div className="my-session" onClick={this.onOpenFirstModal}>
+          <Card className="my-session-card">
+            <div className="my-session-image-container">
+              <Image src={this.props.session.photographer.profile_photo} className="session-card-image"/>
+            </div>
+            <Card.Content>
+              <Card.Header>
+                {this.props.session.session_type} Photography Session
+              </Card.Header>
+              <Card.Description>
+                Date: {this.state.date[0]} {this.state.date[1]} {this.state.date[2]}
+              </Card.Description>
+            </Card.Content>
+          </Card>
         </div>
 
-        <Modal open={openFirstModal} onClose={this.onCloseFirstModal} little>
-          <h4>Photography Company Name </h4>
+        <Modal open={openFirstModal} onClose={this.onCloseFirstModal} className="my-session-modal"little>
+          <h4>@{this.props.session.photographer.username} </h4>
           <p>{this.props.session.session_type} Photography Session</p>
 
           <p>
@@ -55,15 +76,16 @@ class SessionModal extends React.Component {
             {this.props.session.hours} hour session at ${this.props.session.price}<br/>
             {this.props.session.min_photos} to {this.props.session.max_photos} photos to be delivered
           </p>
-          <button onClick={ (e)=> this.props.handleUpdate(this.props.session) }>Update Session</button>
-          <button onClick={this.onOpenSecondModal}>Cancel Session</button>
+          <button onClick={ (e)=> this.props.handleUpdate(this.props.session) } className="my-session-modal-button" >Update</button>
+          <button onClick={this.onOpenSecondModal} className="my-session-modal-button" >Cancel</button>
         </Modal>
 
 
         <Modal open={openSecondModal} onClose={this.onCloseSecondModal} little>
+          <br/><br/>
           <p> Are you sure you want to cancel your session? </p>
-          <button onClick={this.handleCancel}>Yes</button>
-          <button onClick={this.onCloseSecondModal}>No</button>
+          <button onClick={this.handleCancel} className="my-session-modal-button">Yes</button>
+          <button onClick={this.onCloseSecondModal} className="my-session-modal-button">No</button>
         </Modal>
       </div>
     )
@@ -78,4 +100,4 @@ class SessionModal extends React.Component {
 }
 
 
-export default connect(null,{ cancelSession })(SessionModal)
+export default connect((state)=>({ loading: state.sessions.loading }),{ cancelSession, load })(SessionModal)

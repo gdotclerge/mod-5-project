@@ -4,6 +4,7 @@
 }
 
 .calendar-container {
+  grid-column-start: 1;
   height: 300px;
   width: auto;
 }
